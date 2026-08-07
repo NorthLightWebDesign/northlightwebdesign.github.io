@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>Optimal Painting LLC | Professional Painting in Toms River, NJ</title>
+<meta name="description" content="Optimal Painting LLC provides professional interior and exterior painting in Toms River and across Ocean County, NJ. 5 stars on Google. Call (908) 433-9494 for a free estimate.">
+<style>
+  :root {
+    --navy: #14213d;
+    --navy-deep: #0c1428;
+    --accent: #fca311;
+    --accent-dark: #d88a08;
+    --paper: #ffffff;
+    --mist: #f4f6fa;
+    --ink: #1f2430;
+    --ink-soft: #5a6272;
+    --line: #e2e6ee;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    color: var(--ink);
+    background: var(--paper);
+    line-height: 1.6;
+  }
+  img { max-width: 100%; display: block; }
+  a { color: inherit; text-decoration: none; }
+  .wrap { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
+
+  .preview-ribbon {
+    background: var(--accent);
+    color: var(--navy-deep);
+    text-align: center;
+    font-size: 13px;
+    font-weight: 600;
+    padding: 6px 12px;
+    letter-spacing: 0.02em;
+  }
+
+  header {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    background: var(--navy);
+    color: #fff;
+    box-shadow: 0 2px 12px rgba(12, 20, 40, 0.25);
+  }
+  .nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 14px 0;
+    gap: 16px;
+  }
+  .brand { font-size: 18px; font-weight: 700; letter-spacing: 0.01em; }
+  .brand span { color: var(--accent); }
+  .nav-links { display: flex; gap: 22px; font-size: 14px; }
+  .nav-links a:hover { color: var(--accent); }
+  .call-btn {
+    background: var(--accent);
+    color: var(--navy-deep);
+    font-weight: 700;
+    font-size: 14px;
+    padding: 10px 18px;
+    border-radius: 6px;
+    white-space: nowrap;
+    transition: background 0.15s ease;
+  }
+  .call-btn:hover { background: var(--accent-dark); }
+
+  .hero {
+    background: linear-gradient(160deg, var(--navy) 0%, var(--navy-deep) 100%);
+    color: #fff;
+    padding: 84px 0 96px;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::after {
+    content: "";
+    position: absolute;
+    right: -120px;
+    top: -80px;
+    width: 420px;
+    height: 420px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(252, 163, 17, 0.18) 0%, rgba(252, 163, 17, 0) 70%);
+  }
+  .hero h1 { font-size: clamp(30px, 5vw, 48px); line-height: 1.15; margin-bottom: 18px; }
+  .hero h1 em { color: var(--accent); font-style: normal; }
+  .hero p.lead { font-size: 18px; color: #c9d2e3; max-width: 560px; margin-bottom: 30px; }
+  .hero-cta { display: flex; gap: 14px; flex-wrap: wrap; align-items: center; }
+  .hero-cta .ghost {
+    border: 1px solid rgba(255, 255, 255, 0.35);
+    color: #fff;
+    padding: 12px 20px;
+    border-radius: 6px;
+    font-size: 15px;
+    font-weight: 600;
+  }
+  .hero-cta .ghost:hover { border-color: var(--accent); color: var(--accent); }
+  .hero-cta .call-btn { font-size: 15px; padding: 13px 22px; }
+  .badge-row { display: flex; gap: 26px; margin-top: 42px; flex-wrap: wrap; }
+  .badge { display: flex; align-items: center; gap: 10px; font-size: 14px; color: #c9d2e3; }
+  .badge b { color: #fff; font-size: 20px; display: block; line-height: 1.2; }
+  .stars { color: var(--accent); font-size: 16px; letter-spacing: 2px; }
+
+  section { padding: 72px 0; }
+  section.alt { background: var(--mist); }
+  .kicker {
+    color: var(--accent-dark);
+    font-size: 13px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    margin-bottom: 10px;
+  }
+  h2 { font-size: clamp(24px, 3.4vw, 34px); color: var(--navy); margin-bottom: 14px; line-height: 1.2; }
+  .section-intro { color: var(--ink-soft); max-width: 640px; margin-bottom: 40px; }
+
+  .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 22px; }
+  .service-card {
+    background: var(--paper);
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    padding: 26px 24px;
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+  }
+  .service-card:hover { transform: translateY(-3px); box-shadow: 0 10px 28px rgba(12, 20, 40, 0.10); }
+  .service-card .icon {
+    width: 44px; height: 44px;
+    border-radius: 9px;
+    background: var(--navy);
+    color: var(--accent);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 22px;
+    margin-bottom: 16px;
+  }
+  .service-card h3 { font-size: 17px; color: var(--navy); margin-bottom: 8px; }
+  .service-card p { font-size: 14px; color: var(--ink-soft); }
+
+  .why { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 28px; }
+  .why-item h3 { font-size: 16px; color: var(--navy); margin-bottom: 6px; display: flex; align-items: center; gap: 9px; }
+  .why-item .tick { color: var(--accent-dark); font-weight: 800; }
+  .why-item p { font-size: 14px; color: var(--ink-soft); }
+
+  .reviews-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 22px; }
+  .review-card {
+    background: var(--paper);
+    border: 1px solid var(--line);
+    border-left: 4px solid var(--accent);
+    border-radius: 10px;
+    padding: 24px;
+  }
+  .review-card .stars { margin-bottom: 10px; }
+  .review-card p { font-size: 15px; color: var(--ink); margin-bottom: 14px; }
+  .review-card .who { font-size: 13px; color: var(--ink-soft); font-weight: 600; }
+  .google-line { margin-top: 30px; font-size: 14px; color: var(--ink-soft); }
+  .google-line a { color: var(--navy); font-weight: 600; text-decoration: underline; }
+
+  .area-strip {
+    background: var(--navy);
+    color: #fff;
+    padding: 54px 0;
+  }
+  .area-strip h2 { color: #fff; }
+  .towns { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 22px; }
+  .town {
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    border-radius: 999px;
+    padding: 7px 16px;
+    font-size: 13.5px;
+    color: #dbe2ef;
+  }
+
+  .quote-box {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 48px;
+    align-items: start;
+  }
+  .quote-copy p { color: var(--ink-soft); margin-bottom: 18px; }
+  .phone-big {
+    display: inline-block;
+    font-size: 24px;
+    font-weight: 800;
+    color: var(--navy);
+    margin: 6px 0 4px;
+  }
+  .quote-form {
+    background: var(--paper);
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    padding: 30px 28px;
+    box-shadow: 0 14px 40px rgba(12, 20, 40, 0.08);
+  }
+  .quote-form label { display: block; font-size: 13px; font-weight: 600; color: var(--navy); margin: 14px 0 5px; }
+  .quote-form input, .quote-form select, .quote-form textarea {
+    width: 100%;
+    border: 1px solid var(--line);
+    border-radius: 7px;
+    padding: 11px 12px;
+    font-size: 14px;
+    font-family: inherit;
+    background: #fbfcfe;
+  }
+  .quote-form textarea { min-height: 90px; resize: vertical; }
+  .quote-form button {
+    width: 100%;
+    margin-top: 20px;
+    background: var(--accent);
+    color: var(--navy-deep);
+    border: none;
+    border-radius: 7px;
+    padding: 14px;
+    font-size: 15px;
+    font-weight: 800;
+    cursor: pointer;
+  }
+  .quote-form button:hover { background: var(--accent-dark); }
+  .form-note { font-size: 12px; color: var(--ink-soft); text-align: center; margin-top: 10px; }
+
+  footer {
+    background: var(--navy-deep);
+    color: #9aa6bd;
+    padding: 36px 0;
+    font-size: 13.5px;
+  }
+  .foot { display: flex; justify-content: space-between; gap: 18px; flex-wrap: wrap; align-items: center; }
+  .foot .brand { font-size: 15px; color: #fff; }
+
+  @media (max-width: 760px) {
+    .nav-links { display: none; }
+    .quote-box { grid-template-columns: 1fr; }
+    .hero { padding: 60px 0 70px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="preview-ribbon">Preview of your new website, built for Optimal Painting LLC by Northlight Web Design. Not yet live.</div>
+
+<header>
+  <div class="wrap nav">
+    <div class="brand">Optimal Painting<span>.</span></div>
+    <nav class="nav-links">
+      <a href="#services">Services</a>
+      <a href="#reviews">Reviews</a>
+      <a href="#area">Service Area</a>
+      <a href="#quote">Free Quote</a>
+    </nav>
+    <a class="call-btn" href="tel:+19084339494">Call (908) 433-9494</a>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap">
+    <h1>Toms River's Trusted <em>Painting Professionals</em></h1>
+    <p class="lead">Optimal Painting LLC delivers clean lines, honest pricing, and a finish you'll be proud to show off. Interior and exterior painting done right, on schedule, by a local crew your neighbors already recommend.</p>
+    <div class="hero-cta">
+      <a class="call-btn" href="#quote">Get a Free Quote</a>
+      <a class="ghost" href="#reviews">See Our Reviews</a>
+    </div>
+    <div class="badge-row">
+      <div class="badge"><div><b>5 <span class="stars">★★★★★</span></b>8 Google reviews</div></div>
+      <div class="badge"><div><b>Local</b>Based in Toms River, NJ</div></div>
+      <div class="badge"><div><b>Free</b>estimates, no pressure</div></div>
+    </div>
+  </div>
+</section>
+
+<section id="services">
+  <div class="wrap">
+    <div class="kicker">What we do</div>
+    <h2>Painting services for every part of your home</h2>
+    <p class="section-intro">From a single accent wall to a full exterior repaint, every job gets the same careful prep, quality materials, and cleanup so thorough you'll wonder if we were ever there.</p>
+    <div class="services-grid">
+      <div class="service-card">
+        <div class="icon">&#9632;</div>
+        <h3>Interior Painting</h3>
+        <p>Walls, ceilings, trim, and doors. Careful prep, crisp lines, and furniture protected like it's our own.</p>
+      </div>
+      <div class="service-card">
+        <div class="icon">&#9650;</div>
+        <h3>Exterior Painting</h3>
+        <p>Siding, trim, shutters, and decks. Weather-grade coatings that stand up to Jersey Shore seasons.</p>
+      </div>
+      <div class="service-card">
+        <div class="icon">&#9670;</div>
+        <h3>Cabinet Refinishing</h3>
+        <p>A factory-smooth finish that transforms your kitchen for a fraction of the cost of replacement.</p>
+      </div>
+      <div class="service-card">
+        <div class="icon">&#9679;</div>
+        <h3>Deck &amp; Fence Staining</h3>
+        <p>Cleaning, sealing, and staining that protects your outdoor spaces and keeps them looking sharp.</p>
+      </div>
+      <div class="service-card">
+        <div class="icon">&#9645;</div>
+        <h3>Drywall &amp; Repairs</h3>
+        <p>Patches, cracks, and water damage repaired and blended so the fix is invisible under fresh paint.</p>
+      </div>
+      <div class="service-card">
+        <div class="icon">&#9633;</div>
+        <h3>Power Washing</h3>
+        <p>Siding, walkways, and decks refreshed and prepped, on their own or before any exterior work.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="alt">
+  <div class="wrap">
+    <div class="kicker">Why Toms River chooses us</div>
+    <h2>A local crew that treats your home like their own</h2>
+    <div class="why" style="margin-top: 34px;">
+      <div class="why-item">
+        <h3><span class="tick">&#10003;</span> Honest, upfront quotes</h3>
+        <p>You'll know exactly what the job costs before we start. No surprises, no padding.</p>
+      </div>
+      <div class="why-item">
+        <h3><span class="tick">&#10003;</span> Prep is everything</h3>
+        <p>Sanding, patching, taping, priming. The finish only lasts if the prep is right, so we never skip it.</p>
+      </div>
+      <div class="why-item">
+        <h3><span class="tick">&#10003;</span> On time, every time</h3>
+        <p>We show up when we say we will and finish on the schedule we quoted.</p>
+      </div>
+      <div class="why-item">
+        <h3><span class="tick">&#10003;</span> Spotless cleanup</h3>
+        <p>Drop cloths, daily tidy-ups, and a final walkthrough. The only thing we leave behind is the finish.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="reviews">
+  <div class="wrap">
+    <div class="kicker">Reviews</div>
+    <h2>Rated 5 stars by your neighbors</h2>
+    <p class="section-intro">Real reviews from real customers on our Google Business Profile.</p>
+    <div class="reviews-grid">
+      <div class="review-card"><div class="stars">★★★★★</div><p>Review quotes from your Google profile will appear here on the live site.</p><div class="who">Your customers</div></div>
+    </div>
+    <p class="google-line">Read all 8 reviews on <a href="https://www.google.com/maps/place/Optimal+Painting+LLC/@39.960074399999996,-74.2000273,14z/data=!4m8!1m2!2m1!1sOptimal+Painting+LLC!3m4!1s0x89c2256beb608e8d:0x3fe9588d3afb029d!8m2!3d39.960074399999996!4d-74.2000273" target="_blank" rel="noopener">our Google profile</a>.</p>
+  </div>
+</section>
+
+<section class="area-strip" id="area">
+  <div class="wrap">
+    <div class="kicker" style="color: var(--accent);">Service area</div>
+    <h2>Proudly serving Toms River and all of Ocean County</h2>
+    <div class="towns">
+      <span class="town">Toms River</span>
+      <span class="town">Brick</span>
+      <span class="town">Lakewood</span>
+      <span class="town">Jackson</span>
+      <span class="town">Manahawkin</span>
+      <span class="town">Point Pleasant</span>
+      <span class="town">Barnegat</span>
+      <span class="town">Bayville</span>
+      <span class="town">Forked River</span>
+      <span class="town">Beachwood</span>
+      <span class="town">Whiting</span>
+      <span class="town">Tuckerton</span>
+    </div>
+  </div>
+</section>
+
+<section class="alt" id="quote">
+  <div class="wrap quote-box">
+    <div class="quote-copy">
+      <div class="kicker">Free estimate</div>
+      <h2>Tell us about your project</h2>
+      <p>Send a few details and we'll get back to you with an honest estimate, usually by the next business day. Prefer to talk it through?</p>
+      <a class="phone-big" href="tel:+19084339494">(908) 433-9494</a>
+      <p style="font-size: 13.5px;">Call or text, whichever is easier.</p>
+    </div>
+    <form class="quote-form" onsubmit="return false;">
+      <label for="f-name">Name</label>
+      <input id="f-name" type="text" placeholder="Your name">
+      <label for="f-phone">Phone</label>
+      <input id="f-phone" type="tel" placeholder="(555) 555-5555">
+      <label for="f-type">Project type</label>
+      <select id="f-type">
+        <option>Interior painting</option>
+        <option>Exterior painting</option>
+        <option>Cabinets</option>
+        <option>Deck or fence</option>
+        <option>Something else</option>
+      </select>
+      <label for="f-notes">Anything we should know?</label>
+      <textarea id="f-notes" placeholder="Rooms, colors, timing..."></textarea>
+      <button type="submit">Request My Free Quote</button>
+      <p class="form-note">This form goes live when the site launches.</p>
+    </form>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap foot">
+    <div>
+      <div class="brand">Optimal Painting LLC</div>
+      <div>Toms River, New Jersey &middot; <a href="tel:+19084339494" style="text-decoration: underline;">(908) 433-9494</a></div>
+    </div>
+    <div>Website preview by Northlight Web Design</div>
+  </div>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Northlight Web Design | Websites for Local Businesses in New Jersey</title>
+<meta name="description" content="Northlight builds clean, fast websites for New Jersey service businesses that don't have one yet. Flat $1,000 build, live in a week, no monthly contract required.">
+<style>
+  :root {
+    --navy: #14213d;
+    --navy-deep: #0c1428;
+    --accent: #fca311;
+    --accent-dark: #d88a08;
+    --aurora: #4cc9a8;
+    --paper: #ffffff;
+    --mist: #f4f6fa;
+    --ink: #1f2430;
+    --ink-soft: #5a6272;
+    --line: #e2e6ee;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    color: var(--ink);
+    background: var(--paper);
+    line-height: 1.6;
+  }
+  a { color: inherit; text-decoration: none; }
+  .wrap { max-width: 1040px; margin: 0 auto; padding: 0 20px; }
+
+  header {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    background: var(--navy);
+    color: #fff;
+    box-shadow: 0 2px 12px rgba(12, 20, 40, 0.25);
+  }
+  .nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px 0;
+    gap: 16px;
+  }
+  .brand { font-size: 18px; font-weight: 700; letter-spacing: 0.01em; }
+  .brand span { color: var(--accent); }
+  .nav-links { display: flex; gap: 22px; font-size: 14px; }
+  .nav-links a:hover { color: var(--accent); }
+  .cta-btn {
+    background: var(--accent);
+    color: var(--navy-deep);
+    font-weight: 700;
+    font-size: 14px;
+    padding: 10px 18px;
+    border-radius: 6px;
+    white-space: nowrap;
+    transition: background 0.15s ease;
+  }
+  .cta-btn:hover { background: var(--accent-dark); }
+
+  .hero {
+    background: linear-gradient(160deg, var(--navy) 0%, var(--navy-deep) 100%);
+    color: #fff;
+    padding: 92px 0 100px;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: "";
+    position: absolute;
+    left: -100px;
+    top: -140px;
+    width: 520px;
+    height: 520px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(76, 201, 168, 0.14) 0%, rgba(76, 201, 168, 0) 70%);
+  }
+  .hero::after {
+    content: "";
+    position: absolute;
+    right: -120px;
+    bottom: -160px;
+    width: 460px;
+    height: 460px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(252, 163, 17, 0.16) 0%, rgba(252, 163, 17, 0) 70%);
+  }
+  .hero .wrap { position: relative; z-index: 1; }
+  .hero h1 { font-size: clamp(30px, 5vw, 50px); line-height: 1.14; margin-bottom: 18px; max-width: 720px; }
+  .hero h1 em { color: var(--accent); font-style: normal; }
+  .hero p.lead { font-size: 18px; color: #c9d2e3; max-width: 600px; margin-bottom: 32px; }
+  .hero-cta { display: flex; gap: 14px; flex-wrap: wrap; align-items: center; }
+  .hero-cta .ghost {
+    border: 1px solid rgba(255, 255, 255, 0.35);
+    color: #fff;
+    padding: 12px 20px;
+    border-radius: 6px;
+    font-size: 15px;
+    font-weight: 600;
+  }
+  .hero-cta .ghost:hover { border-color: var(--accent); color: var(--accent); }
+  .hero-cta .cta-btn { font-size: 15px; padding: 13px 22px; }
+
+  section { padding: 76px 0; }
+  section.alt { background: var(--mist); }
+  .kicker {
+    color: var(--accent-dark);
+    font-size: 13px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    margin-bottom: 10px;
+  }
+  h2 { font-size: clamp(24px, 3.4vw, 34px); color: var(--navy); margin-bottom: 14px; line-height: 1.2; }
+  .section-intro { color: var(--ink-soft); max-width: 640px; margin-bottom: 40px; font-size: 16px; }
+
+  .steps { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 22px; }
+  .step {
+    background: var(--paper);
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    padding: 26px 24px;
+  }
+  .step .num {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    background: var(--navy);
+    color: var(--accent);
+    font-weight: 700;
+    font-size: 15px;
+    margin-bottom: 14px;
+  }
+  .step h3 { font-size: 17px; color: var(--navy); margin-bottom: 8px; }
+  .step p { font-size: 14.5px; color: var(--ink-soft); }
+
+  .pricing-card {
+    background: var(--navy);
+    color: #fff;
+    border-radius: 14px;
+    padding: 42px 38px;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 28px;
+    align-items: center;
+  }
+  .pricing-card h3 { font-size: 24px; margin-bottom: 10px; }
+  .pricing-card p { color: #c9d2e3; font-size: 15.5px; max-width: 520px; }
+  .price-tag { text-align: center; }
+  .price-tag .amount { font-size: 46px; font-weight: 800; color: var(--accent); line-height: 1; }
+  .price-tag .terms { font-size: 13.5px; color: #c9d2e3; margin-top: 8px; }
+  .pricing-notes { margin-top: 26px; display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 18px; }
+  .pricing-note {
+    background: var(--paper);
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    padding: 20px 22px;
+    font-size: 14.5px;
+    color: var(--ink-soft);
+  }
+  .pricing-note b { color: var(--navy); display: block; margin-bottom: 6px; font-size: 15px; }
+
+  .about-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 36px; align-items: start; }
+  .about-grid p { color: var(--ink-soft); font-size: 15.5px; margin-bottom: 14px; }
+  .about-grid p b { color: var(--navy); }
+
+  .contact-band {
+    background: linear-gradient(160deg, var(--navy) 0%, var(--navy-deep) 100%);
+    color: #fff;
+    text-align: center;
+    padding: 84px 0;
+  }
+  .contact-band h2 { color: #fff; }
+  .contact-band p { color: #c9d2e3; max-width: 540px; margin: 0 auto 30px; }
+  .contact-band .email {
+    display: inline-block;
+    background: var(--accent);
+    color: var(--navy-deep);
+    font-weight: 700;
+    font-size: 17px;
+    padding: 14px 26px;
+    border-radius: 8px;
+    transition: background 0.15s ease;
+  }
+  .contact-band .email:hover { background: var(--accent-dark); }
+
+  footer { background: var(--navy-deep); color: #8b95ab; font-size: 13.5px; padding: 26px 0; }
+  footer .wrap { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 10px; }
+
+  @media (max-width: 720px) {
+    .nav-links { display: none; }
+    .pricing-card { grid-template-columns: 1fr; text-align: left; }
+    .price-tag { text-align: left; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap nav">
+    <div class="brand">Northlight <span>Web Design</span></div>
+    <nav class="nav-links">
+      <a href="#how">How It Works</a>
+      <a href="#pricing">Pricing</a>
+      <a href="#about">About</a>
+    </nav>
+    <a class="cta-btn" href="mailto:david@northlightwebdesign.com">Get In Touch</a>
+  </div>
+</header>
+
+<div class="hero">
+  <div class="wrap">
+    <h1>Your business works hard. <em>Your website should exist.</em></h1>
+    <p class="lead">Northlight builds clean, fast, professional websites for New Jersey service businesses that don't have one yet. Flat price, live in about a week, and you see the finished site before you pay a dollar.</p>
+    <div class="hero-cta">
+      <a class="cta-btn" href="mailto:david@northlightwebdesign.com">Email David</a>
+      <a class="ghost" href="#how">See how it works</a>
+    </div>
+  </div>
+</div>
+
+<section id="how" class="alt">
+  <div class="wrap">
+    <div class="kicker">How It Works</div>
+    <h2>We build first. You decide after.</h2>
+    <p class="section-intro">Most web designers ask you to pay up front and imagine the result. We do it backwards: we build your site first, send you the link, and you only move forward if you like what you see.</p>
+    <div class="steps">
+      <div class="step">
+        <div class="num">1</div>
+        <h3>You get a link</h3>
+        <p>We build a complete preview of your site using your real business: your reviews, your photos, your services, your town.</p>
+      </div>
+      <div class="step">
+        <div class="num">2</div>
+        <h3>You take a look</h3>
+        <p>Like it? A $200 deposit starts the real build. Don't like it? Delete the email and nothing happens. No pressure, no follow-up calls.</p>
+      </div>
+      <div class="step">
+        <div class="num">3</div>
+        <h3>We finish it together</h3>
+        <p>A 15-minute call to get your details right, then we polish the site, wire up your contact form, and connect your domain.</p>
+      </div>
+      <div class="step">
+        <div class="num">4</div>
+        <h3>You go live in a week</h3>
+        <p>Balance is due at launch. From day one, customers searching your name find a real website instead of nothing.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="pricing">
+  <div class="wrap">
+    <div class="kicker">Pricing</div>
+    <h2>One flat price. No surprises.</h2>
+    <p class="section-intro">You shouldn't need a meeting to find out what a website costs. Here it is.</p>
+    <div class="pricing-card">
+      <div>
+        <h3>Complete business website</h3>
+        <p>Everything a local service business needs: your services, your reviews, your photos, a contact form that reaches your phone, and a design that looks sharp on every device. Built for you, owned by you.</p>
+      </div>
+      <div class="price-tag">
+        <div class="amount">$1,000</div>
+        <div class="terms">$200 deposit to start<br>balance due at launch</div>
+      </div>
+    </div>
+    <div class="pricing-notes">
+      <div class="pricing-note">
+        <b>Optional care plan</b>
+        Hosting, updates, and edits handled for you for a flat monthly fee. Cancel anytime. Your site stays yours either way.
+      </div>
+      <div class="pricing-note">
+        <b>Your domain, your property</b>
+        The domain is registered in your name and the site belongs to you. If we ever part ways, everything goes with you.
+      </div>
+      <div class="pricing-note">
+        <b>No contracts, no upsells</b>
+        The price on this page is the price. We make money by building good sites, not by locking you in.
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="about" class="alt">
+  <div class="wrap">
+    <div class="kicker">About</div>
+    <h2>Built in New Jersey, for New Jersey businesses.</h2>
+    <div class="about-grid">
+      <div>
+        <p><b>Northlight Web Design is run by David Kincade</b>, based in central New Jersey. Before building websites, David spent years working in landscaping and restaurants, which is exactly why Northlight exists: the best tradespeople and service businesses are often the ones with no website at all.</p>
+        <p>Their work speaks for itself in person, but online they're invisible, and every week customers who search for them find a competitor instead.</p>
+      </div>
+      <div>
+        <p>Northlight fixes that with honest pricing and zero runaround. We work mostly with painters, landscapers, and other home service pros across the Jersey Shore and central New Jersey.</p>
+        <p>If you got an email from us with a preview of your site, that link is real, it was built specifically for your business, and the person who replies when you write back is David.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="contact-band">
+  <div class="wrap">
+    <h2>Want a website that pulls its weight?</h2>
+    <p>Send a note with your business name and town. You'll get a straight answer, and usually a working preview, within a couple of days.</p>
+    <a class="email" href="mailto:david@northlightwebdesign.com">david@northlightwebdesign.com</a>
+  </div>
+</div>
+
+<footer>
+  <div class="wrap">
+    <div>Northlight Web Design, New Jersey</div>
+    <div>david@northlightwebdesign.com</div>
+  </div>
+</footer>
+
+</body>
+</html>
