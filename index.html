@@ -4,198 +4,401 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Northlight Web Design | Websites for Local Businesses in New Jersey</title>
-<meta name="description" content="Northlight builds clean, fast websites for New Jersey service businesses that don't have one yet. Flat $1,000 build, live in a week, no monthly contract required.">
+<meta name="description" content="Northlight builds clean, fast websites for New Jersey service businesses that don't have one yet. Flat $1,000 build, live in a week, and you see the finished site before you pay a dollar.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230a1128'/%3E%3Cpath d='M14 44 L14 22 L20 22 L34 38 L34 22 L40 22 L40 44 L34 44 L20 28 L20 44 Z' fill='%23fca311'/%3E%3Cpath d='M12 16 Q32 6 52 16' stroke='%234cc9a8' stroke-width='4' fill='none' stroke-linecap='round'/%3E%3C/svg%3E">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "name": "Northlight Web Design",
+  "url": "https://northlightwebdesign.com",
+  "email": "david@northlightwebdesign.com",
+  "description": "Websites for New Jersey service businesses that don't have one yet. Flat $1,000 build, live in about a week.",
+  "areaServed": "New Jersey",
+  "founder": { "@type": "Person", "name": "David Kincade" },
+  "priceRange": "$1,000 flat"
+}
+</script>
 <style>
   :root {
+    --night: #0a1128;
+    --night-deep: #060b1c;
     --navy: #14213d;
-    --navy-deep: #0c1428;
+    --aurora: #4cc9a8;
+    --aurora-soft: #7fe0c3;
+    --violet: #6d5bd0;
     --accent: #fca311;
     --accent-dark: #d88a08;
-    --aurora: #4cc9a8;
     --paper: #ffffff;
-    --mist: #f4f6fa;
-    --ink: #1f2430;
-    --ink-soft: #5a6272;
-    --line: #e2e6ee;
+    --mist: #f3f6fb;
+    --ink: #1c2231;
+    --ink-soft: #59627a;
+    --line: #e3e8f2;
+    --radius: 14px;
+    --shadow-soft: 0 10px 40px rgba(10, 17, 40, 0.10);
+    --shadow-lift: 0 18px 50px rgba(10, 17, 40, 0.16);
   }
   * { margin: 0; padding: 0; box-sizing: border-box; }
   html { scroll-behavior: smooth; }
   body {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
     color: var(--ink);
     background: var(--paper);
-    line-height: 1.6;
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
   }
+  h1, h2, h3, .display { font-family: "Fraunces", Georgia, serif; }
   a { color: inherit; text-decoration: none; }
-  .wrap { max-width: 1040px; margin: 0 auto; padding: 0 20px; }
+  .wrap { max-width: 1080px; margin: 0 auto; padding: 0 22px; }
+  ::selection { background: var(--aurora); color: var(--night); }
 
+  /* ---------- Header ---------- */
   header {
     position: sticky;
     top: 0;
-    z-index: 50;
-    background: var(--navy);
+    z-index: 100;
+    background: rgba(10, 17, 40, 0.82);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
     color: #fff;
-    box-shadow: 0 2px 12px rgba(12, 20, 40, 0.25);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
   }
-  .nav {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 15px 0;
-    gap: 16px;
-  }
-  .brand { font-size: 18px; font-weight: 700; letter-spacing: 0.01em; }
+  .nav { display: flex; align-items: center; justify-content: space-between; padding: 15px 0; gap: 16px; }
+  .brand { display: flex; align-items: center; gap: 11px; font-family: "Fraunces", serif; font-size: 19px; font-weight: 600; letter-spacing: 0.01em; }
+  .brand svg { display: block; }
   .brand span { color: var(--accent); }
-  .nav-links { display: flex; gap: 22px; font-size: 14px; }
-  .nav-links a:hover { color: var(--accent); }
-  .cta-btn {
-    background: var(--accent);
-    color: var(--navy-deep);
-    font-weight: 700;
-    font-size: 14px;
-    padding: 10px 18px;
-    border-radius: 6px;
-    white-space: nowrap;
-    transition: background 0.15s ease;
+  .nav-links { display: flex; gap: 26px; font-size: 14.5px; font-weight: 500; color: #c4cde0; }
+  .nav-links a { position: relative; padding: 4px 0; transition: color .15s ease; }
+  .nav-links a::after {
+    content: ""; position: absolute; left: 0; bottom: 0; width: 0; height: 2px;
+    background: var(--aurora); transition: width .2s ease; border-radius: 2px;
   }
-  .cta-btn:hover { background: var(--accent-dark); }
+  .nav-links a:hover { color: #fff; }
+  .nav-links a:hover::after { width: 100%; }
+  .cta-btn {
+    background: var(--accent); color: var(--night-deep);
+    font-weight: 700; font-size: 14px; padding: 11px 20px; border-radius: 9px;
+    white-space: nowrap; transition: transform .15s ease, box-shadow .15s ease, background .15s ease;
+    box-shadow: 0 4px 18px rgba(252, 163, 17, 0.25);
+  }
+  .cta-btn:hover { background: #ffb437; transform: translateY(-1px); box-shadow: 0 8px 26px rgba(252, 163, 17, 0.35); }
 
+  /* ---------- Hero ---------- */
   .hero {
-    background: linear-gradient(160deg, var(--navy) 0%, var(--navy-deep) 100%);
-    color: #fff;
-    padding: 92px 0 100px;
     position: relative;
+    background: linear-gradient(175deg, var(--night) 0%, var(--night-deep) 70%, #0b1630 100%);
+    color: #fff;
+    padding: 100px 0 130px;
     overflow: hidden;
   }
-  .hero::before {
-    content: "";
-    position: absolute;
-    left: -100px;
-    top: -140px;
-    width: 520px;
-    height: 520px;
-    border-radius: 50%;
-    background: radial-gradient(circle, rgba(76, 201, 168, 0.14) 0%, rgba(76, 201, 168, 0) 70%);
+  .aurora { position: absolute; inset: 0; overflow: hidden; pointer-events: none; }
+  .aurora .ribbon {
+    position: absolute; border-radius: 50%; filter: blur(70px); opacity: .5;
+    animation: drift 16s ease-in-out infinite alternate;
   }
-  .hero::after {
-    content: "";
-    position: absolute;
-    right: -120px;
-    bottom: -160px;
-    width: 460px;
-    height: 460px;
-    border-radius: 50%;
-    background: radial-gradient(circle, rgba(252, 163, 17, 0.16) 0%, rgba(252, 163, 17, 0) 70%);
+  .r1 { width: 720px; height: 340px; left: -160px; top: -120px; background: radial-gradient(ellipse, rgba(76,201,168,.55), transparent 70%); }
+  .r2 { width: 640px; height: 300px; right: -180px; top: -40px; background: radial-gradient(ellipse, rgba(109,91,208,.45), transparent 70%); animation-delay: -6s; animation-duration: 20s; }
+  .r3 { width: 560px; height: 280px; left: 28%; top: -160px; background: radial-gradient(ellipse, rgba(252,163,17,.22), transparent 70%); animation-delay: -11s; animation-duration: 24s; }
+  @keyframes drift {
+    from { transform: translate3d(0, 0, 0) rotate(-4deg) scaleX(1); }
+    to   { transform: translate3d(60px, 34px, 0) rotate(5deg) scaleX(1.12); }
   }
-  .hero .wrap { position: relative; z-index: 1; }
-  .hero h1 { font-size: clamp(30px, 5vw, 50px); line-height: 1.14; margin-bottom: 18px; max-width: 720px; }
+  .stars { position: absolute; inset: 0; pointer-events: none; opacity: .5;
+    background-image:
+      radial-gradient(1.2px 1.2px at 12% 28%, #fff 50%, transparent 51%),
+      radial-gradient(1px 1px at 34% 12%, #fff 50%, transparent 51%),
+      radial-gradient(1.4px 1.4px at 58% 32%, #fff 50%, transparent 51%),
+      radial-gradient(1px 1px at 73% 15%, #fff 50%, transparent 51%),
+      radial-gradient(1.2px 1.2px at 88% 38%, #fff 50%, transparent 51%),
+      radial-gradient(1px 1px at 22% 52%, #fff 50%, transparent 51%),
+      radial-gradient(1.3px 1.3px at 47% 60%, #fff 50%, transparent 51%),
+      radial-gradient(1px 1px at 92% 64%, #fff 50%, transparent 51%);
+  }
+  .hero .wrap { position: relative; z-index: 2; display: grid; grid-template-columns: 1.05fr .95fr; gap: 56px; align-items: center; }
+  .eyebrow {
+    display: inline-flex; align-items: center; gap: 9px;
+    font-size: 13px; font-weight: 600; letter-spacing: .1em; text-transform: uppercase;
+    color: var(--aurora-soft); margin-bottom: 22px;
+  }
+  .eyebrow::before { content: ""; width: 26px; height: 2px; background: var(--aurora); border-radius: 2px; }
+  .hero h1 { font-size: clamp(34px, 4.6vw, 54px); font-weight: 600; line-height: 1.12; margin-bottom: 22px; letter-spacing: -0.01em; }
   .hero h1 em { color: var(--accent); font-style: normal; }
-  .hero p.lead { font-size: 18px; color: #c9d2e3; max-width: 600px; margin-bottom: 32px; }
+  .hero p.lead { font-size: 18px; color: #b9c3da; max-width: 520px; margin-bottom: 34px; }
   .hero-cta { display: flex; gap: 14px; flex-wrap: wrap; align-items: center; }
-  .hero-cta .ghost {
-    border: 1px solid rgba(255, 255, 255, 0.35);
-    color: #fff;
-    padding: 12px 20px;
-    border-radius: 6px;
-    font-size: 15px;
-    font-weight: 600;
+  .hero-cta .cta-btn { font-size: 15.5px; padding: 14px 26px; }
+  .ghost {
+    border: 1px solid rgba(255, 255, 255, 0.28); color: #e7ecf6;
+    padding: 13px 22px; border-radius: 9px; font-size: 15px; font-weight: 600;
+    transition: border-color .15s ease, color .15s ease, background .15s ease;
   }
-  .hero-cta .ghost:hover { border-color: var(--accent); color: var(--accent); }
-  .hero-cta .cta-btn { font-size: 15px; padding: 13px 22px; }
+  .ghost:hover { border-color: var(--aurora); color: var(--aurora-soft); background: rgba(76,201,168,.06); }
+  .hero-proof { display: flex; gap: 30px; margin-top: 44px; flex-wrap: wrap; }
+  .proof { font-size: 13.5px; color: #93a0be; }
+  .proof b { display: block; font-family: "Fraunces", serif; font-size: 22px; color: #fff; line-height: 1.3; }
+  .proof b span { color: var(--aurora); }
 
-  section { padding: 76px 0; }
-  section.alt { background: var(--mist); }
+  /* Browser mockup */
+  .mockup { position: relative; }
+  .browser {
+    background: #fff; border-radius: 12px; overflow: hidden;
+    box-shadow: 0 30px 80px rgba(0, 0, 0, 0.45), 0 0 0 1px rgba(255,255,255,.08);
+    transform: rotate(1.6deg);
+    animation: float 7s ease-in-out infinite;
+  }
+  @keyframes float { 0%, 100% { transform: rotate(1.6deg) translateY(0); } 50% { transform: rotate(1.6deg) translateY(-10px); } }
+  .browser-bar { display: flex; align-items: center; gap: 8px; background: #eef1f7; padding: 10px 14px; }
+  .dot { width: 10px; height: 10px; border-radius: 50%; }
+  .dot:nth-child(1) { background: #ff5f57; } .dot:nth-child(2) { background: #febc2e; } .dot:nth-child(3) { background: #28c840; }
+  .urlbar {
+    flex: 1; background: #fff; border-radius: 6px; font-size: 11px; color: #7a8499;
+    padding: 5px 10px; margin-left: 8px; border: 1px solid #e2e6ee;
+    display: flex; align-items: center; gap: 6px;
+  }
+  .urlbar svg { flex: none; }
+  .site { font-size: 10px; }
+  .site-hero { background: linear-gradient(150deg, var(--navy), #0d1830); color: #fff; padding: 22px 18px 26px; }
+  .site-nav { display: flex; justify-content: space-between; align-items: center; margin-bottom: 18px; }
+  .site-logo { font-weight: 700; font-size: 11px; }
+  .site-logo i { color: var(--accent); font-style: normal; }
+  .site-pill { background: var(--accent); color: var(--night); font-weight: 700; border-radius: 4px; padding: 4px 8px; font-size: 9px; }
+  .site-h1 { font-family: "Fraunces", serif; font-size: 17px; line-height: 1.25; margin-bottom: 7px; }
+  .site-sub { color: #aab6cf; font-size: 9.5px; max-width: 220px; }
+  .site-stars { color: var(--accent); letter-spacing: 2px; margin-top: 10px; font-size: 9px; }
+  .site-stars span { color: #aab6cf; letter-spacing: 0; }
+  .site-body { padding: 14px 18px 18px; background: #fff; }
+  .site-row { display: flex; gap: 8px; }
+  .site-card { flex: 1; border: 1px solid #e6eaf2; border-radius: 7px; padding: 9px 9px 10px; }
+  .site-card b { display: block; font-size: 9.5px; color: var(--navy); margin-bottom: 3px; }
+  .site-card p { font-size: 8.5px; color: #7c869c; line-height: 1.45; }
+  .site-quote { margin-top: 10px; background: var(--mist); border-radius: 7px; padding: 9px 11px; font-size: 8.5px; color: #5c6478; font-style: italic; }
+  .site-quote b { display: block; font-style: normal; color: var(--navy); font-size: 8.5px; margin-top: 4px; }
+  .mock-tag {
+    position: absolute; right: -10px; bottom: -18px;
+    background: var(--aurora); color: var(--night-deep); font-weight: 700; font-size: 12.5px;
+    border-radius: 8px; padding: 9px 14px; box-shadow: var(--shadow-lift); transform: rotate(-2deg);
+  }
+
+  /* ---------- Shared sections ---------- */
+  section { padding: 92px 0; position: relative; }
+  section.alt {
+    background:
+      radial-gradient(1100px 320px at 15% 0%, rgba(76, 201, 168, 0.07), transparent 60%),
+      radial-gradient(1100px 320px at 85% 100%, rgba(109, 91, 208, 0.06), transparent 60%),
+      var(--mist);
+  }
+  section.alt::before {
+    content: ""; position: absolute; inset: 0; pointer-events: none; opacity: .5;
+    background-image: radial-gradient(rgba(20, 33, 61, 0.10) 1px, transparent 1.4px);
+    background-size: 26px 26px;
+    mask-image: linear-gradient(180deg, transparent, #000 18%, #000 82%, transparent);
+    -webkit-mask-image: linear-gradient(180deg, transparent, #000 18%, #000 82%, transparent);
+  }
+  section > .wrap { position: relative; z-index: 1; }
+  section:not(.alt) {
+    background:
+      radial-gradient(900px 300px at 85% 0%, rgba(252, 163, 17, 0.05), transparent 60%),
+      var(--paper);
+  }
   .kicker {
-    color: var(--accent-dark);
-    font-size: 13px;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.12em;
-    margin-bottom: 10px;
+    display: inline-flex; align-items: center; gap: 9px;
+    color: var(--accent-dark); font-size: 12.5px; font-weight: 700;
+    text-transform: uppercase; letter-spacing: 0.12em; margin-bottom: 14px;
   }
-  h2 { font-size: clamp(24px, 3.4vw, 34px); color: var(--navy); margin-bottom: 14px; line-height: 1.2; }
-  .section-intro { color: var(--ink-soft); max-width: 640px; margin-bottom: 40px; font-size: 16px; }
+  .kicker::before { content: ""; width: 22px; height: 2px; background: var(--accent); border-radius: 2px; }
+  h2 { font-size: clamp(26px, 3.4vw, 38px); font-weight: 600; color: var(--night); margin-bottom: 16px; line-height: 1.15; letter-spacing: -0.01em; }
+  .section-intro { color: var(--ink-soft); max-width: 620px; margin-bottom: 48px; font-size: 16.5px; }
 
-  .steps { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 22px; }
+  /* Reveal on scroll */
+  .reveal { opacity: 0; transform: translateY(22px); transition: opacity .6s ease, transform .6s ease; }
+  .reveal.in { opacity: 1; transform: none; }
+  @media (prefers-reduced-motion: reduce) {
+    .reveal { opacity: 1; transform: none; transition: none; }
+    .browser, .aurora .ribbon { animation: none; }
+    html { scroll-behavior: auto; }
+  }
+
+  /* ---------- Steps ---------- */
+  .steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; counter-reset: step; position: relative; }
   .step {
-    background: var(--paper);
-    border: 1px solid var(--line);
-    border-radius: 10px;
-    padding: 26px 24px;
+    background: var(--paper); border: 1px solid var(--line); border-radius: var(--radius);
+    padding: 28px 24px; position: relative;
+    transition: transform .18s ease, box-shadow .18s ease, border-color .18s ease;
   }
+  .step:hover { transform: translateY(-5px); box-shadow: var(--shadow-lift); border-color: transparent; }
   .step .num {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    width: 34px;
-    height: 34px;
-    border-radius: 50%;
-    background: var(--navy);
-    color: var(--accent);
-    font-weight: 700;
-    font-size: 15px;
-    margin-bottom: 14px;
+    display: inline-flex; align-items: center; justify-content: center;
+    width: 38px; height: 38px; border-radius: 11px;
+    background: var(--night); color: var(--accent);
+    font-family: "Fraunces", serif; font-weight: 700; font-size: 17px; margin-bottom: 16px;
   }
-  .step h3 { font-size: 17px; color: var(--navy); margin-bottom: 8px; }
+  .step h3 { font-size: 18px; color: var(--night); margin-bottom: 9px; font-weight: 600; }
   .step p { font-size: 14.5px; color: var(--ink-soft); }
+  .step .free-tag { display: inline-block; margin-top: 12px; background: rgba(76,201,168,.14); color: #16775c; font-size: 11.5px; font-weight: 700; padding: 4px 9px; border-radius: 6px; letter-spacing: .03em; }
 
+  /* ---------- What you get ---------- */
+  .grid-6 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+  .feature {
+    background: var(--paper); border: 1px solid var(--line); border-radius: var(--radius);
+    padding: 26px 24px; transition: transform .18s ease, box-shadow .18s ease;
+  }
+  .feature:hover { transform: translateY(-4px); box-shadow: var(--shadow-soft); }
+  .feature .ic {
+    width: 42px; height: 42px; border-radius: 11px; display: flex; align-items: center; justify-content: center;
+    background: linear-gradient(140deg, rgba(76,201,168,.16), rgba(109,91,208,.12)); margin-bottom: 15px;
+  }
+  .feature h3 { font-size: 16.5px; color: var(--night); margin-bottom: 7px; font-weight: 600; }
+  .feature p { font-size: 14px; color: var(--ink-soft); }
+
+  /* ---------- Pricing ---------- */
   .pricing-card {
-    background: var(--navy);
-    color: #fff;
-    border-radius: 14px;
-    padding: 42px 38px;
-    display: grid;
-    grid-template-columns: 1fr auto;
-    gap: 28px;
-    align-items: center;
+    position: relative;
+    background: linear-gradient(160deg, var(--night) 0%, #101c3e 100%);
+    color: #fff; border-radius: 20px; padding: 48px 44px;
+    display: grid; grid-template-columns: 1fr auto; gap: 32px; align-items: center;
+    overflow: hidden; box-shadow: var(--shadow-lift);
   }
-  .pricing-card h3 { font-size: 24px; margin-bottom: 10px; }
-  .pricing-card p { color: #c9d2e3; font-size: 15.5px; max-width: 520px; }
-  .price-tag { text-align: center; }
-  .price-tag .amount { font-size: 46px; font-weight: 800; color: var(--accent); line-height: 1; }
-  .price-tag .terms { font-size: 13.5px; color: #c9d2e3; margin-top: 8px; }
-  .pricing-notes { margin-top: 26px; display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 18px; }
+  .pricing-card::before {
+    content: ""; position: absolute; left: 0; right: 0; top: 0; height: 3px;
+    background: linear-gradient(90deg, var(--aurora), var(--violet), var(--accent));
+  }
+  .pricing-card::after {
+    content: ""; position: absolute; right: -140px; bottom: -160px; width: 420px; height: 420px; border-radius: 50%;
+    background: radial-gradient(circle, rgba(76,201,168,0.14) 0%, transparent 70%);
+  }
+  .pricing-card h3 { font-size: 26px; margin-bottom: 12px; font-weight: 600; }
+  .pricing-card > div { position: relative; z-index: 1; }
+  .pricing-card p { color: #b9c3da; font-size: 15.5px; max-width: 500px; }
+  .pricing-card ul { list-style: none; margin-top: 18px; display: grid; grid-template-columns: 1fr 1fr; gap: 9px 22px; }
+  .pricing-card li { font-size: 14px; color: #d7deed; display: flex; gap: 9px; align-items: baseline; }
+  .pricing-card li::before { content: "✓"; color: var(--aurora); font-weight: 700; }
+  .price-tag { text-align: center; padding: 0 10px; }
+  .price-tag .amount { font-family: "Fraunces", serif; font-size: 58px; font-weight: 700; color: var(--accent); line-height: 1; }
+  .price-tag .terms { font-size: 13.5px; color: #b9c3da; margin-top: 12px; line-height: 1.6; }
+  .pricing-notes { margin-top: 24px; display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
   .pricing-note {
-    background: var(--paper);
-    border: 1px solid var(--line);
-    border-radius: 10px;
-    padding: 20px 22px;
-    font-size: 14.5px;
-    color: var(--ink-soft);
+    background: var(--paper); border: 1px solid var(--line); border-radius: var(--radius);
+    padding: 22px 24px; font-size: 14px; color: var(--ink-soft);
   }
-  .pricing-note b { color: var(--navy); display: block; margin-bottom: 6px; font-size: 15px; }
+  .pricing-note b { color: var(--night); display: block; margin-bottom: 6px; font-size: 15px; }
 
-  .about-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 36px; align-items: start; }
-  .about-grid p { color: var(--ink-soft); font-size: 15.5px; margin-bottom: 14px; }
-  .about-grid p b { color: var(--navy); }
+  /* ---------- FAQ ---------- */
+  .faq { max-width: 760px; }
+  details {
+    background: var(--paper); border: 1px solid var(--line); border-radius: 12px;
+    padding: 0; margin-bottom: 12px; overflow: hidden; transition: box-shadow .18s ease;
+  }
+  details[open] { box-shadow: var(--shadow-soft); }
+  summary {
+    cursor: pointer; list-style: none; display: flex; justify-content: space-between; align-items: center;
+    padding: 19px 24px; font-weight: 600; font-size: 15.5px; color: var(--night); gap: 14px;
+  }
+  summary::-webkit-details-marker { display: none; }
+  summary::after {
+    content: "+"; font-family: "Fraunces", serif; font-size: 22px; color: var(--accent-dark);
+    transition: transform .2s ease; line-height: 1; flex: none;
+  }
+  details[open] summary::after { transform: rotate(45deg); }
+  details .a { padding: 0 24px 20px; color: var(--ink-soft); font-size: 14.5px; max-width: 640px; }
 
+  /* ---------- About ---------- */
+  .about-grid { display: grid; grid-template-columns: auto 1fr; gap: 40px; align-items: start; max-width: 900px; }
+  .avatar {
+    width: 110px; height: 110px; border-radius: 26px; flex: none;
+    background: linear-gradient(145deg, var(--night), #1b2b55);
+    color: var(--accent); display: flex; align-items: center; justify-content: center;
+    font-family: "Fraunces", serif; font-size: 38px; font-weight: 700;
+    box-shadow: var(--shadow-soft); position: relative;
+  }
+  .avatar::after {
+    content: ""; position: absolute; inset: -5px; border-radius: 30px;
+    border: 2px solid transparent;
+    background: linear-gradient(120deg, var(--aurora), transparent 42%, transparent 60%, var(--accent)) border-box;
+    -webkit-mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor; mask-composite: exclude;
+  }
+  .about-copy p { color: var(--ink-soft); font-size: 15.5px; margin-bottom: 14px; }
+  .about-copy p b { color: var(--night); }
+  .about-copy .sig { font-family: "Fraunces", serif; color: var(--night); font-size: 17px; margin-top: 4px; }
+  .about-copy .sig span { color: var(--ink-soft); font-family: "Inter", sans-serif; font-size: 13px; display: block; }
+
+  /* ---------- Contact ---------- */
   .contact-band {
-    background: linear-gradient(160deg, var(--navy) 0%, var(--navy-deep) 100%);
-    color: #fff;
-    text-align: center;
-    padding: 84px 0;
+    position: relative;
+    background: linear-gradient(175deg, var(--night) 0%, var(--night-deep) 100%);
+    color: #fff; text-align: center; padding: 100px 0; overflow: hidden;
   }
+  .contact-band .aurora .ribbon { opacity: .35; }
+  .contact-band .wrap { position: relative; z-index: 2; }
   .contact-band h2 { color: #fff; }
-  .contact-band p { color: #c9d2e3; max-width: 540px; margin: 0 auto 30px; }
-  .contact-band .email {
-    display: inline-block;
-    background: var(--accent);
-    color: var(--navy-deep);
-    font-weight: 700;
-    font-size: 17px;
-    padding: 14px 26px;
-    border-radius: 8px;
-    transition: background 0.15s ease;
+  .contact-band p { color: #b9c3da; max-width: 520px; margin: 0 auto 36px; font-size: 16.5px; }
+  .contact-band .wrap { max-width: 720px; }
+  .contact-band h2, .contact-band > .wrap > p { text-align: center; }
+  .contact-form {
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 18px; padding: 34px; text-align: left;
+    backdrop-filter: blur(6px); -webkit-backdrop-filter: blur(6px);
   }
-  .contact-band .email:hover { background: var(--accent-dark); }
+  .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  .field { margin-bottom: 16px; }
+  .field label { display: block; font-size: 13px; font-weight: 600; color: #c4cde0; margin-bottom: 7px; letter-spacing: .02em; }
+  .field input, .field textarea {
+    width: 100%; background: rgba(10, 17, 40, 0.6); border: 1px solid rgba(255, 255, 255, 0.14);
+    border-radius: 10px; padding: 13px 15px; color: #fff; font-family: "Inter", sans-serif; font-size: 15px;
+    transition: border-color .15s ease, box-shadow .15s ease;
+  }
+  .field input::placeholder, .field textarea::placeholder { color: #5f6b88; }
+  .field input:focus, .field textarea:focus {
+    outline: none; border-color: var(--aurora);
+    box-shadow: 0 0 0 3px rgba(76, 201, 168, 0.18);
+  }
+  .field textarea { resize: vertical; min-height: 110px; }
+  .form-submit {
+    width: 100%; border: none; cursor: pointer;
+    display: inline-flex; align-items: center; justify-content: center; gap: 12px;
+    background: var(--accent); color: var(--night-deep);
+    font-family: "Inter", sans-serif; font-weight: 700; font-size: 16.5px; padding: 16px 30px; border-radius: 12px;
+    transition: transform .15s ease, box-shadow .15s ease, background .15s ease, opacity .15s ease;
+    box-shadow: 0 10px 34px rgba(252, 163, 17, 0.3);
+  }
+  .form-submit:hover { background: #ffb437; transform: translateY(-2px); box-shadow: 0 16px 44px rgba(252, 163, 17, 0.4); }
+  .form-submit[disabled] { opacity: .6; cursor: wait; transform: none; }
+  .form-note { margin-top: 14px; font-size: 13px; color: #93a0be; text-align: center; }
+  .form-note a { color: var(--aurora-soft); font-weight: 600; }
+  .form-note a:hover { text-decoration: underline; }
+  .form-status { display: none; text-align: center; padding: 40px 10px; }
+  .form-status .big { font-family: "Fraunces", serif; font-size: 26px; color: #fff; margin: 14px 0 8px; }
+  .form-status p { color: #b9c3da; font-size: 15px; margin: 0 auto; }
+  .contact-sub { margin-top: 22px; font-size: 13.5px; color: #93a0be; text-align: center; }
+  @media (max-width: 640px) { .form-row { grid-template-columns: 1fr; } .contact-form { padding: 26px 20px; } }
 
-  footer { background: var(--navy-deep); color: #8b95ab; font-size: 13.5px; padding: 26px 0; }
-  footer .wrap { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 10px; }
+  /* ---------- Footer ---------- */
+  footer { background: var(--night-deep); color: #7e89a5; font-size: 13.5px; padding: 34px 0; border-top: 1px solid rgba(255,255,255,.05); }
+  footer .wrap { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; }
+  footer .fbrand { display: flex; align-items: center; gap: 9px; color: #c4cde0; font-family: "Fraunces", serif; font-size: 15px; }
+  footer a:hover { color: #fff; }
 
-  @media (max-width: 720px) {
+  /* ---------- Responsive ---------- */
+  @media (max-width: 920px) {
+    .hero .wrap { grid-template-columns: 1fr; gap: 60px; }
+    .hero { padding: 76px 0 96px; }
+    .mockup { max-width: 480px; margin: 0 auto; }
+    .steps { grid-template-columns: 1fr 1fr; }
+    .grid-6 { grid-template-columns: 1fr 1fr; }
+    .pricing-notes { grid-template-columns: 1fr; }
+  }
+  @media (max-width: 640px) {
     .nav-links { display: none; }
-    .pricing-card { grid-template-columns: 1fr; text-align: left; }
-    .price-tag { text-align: left; }
+    .steps { grid-template-columns: 1fr; }
+    .grid-6 { grid-template-columns: 1fr; }
+    .pricing-card { grid-template-columns: 1fr; text-align: left; padding: 36px 28px; }
+    .price-tag { text-align: left; padding: 0; }
+    .pricing-card ul { grid-template-columns: 1fr; }
+    .about-grid { grid-template-columns: 1fr; }
+    section { padding: 70px 0; }
   }
 </style>
 </head>
@@ -203,49 +406,104 @@
 
 <header>
   <div class="wrap nav">
-    <div class="brand">Northlight <span>Web Design</span></div>
+    <a class="brand" href="#top" aria-label="Northlight Web Design">
+      <svg width="30" height="30" viewBox="0 0 64 64" fill="none" aria-hidden="true">
+        <rect width="64" height="64" rx="14" fill="#101c3e"/>
+        <path d="M14 44 L14 22 L20 22 L34 38 L34 22 L40 22 L40 44 L34 44 L20 28 L20 44 Z" fill="#fca311"/>
+        <path d="M12 16 Q32 6 52 16" stroke="#4cc9a8" stroke-width="4" fill="none" stroke-linecap="round"/>
+      </svg>
+      Northlight <span>Web Design</span>
+    </a>
     <nav class="nav-links">
       <a href="#how">How It Works</a>
+      <a href="#included">What You Get</a>
       <a href="#pricing">Pricing</a>
+      <a href="#faq">FAQ</a>
       <a href="#about">About</a>
     </nav>
     <a class="cta-btn" href="mailto:david@northlightwebdesign.com">Get In Touch</a>
   </div>
 </header>
 
-<div class="hero">
+<div class="hero" id="top">
+  <div class="aurora" aria-hidden="true">
+    <div class="ribbon r1"></div>
+    <div class="ribbon r2"></div>
+    <div class="ribbon r3"></div>
+  </div>
+  <div class="stars" aria-hidden="true"></div>
   <div class="wrap">
-    <h1>Your business works hard. <em>Your website should exist.</em></h1>
-    <p class="lead">Northlight builds clean, fast, professional websites for New Jersey service businesses that don't have one yet. Flat price, live in about a week, and you see the finished site before you pay a dollar.</p>
-    <div class="hero-cta">
-      <a class="cta-btn" href="mailto:david@northlightwebdesign.com">Email David</a>
-      <a class="ghost" href="#how">See how it works</a>
+    <div>
+      <div class="eyebrow">New Jersey Web Design</div>
+      <h1>Your business works hard. <em>Your website should exist.</em></h1>
+      <p class="lead">Northlight builds clean, fast, professional websites for local service businesses that don't have one yet. Flat price, live in about a week, and you see the finished site before you pay a dollar.</p>
+      <div class="hero-cta">
+        <a class="cta-btn" href="mailto:david@northlightwebdesign.com">Email David</a>
+        <a class="ghost" href="#how">See how it works</a>
+      </div>
+      <div class="hero-proof">
+        <div class="proof"><b>$1,000 <span>flat</span></b>No surprises, ever</div>
+        <div class="proof"><b>~1 <span>week</span></b>From deposit to live</div>
+        <div class="proof"><b>$0 <span>up front</span></b>See it before you pay</div>
+      </div>
+    </div>
+    <div class="mockup" aria-hidden="true">
+      <div class="browser">
+        <div class="browser-bar">
+          <div class="dot"></div><div class="dot"></div><div class="dot"></div>
+          <div class="urlbar">
+            <svg width="9" height="11" viewBox="0 0 10 12" fill="none"><path d="M2 5V3.5C2 1.8 3.3 .5 5 .5S8 1.8 8 3.5V5" stroke="#28c840" stroke-width="1.4"/><rect y="5" width="10" height="7" rx="1.6" fill="#28c840"/></svg>
+            yourbusiness.com
+          </div>
+        </div>
+        <div class="site">
+          <div class="site-hero">
+            <div class="site-nav">
+              <div class="site-logo">Shoreline <i>Painting</i></div>
+              <div class="site-pill">Free Estimate</div>
+            </div>
+            <div class="site-h1">Interior and exterior painting done right in Ocean County</div>
+            <div class="site-sub">Licensed and insured. Clean lines, clean job sites, and straight answers.</div>
+            <div class="site-stars">★★★★★ <span>5.0 on Google</span></div>
+          </div>
+          <div class="site-body">
+            <div class="site-row">
+              <div class="site-card"><b>Interior</b><p>Walls, ceilings, trim, and cabinets with a factory finish.</p></div>
+              <div class="site-card"><b>Exterior</b><p>Siding, decks, and fences that stand up to shore weather.</p></div>
+              <div class="site-card"><b>Commercial</b><p>Offices and storefronts, scheduled around your hours.</p></div>
+            </div>
+            <div class="site-quote">"Showed up on time, finished early, and the house looks brand new."<b>Maria T., Toms River</b></div>
+          </div>
+        </div>
+      </div>
+      <div class="mock-tag">Built before we ever call you</div>
     </div>
   </div>
 </div>
 
 <section id="how" class="alt">
   <div class="wrap">
-    <div class="kicker">How It Works</div>
-    <h2>We build first. You decide after.</h2>
-    <p class="section-intro">Most web designers ask you to pay up front and imagine the result. We do it backwards: we build your site first, send you the link, and you only move forward if you like what you see.</p>
+    <div class="kicker reveal">How It Works</div>
+    <h2 class="reveal">We build first. You decide after.</h2>
+    <p class="section-intro reveal">Most web designers ask you to pay up front and imagine the result. We do it backwards: we build your site first, send you the link, and you only move forward if you like what you see.</p>
     <div class="steps">
-      <div class="step">
+      <div class="step reveal">
         <div class="num">1</div>
         <h3>You get a link</h3>
         <p>We build a complete preview of your site using your real business: your reviews, your photos, your services, your town.</p>
+        <span class="free-tag">FREE, NO STRINGS</span>
       </div>
-      <div class="step">
+      <div class="step reveal">
         <div class="num">2</div>
         <h3>You take a look</h3>
         <p>Like it? A $200 deposit starts the real build. Don't like it? Delete the email and nothing happens. No pressure, no follow-up calls.</p>
       </div>
-      <div class="step">
+      <div class="step reveal">
         <div class="num">3</div>
         <h3>We finish it together</h3>
         <p>A 15-minute call to get your details right, then we polish the site, wire up your contact form, and connect your domain.</p>
       </div>
-      <div class="step">
+      <div class="step reveal">
         <div class="num">4</div>
         <h3>You go live in a week</h3>
         <p>Balance is due at launch. From day one, customers searching your name find a real website instead of nothing.</p>
@@ -254,15 +512,63 @@
   </div>
 </section>
 
-<section id="pricing">
+<section id="included">
   <div class="wrap">
-    <div class="kicker">Pricing</div>
-    <h2>One flat price. No surprises.</h2>
-    <p class="section-intro">You shouldn't need a meeting to find out what a website costs. Here it is.</p>
-    <div class="pricing-card">
+    <div class="kicker reveal">What You Get</div>
+    <h2 class="reveal">Everything a local business needs. Nothing it doesn't.</h2>
+    <p class="section-intro reveal">No bloated packages, no features you'll never use. Every Northlight site ships with the essentials done properly.</p>
+    <div class="grid-6">
+      <div class="feature reveal">
+        <div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#14213d" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="15" rx="2"/><path d="M2 9h20M8 23h8"/></svg></div>
+        <h3>Custom design</h3>
+        <p>Built around your trade, your town, and your photos. Not a template with your name pasted in.</p>
+      </div>
+      <div class="feature reveal">
+        <div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#14213d" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L3 14h7l-1 8 10-12h-7l1-8z"/></svg></div>
+        <h3>Fast on every device</h3>
+        <p>Loads in a blink on phones, where most of your customers will find you.</p>
+      </div>
+      <div class="feature reveal">
+        <div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#14213d" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 12-9 12s-9-5-9-12a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
+        <h3>Found on Google</h3>
+        <p>Set up so people searching for your service in your area actually find you.</p>
+      </div>
+      <div class="feature reveal">
+        <div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#14213d" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 17.3l-6.2 3.3 1.2-6.9L2 8.8l7-1L12 1.5l3 6.3 7 1-5 4.9 1.2 6.9z"/></svg></div>
+        <h3>Your reviews, front and center</h3>
+        <p>The five-star reputation you earned on Google, put to work selling for you.</p>
+      </div>
+      <div class="feature reveal">
+        <div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#14213d" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 2 .7 2.9a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.2-1.2a2 2 0 0 1 2.1-.5c.9.3 1.9.6 2.9.7a2 2 0 0 1 1.7 2z"/></svg></div>
+        <h3>Leads reach your phone</h3>
+        <p>A contact form and click-to-call number, so a visitor becomes a phone call.</p>
+      </div>
+      <div class="feature reveal">
+        <div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#14213d" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg></div>
+        <h3>Secure and yours</h3>
+        <p>HTTPS security, your own domain, registered in your name. It all belongs to you.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="pricing" class="alt">
+  <div class="wrap">
+    <div class="kicker reveal">Pricing</div>
+    <h2 class="reveal">One flat price. No surprises.</h2>
+    <p class="section-intro reveal">You shouldn't need a meeting to find out what a website costs. Here it is.</p>
+    <div class="pricing-card reveal">
       <div>
         <h3>Complete business website</h3>
-        <p>Everything a local service business needs: your services, your reviews, your photos, a contact form that reaches your phone, and a design that looks sharp on every device. Built for you, owned by you.</p>
+        <p>Everything a local service business needs to look established and win the customer who just searched your name.</p>
+        <ul>
+          <li>Custom design and copy</li>
+          <li>Your reviews and photos</li>
+          <li>Contact form to your phone</li>
+          <li>Your own domain, in your name</li>
+          <li>Google-ready from day one</li>
+          <li>Live in about a week</li>
+        </ul>
       </div>
       <div class="price-tag">
         <div class="amount">$1,000</div>
@@ -270,15 +576,15 @@
       </div>
     </div>
     <div class="pricing-notes">
-      <div class="pricing-note">
+      <div class="pricing-note reveal">
         <b>Optional care plan</b>
         Hosting, updates, and edits handled for you for a flat monthly fee. Cancel anytime. Your site stays yours either way.
       </div>
-      <div class="pricing-note">
+      <div class="pricing-note reveal">
         <b>Your domain, your property</b>
         The domain is registered in your name and the site belongs to you. If we ever part ways, everything goes with you.
       </div>
-      <div class="pricing-note">
+      <div class="pricing-note reveal">
         <b>No contracts, no upsells</b>
         The price on this page is the price. We make money by building good sites, not by locking you in.
       </div>
@@ -286,37 +592,147 @@
   </div>
 </section>
 
+<section id="faq">
+  <div class="wrap">
+    <div class="kicker reveal">Questions</div>
+    <h2 class="reveal">Fair questions, straight answers.</h2>
+    <p class="section-intro reveal">The things business owners actually ask us.</p>
+    <div class="faq">
+      <details class="reveal">
+        <summary>Is the preview really free?</summary>
+        <div class="a">Yes. Building the preview is our marketing cost, not yours. If you don't want it, nothing happens - no invoice, no calls, no hard feelings. You only ever pay if you say "build it."</div>
+      </details>
+      <details class="reveal">
+        <summary>Why is it so much cheaper than other quotes I've gotten?</summary>
+        <div class="a">Agencies carry offices, salespeople, and account managers, and their pricing carries them too. Northlight is deliberately lean and builds for one kind of client - local service businesses - so the work is efficient and the price stays flat.</div>
+      </details>
+      <details class="reveal">
+        <summary>What if I want changes to the preview?</summary>
+        <div class="a">That's the point of the 15-minute call. We go through the site together, you tell us what's off, and we fix it before launch. Reasonable revisions are part of the flat price.</div>
+      </details>
+      <details class="reveal">
+        <summary>Do I have to pay monthly?</summary>
+        <div class="a">No. The care plan is optional - it covers hosting, updates, and edits so you never think about the site again. Skip it and the site is still yours; we hand over everything at launch.</div>
+      </details>
+      <details class="reveal">
+        <summary>How do you know so much about my business already?</summary>
+        <div class="a">Everything in your preview comes from what you've already made public - your Google Business Profile, your reviews, your photos. We just put it to work in one place that you own.</div>
+      </details>
+    </div>
+  </div>
+</section>
+
 <section id="about" class="alt">
   <div class="wrap">
-    <div class="kicker">About</div>
-    <h2>Built in New Jersey, for New Jersey businesses.</h2>
-    <div class="about-grid">
-      <div>
-        <p><b>Northlight Web Design is run by David Kincade</b>, based in central New Jersey. Before building websites, David spent years working in landscaping and restaurants, which is exactly why Northlight exists: the best tradespeople and service businesses are often the ones with no website at all.</p>
-        <p>Their work speaks for itself in person, but online they're invisible, and every week customers who search for them find a competitor instead.</p>
-      </div>
-      <div>
-        <p>Northlight fixes that with honest pricing and zero runaround. We work mostly with painters, landscapers, and other home service pros across the Jersey Shore and central New Jersey.</p>
-        <p>If you got an email from us with a preview of your site, that link is real, it was built specifically for your business, and the person who replies when you write back is David.</p>
+    <div class="kicker reveal">About</div>
+    <h2 class="reveal">Built in New Jersey, for New Jersey businesses.</h2>
+    <div class="about-grid reveal">
+      <div class="avatar">DK</div>
+      <div class="about-copy">
+        <p><b>Northlight Web Design is run by David Kincade</b>, based in central New Jersey. Before building websites, David spent years working in landscaping and restaurants, which is exactly why Northlight exists: the best tradespeople and service businesses are often the ones with no website at all. Their work speaks for itself in person, but online they're invisible, and every week customers who search for them find a competitor instead.</p>
+        <p>Northlight fixes that with honest pricing and zero runaround. We work mostly with painters, landscapers, and other home service pros across the Jersey Shore and central New Jersey. If you got an email from us with a preview of your site, that link is real, it was built specifically for your business, and the person who replies when you write back is David.</p>
+        <div class="sig">David Kincade <span>Founder, Northlight Web Design</span></div>
       </div>
     </div>
   </div>
 </section>
 
 <div class="contact-band">
+  <div class="aurora" aria-hidden="true">
+    <div class="ribbon r1"></div>
+    <div class="ribbon r2"></div>
+  </div>
   <div class="wrap">
-    <h2>Want a website that pulls its weight?</h2>
-    <p>Send a note with your business name and town. You'll get a straight answer, and usually a working preview, within a couple of days.</p>
-    <a class="email" href="mailto:david@northlightwebdesign.com">david@northlightwebdesign.com</a>
+    <h2 class="reveal">Want a website that pulls its weight?</h2>
+    <p class="reveal">Tell us your business name and town. You'll get a straight answer, and usually a working preview, within a couple of days.</p>
+    <div class="contact-form reveal">
+      <form id="contactForm" action="https://formsubmit.co/david@northlightwebdesign.com" method="POST">
+        <input type="hidden" name="_subject" value="New inquiry from northlightwebdesign.com">
+        <input type="hidden" name="_template" value="table">
+        <input type="hidden" name="_captcha" value="false">
+        <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
+        <div class="form-row">
+          <div class="field">
+            <label for="f-name">Your name</label>
+            <input id="f-name" type="text" name="name" placeholder="Sam Rivera" required>
+          </div>
+          <div class="field">
+            <label for="f-business">Business name</label>
+            <input id="f-business" type="text" name="business" placeholder="Rivera Painting LLC" required>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="field">
+            <label for="f-town">Town</label>
+            <input id="f-town" type="text" name="town" placeholder="Toms River, NJ" required>
+          </div>
+          <div class="field">
+            <label for="f-contact">Email or phone</label>
+            <input id="f-contact" type="text" name="reach_me_at" placeholder="Best way to reach you" required>
+          </div>
+        </div>
+        <div class="field">
+          <label for="f-message">What do you need?</label>
+          <textarea id="f-message" name="message" placeholder="A quick line about your business is plenty. We'll take it from there."></textarea>
+        </div>
+        <button class="form-submit" type="submit">
+          <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m22 2-7 20-4-9-9-4z"/><path d="M22 2 11 13"/></svg>
+          Send it to David
+        </button>
+        <div class="form-note">Prefer email? <a href="mailto:david@northlightwebdesign.com">david@northlightwebdesign.com</a></div>
+      </form>
+      <div class="form-status" id="formStatus">
+        <svg width="46" height="46" viewBox="0 0 24 24" fill="none" stroke="#4cc9a8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="m8 12 3 3 5-6"/></svg>
+        <div class="big">Got it. Talk soon.</div>
+        <p>Your note is on its way to David. Expect a reply within a business day or two.</p>
+      </div>
+    </div>
+    <div class="contact-sub reveal">Serving the Jersey Shore and central New Jersey</div>
   </div>
 </div>
 
 <footer>
   <div class="wrap">
-    <div>Northlight Web Design, New Jersey</div>
-    <div>david@northlightwebdesign.com</div>
+    <div class="fbrand">
+      <svg width="22" height="22" viewBox="0 0 64 64" fill="none" aria-hidden="true">
+        <rect width="64" height="64" rx="14" fill="#101c3e"/>
+        <path d="M14 44 L14 22 L20 22 L34 38 L34 22 L40 22 L40 44 L34 44 L20 28 L20 44 Z" fill="#fca311"/>
+        <path d="M12 16 Q32 6 52 16" stroke="#4cc9a8" stroke-width="4" fill="none" stroke-linecap="round"/>
+      </svg>
+      Northlight Web Design
+    </div>
+    <div>New Jersey · <a href="mailto:david@northlightwebdesign.com">david@northlightwebdesign.com</a></div>
   </div>
 </footer>
+
+<script>
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+  }, { threshold: 0.12 });
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+  const form = document.getElementById('contactForm');
+  const status = document.getElementById('formStatus');
+  form.addEventListener('submit', async (ev) => {
+    ev.preventDefault();
+    const btn = form.querySelector('.form-submit');
+    btn.disabled = true;
+    btn.textContent = 'Sending...';
+    try {
+      const res = await fetch('https://formsubmit.co/ajax/david@northlightwebdesign.com', {
+        method: 'POST',
+        headers: { 'Accept': 'application/json' },
+        body: new FormData(form)
+      });
+      if (!res.ok) throw new Error('bad response');
+      form.style.display = 'none';
+      status.style.display = 'block';
+    } catch (err) {
+      // Network or service hiccup: fall back to the classic POST so no lead is ever lost
+      form.submit();
+    }
+  });
+</script>
 
 </body>
 </html>
