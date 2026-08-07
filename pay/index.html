@@ -45,7 +45,13 @@
   h1 { font-family: "Fraunces", serif; font-size: clamp(28px, 4.5vw, 40px); font-weight: 600; text-align: center; margin-bottom: 12px; }
   .sub { text-align: center; color: #b9c3da; max-width: 480px; margin: 0 auto 44px; font-size: 16px; }
 
-  .cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+  .cards { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+  .card.boost { border-color: rgba(252,163,17,.5); position: relative; }
+  .card.boost .tag {
+    position: absolute; top: -11px; left: 50%; transform: translateX(-50%);
+    background: var(--accent); color: var(--night-deep); font-size: 10.5px; font-weight: 700;
+    letter-spacing: .08em; text-transform: uppercase; padding: 4px 10px; border-radius: 20px; white-space: nowrap;
+  }
   .card {
     background: rgba(255,255,255,.045); border: 1px solid rgba(255,255,255,.1); border-radius: 16px;
     padding: 30px 26px; display: flex; flex-direction: column;
@@ -69,7 +75,8 @@
   .help a:hover { text-decoration: underline; }
 
   footer { position: relative; z-index: 1; text-align: center; padding: 22px; font-size: 13px; color: #5f6b88; }
-  @media (max-width: 720px) { .cards { grid-template-columns: 1fr; } }
+  @media (max-width: 900px) { .cards { grid-template-columns: 1fr 1fr; } }
+  @media (max-width: 560px) { .cards { grid-template-columns: 1fr; } }
 </style>
 </head>
 <body>
@@ -111,6 +118,13 @@
         <div class="amount">$45<small>/month</small></div>
         <p>Hosting, updates, and edits handled for you. Cancel anytime; your site stays yours.</p>
         <a href="https://buy.stripe.com/bJe6oJ1Ob3Xfh2n0P82oE02">Start care plan</a>
+      </div>
+      <div class="card boost">
+        <div class="tag">Best value</div>
+        <div class="label">Boost Plan</div>
+        <div class="amount">$100<small>/month</small></div>
+        <p>Everything in Care, plus monthly SEO work, fresh content, Google profile posts, and a plain-English report.</p>
+        <a href="https://buy.stripe.com/eVq4gB2Sf1P7bI30P82oE03">Start boost plan</a>
       </div>
     </div>
     <div class="secure">
