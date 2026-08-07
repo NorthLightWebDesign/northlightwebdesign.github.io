@@ -8,142 +8,157 @@
 <meta name="description" content="Conservatory Painting LLC provides professional interior and exterior painting in Toms River and across Ocean County, NJ. 5 stars on Google. Call (732) 904-6188 for a free estimate.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
   :root {
-    --pine: #1e3d2f;
-    --pine-deep: #142a20;
-    --clay: #c05a2e;
-    --clay-dark: #a34a24;
-    --cream: #faf6ee;
-    --linen: #f3ecdf;
-    --paper: #ffffff;
-    --ink: #26302b;
-    --ink-soft: #5f6a63;
-    --line: #e6dfd1;
-    --radius: 16px;
-    --shadow-soft: 0 10px 36px rgba(30, 61, 47, 0.10);
-    --shadow-lift: 0 18px 48px rgba(30, 61, 47, 0.16);
+    --porcelain: #f7f6f3;
+    --mist: #edebe6;
+    --white: #ffffff;
+    --graphite: #211f24;
+    --graphite-soft: #55525c;
+    --oxblood: #6d2434;
+    --oxblood-deep: #521a27;
+    --brass: #a3823f;
+    --hairline: #d8d5cd;
+    --hairline-dark: rgba(255, 255, 255, 0.18);
+    --r: 2px;
+    --shadow: 0 24px 60px -30px rgba(33, 31, 36, 0.35);
+    --space: clamp(72px, 10vw, 120px);
   }
   * { margin: 0; padding: 0; box-sizing: border-box; }
   html { scroll-behavior: smooth; }
   body {
-    font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-    color: var(--ink);
-    background: var(--cream);
-    line-height: 1.65;
+    font-family: "Manrope", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    color: var(--graphite);
+    background: var(--porcelain);
+    line-height: 1.7;
+    font-size: 16px;
     -webkit-font-smoothing: antialiased;
   }
-  h1, h2, h3 { font-family: "Fraunces", Georgia, serif; }
+  h1, h2, h3, .serif { font-family: "Cormorant Garamond", Georgia, serif; }
   img { max-width: 100%; display: block; }
   a { color: inherit; text-decoration: none; }
-  .wrap { max-width: 1080px; margin: 0 auto; padding: 0 22px; }
-  ::selection { background: var(--clay); color: #fff; }
+  .wrap { max-width: 1140px; margin: 0 auto; padding: 0 24px; }
+  ::selection { background: var(--oxblood); color: #fff; }
 
   .preview-ribbon {
-    background: var(--pine-deep);
-    color: var(--cream);
+    background: var(--oxblood-deep);
+    color: #efe6e3;
     text-align: center;
-    font-size: 13px;
-    font-weight: 600;
-    padding: 7px 12px;
-    letter-spacing: 0.02em;
+    font-size: 12.5px;
+    font-weight: 500;
+    letter-spacing: 0.06em;
+    padding: 8px 14px;
   }
-  .preview-ribbon b { color: #f0b98d; }
+  .preview-ribbon b { color: #d9b8a2; font-weight: 700; }
 
+  /* ---------- Header: light, hairline, centered brand ---------- */
   header {
     position: sticky;
     top: 0;
     z-index: 100;
-    background: rgba(30, 61, 47, 0.96);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    color: #fff;
+    background: rgba(247, 246, 243, 0.94);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border-bottom: 1px solid var(--hairline);
   }
-  .nav { display: flex; align-items: center; justify-content: space-between; padding: 15px 0; gap: 16px; }
-  .brand { display: flex; align-items: center; gap: 11px; font-family: "Fraunces", serif; font-size: 19px; font-weight: 600; }
-  .brand .mark {
-    width: 34px; height: 34px; border-radius: 50%; flex: none;
-    background: var(--clay); color: #fff;
+  .nav { display: flex; align-items: center; justify-content: space-between; gap: 20px; padding: 16px 0; }
+  .brand { display: flex; align-items: center; gap: 12px; }
+  .brand .mono {
+    width: 38px; height: 38px; flex: none;
+    border: 1px solid var(--graphite);
     display: flex; align-items: center; justify-content: center;
+    font-family: "Cormorant Garamond", serif;
+    font-size: 21px; font-weight: 600; line-height: 1;
+    color: var(--oxblood);
   }
-  .nav-links { display: flex; gap: 24px; font-size: 14.5px; font-weight: 500; color: #cfdcd2; }
-  .nav-links a { border-bottom: 2px solid transparent; padding-bottom: 3px; transition: color .15s ease, border-color .15s ease; }
-  .nav-links a:hover { color: #fff; border-color: var(--clay); }
+  .brand .wordmark { display: flex; flex-direction: column; line-height: 1.2; }
+  .brand .wordmark .top { font-family: "Cormorant Garamond", serif; font-size: 19px; font-weight: 600; letter-spacing: 0.01em; }
+  .brand .wordmark .sub { font-size: 10px; font-weight: 600; letter-spacing: 0.28em; text-transform: uppercase; color: var(--graphite-soft); }
+  .nav-links { display: flex; gap: 30px; font-size: 12.5px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: var(--graphite-soft); }
+  .nav-links a { position: relative; padding: 4px 0; transition: color .18s ease; }
+  .nav-links a::after {
+    content: ""; position: absolute; left: 0; right: 100%; bottom: 0;
+    border-bottom: 1px solid var(--oxblood);
+    transition: right .22s ease;
+  }
+  .nav-links a:hover { color: var(--graphite); }
+  .nav-links a:hover::after { right: 0; }
   .call-btn {
-    background: var(--clay); color: #fff;
-    font-weight: 700; font-size: 14px; padding: 11px 22px; border-radius: 999px;
-    white-space: nowrap; transition: transform .15s ease, box-shadow .15s ease, background .15s ease;
-    box-shadow: 0 4px 16px rgba(192, 90, 46, 0.35);
+    background: var(--oxblood); color: #fff;
+    font-size: 13px; font-weight: 700; letter-spacing: 0.05em;
+    padding: 12px 22px; border-radius: var(--r);
+    white-space: nowrap;
+    transition: background .18s ease;
   }
-  .call-btn:hover { background: var(--clay-dark); transform: translateY(-1px); box-shadow: 0 8px 24px rgba(192, 90, 46, 0.45); }
+  .call-btn:hover { background: var(--oxblood-deep); }
 
-  /* ---------- Hero: warm daylight ---------- */
-  .hero {
-    position: relative;
-    background:
-      radial-gradient(900px 400px at 90% -10%, rgba(192, 90, 46, 0.10), transparent 65%),
-      radial-gradient(800px 400px at -5% 110%, rgba(30, 61, 47, 0.08), transparent 65%),
-      var(--cream);
-    padding: 88px 0 96px;
-    overflow: hidden;
+  /* ---------- Hero: centered, framed, editorial ---------- */
+  .hero { padding: clamp(64px, 9vw, 110px) 0 0; }
+  .hero-frame {
+    border: 1px solid var(--hairline);
+    outline: 1px solid var(--hairline);
+    outline-offset: 6px;
+    background: var(--white);
+    text-align: center;
+    padding: clamp(56px, 8vw, 96px) clamp(24px, 6vw, 90px) 0;
+    margin: 6px;
   }
-  .hero .wrap { position: relative; z-index: 2; display: grid; grid-template-columns: 1.15fr .85fr; gap: 48px; align-items: center; }
   .eyebrow {
-    display: inline-flex; align-items: center; gap: 9px;
-    font-size: 13px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase;
-    color: var(--clay); margin-bottom: 18px;
+    display: inline-block;
+    font-size: 12px; font-weight: 700;
+    letter-spacing: 0.3em; text-transform: uppercase;
+    color: var(--oxblood);
+    margin-bottom: 26px;
   }
-  .eyebrow::before { content: ""; width: 26px; height: 3px; background: var(--clay); border-radius: 3px; }
-  .hero h1 { font-size: clamp(34px, 5vw, 54px); font-weight: 600; line-height: 1.1; margin-bottom: 20px; color: var(--pine-deep); letter-spacing: -0.01em; }
-  .hero h1 em { font-style: normal; position: relative; white-space: nowrap; }
-  .hero h1 em svg { position: absolute; left: 0; bottom: -8px; width: 100%; height: 12px; }
-  .hero p.lead { font-size: 17.5px; color: var(--ink-soft); max-width: 520px; margin-bottom: 30px; }
-  .hero-cta { display: flex; gap: 14px; flex-wrap: wrap; align-items: center; }
-  .hero-cta .call-btn { font-size: 15.5px; padding: 14px 28px; }
-  .ghost {
-    border: 2px solid var(--pine); color: var(--pine);
-    padding: 12px 24px; border-radius: 999px; font-size: 15px; font-weight: 700;
-    transition: background .15s ease, color .15s ease;
+  .hero h1 {
+    font-size: clamp(40px, 6.4vw, 72px);
+    font-weight: 500;
+    line-height: 1.06;
+    letter-spacing: -0.005em;
+    max-width: 17ch;
+    margin: 0 auto 24px;
   }
-  .ghost:hover { background: var(--pine); color: var(--cream); }
-  .badge-row { display: flex; gap: 32px; margin-top: 42px; flex-wrap: wrap; }
-  .badge { font-size: 13.5px; color: var(--ink-soft); }
-  .badge b { color: var(--pine-deep); font-family: "Fraunces", serif; font-size: 22px; display: block; line-height: 1.25; }
-  .stars { color: var(--clay); font-size: 15px; letter-spacing: 2px; }
+  .hero h1 em { font-style: italic; color: var(--oxblood); }
+  .hero .lead {
+    font-size: 16.5px;
+    color: var(--graphite-soft);
+    max-width: 560px;
+    margin: 0 auto 36px;
+  }
+  .hero-cta { display: flex; gap: 22px; justify-content: center; align-items: center; flex-wrap: wrap; margin-bottom: clamp(48px, 7vw, 76px); }
+  .hero-cta .call-btn { font-size: 13.5px; padding: 15px 34px; }
+  .textlink {
+    font-size: 13px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase;
+    color: var(--graphite);
+    border-bottom: 1px solid var(--brass);
+    padding-bottom: 3px;
+    transition: color .18s ease, border-color .18s ease;
+  }
+  .textlink:hover { color: var(--oxblood); border-color: var(--oxblood); }
+  .stat-rule {
+    display: grid; grid-template-columns: repeat(3, 1fr);
+    border-top: 1px solid var(--hairline);
+  }
+  .stat { padding: 26px 12px; }
+  .stat + .stat { border-left: 1px solid var(--hairline); }
+  .stat .num { font-family: "Cormorant Garamond", serif; font-size: 30px; font-weight: 600; line-height: 1.2; }
+  .stat .num .stars { color: var(--brass); font-size: 16px; letter-spacing: 3px; vertical-align: 3px; }
+  .stat .lbl { font-size: 11.5px; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; color: var(--graphite-soft); margin-top: 4px; }
 
-  /* Paint swatch fan */
-  .swatches { position: relative; height: 360px; }
-  .swatch {
-    position: absolute; width: 190px; height: 250px; border-radius: 14px;
-    box-shadow: 0 16px 40px rgba(30, 61, 47, 0.18);
-    padding: 18px 16px; display: flex; flex-direction: column; justify-content: flex-end;
-    color: rgba(255,255,255,.92); font-size: 12px; font-weight: 600; letter-spacing: .03em;
-    transition: transform .25s ease;
-  }
-  .swatch small { opacity: .75; font-weight: 500; }
-  .s1 { background: linear-gradient(170deg, #33654d, #1e3d2f); left: 4%; top: 40px; transform: rotate(-9deg); z-index: 1; }
-  .s2 { background: linear-gradient(170deg, #d0703f, #b34d20); left: 30%; top: 12px; transform: rotate(-1deg); z-index: 2; }
-  .s3 { background: linear-gradient(170deg, #e9dbc2, #d4c09a); left: 56%; top: 44px; transform: rotate(8deg); z-index: 3; color: #5f5237; }
-  .s3 small { color: #837455; }
-  .swatch:hover { transform: rotate(0deg) translateY(-8px); }
-  .swatch .chip { width: 30px; height: 30px; border-radius: 50%; border: 3px solid rgba(255,255,255,.85); margin-bottom: auto; }
-  .s3 .chip { border-color: rgba(95,82,55,.6); }
-
-  /* ---------- Sections ---------- */
-  section { padding: 86px 0; position: relative; }
-  section.alt { background: var(--paper); }
-  section.alt::before, section.alt::after {
-    content: ""; position: absolute; left: 0; right: 0; height: 24px; pointer-events: none;
-  }
+  /* ---------- Shared section chrome ---------- */
+  section { padding: var(--space) 0; }
   .kicker {
-    display: inline-flex; align-items: center; gap: 9px;
-    color: var(--clay); font-size: 12.5px; font-weight: 700;
-    text-transform: uppercase; letter-spacing: 0.12em; margin-bottom: 12px;
+    display: flex; align-items: center; gap: 14px;
+    font-size: 11.5px; font-weight: 700;
+    letter-spacing: 0.3em; text-transform: uppercase;
+    color: var(--graphite-soft);
+    margin-bottom: 18px;
   }
-  .kicker::before { content: ""; width: 22px; height: 3px; background: var(--clay); border-radius: 3px; }
-  h2 { font-size: clamp(25px, 3.4vw, 36px); font-weight: 600; color: var(--pine-deep); margin-bottom: 14px; line-height: 1.18; letter-spacing: -0.01em; }
-  .section-intro { color: var(--ink-soft); max-width: 640px; margin-bottom: 44px; font-size: 16px; }
+  .kicker .no { font-family: "Cormorant Garamond", serif; font-size: 15px; font-weight: 600; letter-spacing: 0.05em; color: var(--oxblood); }
+  .kicker::after { content: ""; flex: none; width: 44px; border-top: 1px solid var(--brass); }
+  h2 { font-size: clamp(30px, 4vw, 46px); font-weight: 500; line-height: 1.12; letter-spacing: -0.005em; margin-bottom: 16px; }
+  .section-intro { color: var(--graphite-soft); max-width: 620px; font-size: 16px; margin-bottom: 52px; }
 
   .reveal { opacity: 0; transform: translateY(22px); transition: opacity .6s ease, transform .6s ease; }
   .reveal.in { opacity: 1; transform: none; }
@@ -152,166 +167,173 @@
     html { scroll-behavior: auto; }
   }
 
-  /* ---------- Services ---------- */
-  .services-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
-  .service-card {
-    background: var(--cream);
-    border: 1px solid var(--line);
-    border-radius: var(--radius);
-    padding: 28px 26px;
-    transition: transform 0.18s ease, box-shadow 0.18s ease, background .18s ease;
+  /* ---------- Services: shared-border grid, framed line icons ---------- */
+  .services-grid {
+    display: grid; grid-template-columns: repeat(3, 1fr);
+    border: 1px solid var(--hairline);
+    background: var(--hairline);
+    gap: 1px;
   }
-  .service-card:hover { transform: translateY(-5px); box-shadow: var(--shadow-lift); background: #fffdf8; }
-  .service-card .icon {
-    width: 46px; height: 46px;
-    border-radius: 50%;
-    background: var(--pine);
-    color: #f0d9a8;
+  .service-cell {
+    background: var(--white);
+    padding: 34px 30px 32px;
+    transition: background .2s ease;
+  }
+  .service-cell:hover { background: var(--porcelain); }
+  .service-cell .icon {
+    width: 44px; height: 44px;
+    border: 1px solid var(--graphite);
+    border-radius: var(--r);
+    color: var(--oxblood);
     display: flex; align-items: center; justify-content: center;
-    margin-bottom: 16px;
+    margin-bottom: 20px;
   }
-  .service-card h3 { font-size: 17.5px; color: var(--pine-deep); margin-bottom: 8px; font-weight: 600; }
-  .service-card p { font-size: 14px; color: var(--ink-soft); }
+  .service-cell h3 { font-size: 22px; font-weight: 600; margin-bottom: 8px; }
+  .service-cell p { font-size: 14px; color: var(--graphite-soft); }
 
-  /* ---------- Why ---------- */
-  .why { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 0; margin-top: 38px; border-top: 1px solid var(--line); }
-  .why-item { padding: 26px 26px 26px 0; border-bottom: 1px solid var(--line); margin-right: 26px; }
-  .why-item h3 { font-size: 16.5px; color: var(--pine-deep); margin-bottom: 7px; display: flex; align-items: center; gap: 10px; font-weight: 600; }
-  .why-item .tick {
-    width: 26px; height: 26px; flex: none; border-radius: 50%;
-    background: var(--clay); color: #fff;
-    display: inline-flex; align-items: center; justify-content: center;
-    font-weight: 800; font-size: 13px;
-  }
-  .why-item p { font-size: 14px; color: var(--ink-soft); }
+  /* ---------- Craft: split layout, numbered list ---------- */
+  .craft { background: var(--mist); border-top: 1px solid var(--hairline); border-bottom: 1px solid var(--hairline); }
+  .craft-grid { display: grid; grid-template-columns: 0.9fr 1.1fr; gap: clamp(40px, 6vw, 90px); align-items: start; }
+  .craft-copy h2 { margin-bottom: 20px; }
+  .craft-copy p { color: var(--graphite-soft); font-size: 15.5px; }
+  .craft-copy .note { margin-top: 22px; padding-left: 18px; border-left: 2px solid var(--brass); font-family: "Cormorant Garamond", serif; font-size: 19px; font-style: italic; color: var(--graphite); }
+  .craft-list { border-top: 1px solid var(--hairline); }
+  .craft-item { display: grid; grid-template-columns: 64px 1fr; gap: 8px; padding: 26px 0; border-bottom: 1px solid var(--hairline); }
+  .craft-item .idx { font-family: "Cormorant Garamond", serif; font-size: 26px; font-weight: 600; color: var(--oxblood); line-height: 1.15; }
+  .craft-item h3 { font-size: 21px; font-weight: 600; margin-bottom: 5px; }
+  .craft-item p { font-size: 14px; color: var(--graphite-soft); }
 
-  /* ---------- Reviews: dark pine band ---------- */
-  .reviews-band {
-    background: linear-gradient(170deg, var(--pine) 0%, var(--pine-deep) 100%);
-    color: #fff;
-    padding: 90px 0;
-    position: relative;
-    overflow: hidden;
-  }
-  .reviews-band::after {
-    content: ""; position: absolute; right: -140px; top: -140px; width: 420px; height: 420px; border-radius: 50%;
-    background: radial-gradient(circle, rgba(192, 90, 46, 0.18) 0%, transparent 70%);
-  }
-  .reviews-band .wrap { position: relative; z-index: 1; }
-  .reviews-band h2 { color: #fff; }
-  .reviews-band .kicker { color: #f0b98d; }
-  .reviews-band .kicker::before { background: #f0b98d; }
-  .reviews-band .section-intro { color: #b9cabd; }
-  .reviews-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
-  .review-card {
-    position: relative;
-    background: rgba(255, 255, 255, 0.06);
-    border: 1px solid rgba(255, 255, 255, 0.14);
-    border-radius: var(--radius);
-    padding: 28px 26px 24px;
-    transition: transform .18s ease, background .18s ease;
-  }
-  .review-card:hover { transform: translateY(-4px); background: rgba(255, 255, 255, 0.09); }
-  .review-card .stars { margin-bottom: 12px; color: #f0b98d; }
-  .review-card p { font-size: 15px; color: #eef3ef; margin-bottom: 14px; }
-  .review-card .who { font-size: 13px; color: #b9cabd; font-weight: 600; display: flex; align-items: center; gap: 8px; }
-  .review-card .who::before { content: ""; width: 18px; height: 2px; background: var(--clay); border-radius: 2px; }
-  .google-line { margin-top: 30px; font-size: 14px; color: #b9cabd; }
-  .google-line a { color: #fff; font-weight: 600; text-decoration: underline; }
+  /* ---------- Reviews: light, hairline columns, big serif quotes ---------- */
+  .reviews-grid { display: grid; grid-template-columns: repeat(3, 1fr); }
+  .review-col { padding: 8px 34px 0; border-left: 1px solid var(--hairline); display: flex; flex-direction: column; }
+  .review-col:first-child { border-left: 0; padding-left: 0; }
+  .review-col .qmark { font-family: "Cormorant Garamond", serif; font-size: 64px; font-weight: 600; line-height: 0.6; color: var(--brass); margin-bottom: 22px; }
+  .review-col .stars { color: var(--brass); font-size: 14px; letter-spacing: 3px; margin-bottom: 12px; }
+  .review-col blockquote { font-family: "Cormorant Garamond", serif; font-size: 19px; line-height: 1.5; margin-bottom: 18px; }
+  .review-col .who { margin-top: auto; font-size: 12px; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: var(--graphite-soft); }
+  .google-line { margin-top: 54px; padding-top: 26px; border-top: 1px solid var(--hairline); font-size: 14px; color: var(--graphite-soft); }
+  .google-line a { color: var(--oxblood); font-weight: 700; border-bottom: 1px solid var(--brass); padding-bottom: 2px; }
+  .google-line a:hover { border-color: var(--oxblood); }
 
-  /* ---------- Service area: linen ---------- */
-  .area-strip { background: var(--linen); padding: 70px 0; }
-  .towns { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 24px; }
+  /* ---------- Service area: deep oxblood band ---------- */
+  .area-band {
+    background: var(--oxblood-deep);
+    color: #f1eae6;
+    border-top: 1px solid var(--oxblood);
+  }
+  .area-band .kicker { color: #cba795; }
+  .area-band .kicker .no { color: #d9b8a2; }
+  .area-band .kicker::after { border-color: rgba(217, 184, 162, 0.5); }
+  .area-band h2 { color: #fdfaf8; max-width: 18ch; }
+  .area-band .section-intro { color: #cfb6ab; margin-bottom: 40px; }
+  .towns { display: flex; flex-wrap: wrap; align-items: baseline; column-gap: 14px; row-gap: 14px; max-width: 880px; }
   .town {
-    background: var(--paper);
-    border: 1px solid var(--line);
-    border-radius: 999px;
-    padding: 8px 17px;
-    font-size: 13.5px;
-    color: var(--ink-soft);
-    transition: border-color .15s ease, color .15s ease;
+    font-family: "Cormorant Garamond", serif;
+    font-size: clamp(19px, 2.3vw, 24px);
+    font-weight: 500;
+    color: #ead9d0;
+    white-space: nowrap;
   }
-  .town:hover { border-color: var(--clay); color: var(--clay-dark); }
-  .town:first-child { background: var(--pine); border-color: var(--pine); color: #fff; font-weight: 600; }
+  .town::after { content: ""; display: inline-block; width: 5px; height: 5px; border-radius: 50%; background: var(--brass); margin-left: 14px; vertical-align: 4px; }
+  .town:last-child::after { display: none; }
+  .town.home { color: #fff; font-weight: 700; border-bottom: 1px solid var(--brass); }
 
   /* ---------- Quote ---------- */
-  .quote-box { display: grid; grid-template-columns: 1fr 1fr; gap: 52px; align-items: start; }
-  .quote-copy p { color: var(--ink-soft); margin-bottom: 18px; font-size: 15.5px; }
+  .quote-sec { background: var(--white); border-top: 1px solid var(--hairline); }
+  .quote-box { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(40px, 6vw, 84px); align-items: start; }
+  .quote-copy p { color: var(--graphite-soft); font-size: 15.5px; margin-bottom: 20px; }
   .phone-big {
     display: inline-block;
-    font-family: "Fraunces", serif;
-    font-size: 28px;
-    font-weight: 700;
-    color: var(--pine-deep);
-    margin: 6px 0 4px;
-    border-bottom: 3px solid var(--clay);
-    padding-bottom: 2px;
+    font-family: "Cormorant Garamond", serif;
+    font-size: clamp(30px, 4vw, 40px);
+    font-weight: 600;
+    color: var(--graphite);
+    margin: 2px 0 6px;
+    border-bottom: 1px solid var(--brass);
+    padding-bottom: 4px;
+    transition: color .18s ease;
   }
+  .phone-big:hover { color: var(--oxblood); }
   .quote-form {
-    background: var(--paper);
-    border: 1px solid var(--line);
-    border-radius: 20px;
-    padding: 32px 30px;
-    box-shadow: var(--shadow-lift);
+    background: var(--porcelain);
+    border: 1px solid var(--hairline);
+    border-top: 3px solid var(--oxblood);
+    border-radius: var(--r);
+    padding: 36px 34px 34px;
+    box-shadow: var(--shadow);
   }
-  .quote-form label { display: block; font-size: 13px; font-weight: 700; color: var(--pine-deep); margin: 15px 0 6px; }
+  .quote-form label {
+    display: block;
+    font-size: 11px; font-weight: 700;
+    letter-spacing: 0.2em; text-transform: uppercase;
+    color: var(--graphite-soft);
+    margin: 18px 0 7px;
+  }
+  .quote-form label:first-of-type { margin-top: 0; }
   .quote-form input, .quote-form select, .quote-form textarea {
     width: 100%;
-    border: 1px solid var(--line);
-    border-radius: 10px;
+    border: 1px solid var(--hairline);
+    border-radius: var(--r);
     padding: 12px 13px;
     font-size: 14.5px;
     font-family: inherit;
-    background: var(--cream);
-    transition: border-color .15s ease, box-shadow .15s ease;
+    color: var(--graphite);
+    background: var(--white);
+    transition: border-color .18s ease, box-shadow .18s ease;
   }
   .quote-form input:focus, .quote-form select:focus, .quote-form textarea:focus {
-    outline: none; border-color: var(--clay);
-    box-shadow: 0 0 0 3px rgba(192, 90, 46, 0.15);
+    outline: none; border-color: var(--oxblood);
+    box-shadow: 0 0 0 3px rgba(109, 36, 52, 0.12);
   }
-  .quote-form textarea { min-height: 92px; resize: vertical; }
+  .quote-form textarea { min-height: 96px; resize: vertical; }
   .quote-form button {
     width: 100%;
-    margin-top: 22px;
-    background: var(--clay);
+    margin-top: 26px;
+    background: var(--graphite);
     color: #fff;
     border: none;
-    border-radius: 999px;
-    padding: 15px;
+    border-radius: var(--r);
+    padding: 16px;
     font-family: inherit;
-    font-size: 15.5px;
-    font-weight: 800;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
     cursor: pointer;
-    transition: background .15s ease, transform .15s ease, box-shadow .15s ease;
-    box-shadow: 0 8px 24px rgba(192, 90, 46, 0.3);
+    transition: background .18s ease;
   }
-  .quote-form button:hover { background: var(--clay-dark); transform: translateY(-1px); box-shadow: 0 12px 30px rgba(192, 90, 46, 0.4); }
-  .form-note { font-size: 12px; color: var(--ink-soft); text-align: center; margin-top: 11px; }
+  .quote-form button:hover { background: var(--oxblood); }
+  .form-note { font-size: 12px; color: var(--graphite-soft); text-align: center; margin-top: 12px; }
 
   footer {
-    background: var(--pine-deep);
-    color: #9db3a4;
-    padding: 34px 0;
+    background: var(--graphite);
+    color: #a7a3ad;
+    padding: 40px 0;
     font-size: 13.5px;
   }
-  .foot { display: flex; justify-content: space-between; gap: 18px; flex-wrap: wrap; align-items: center; }
-  .foot .fname { font-family: "Fraunces", serif; font-size: 16px; color: #fff; }
-  .foot a { text-decoration: underline; }
+  .foot { display: flex; justify-content: space-between; gap: 18px; flex-wrap: wrap; align-items: center; border-top: 1px solid var(--hairline-dark); padding-top: 0; }
+  .foot .fname { font-family: "Cormorant Garamond", serif; font-size: 19px; color: #fff; margin-bottom: 2px; }
+  .foot a { color: #d8d5dd; border-bottom: 1px solid rgba(163, 130, 63, 0.6); padding-bottom: 1px; }
   .foot a:hover { color: #fff; }
 
   @media (max-width: 920px) {
-    .hero .wrap { grid-template-columns: 1fr; gap: 40px; }
-    .swatches { height: 300px; max-width: 460px; }
     .services-grid { grid-template-columns: 1fr 1fr; }
+    .craft-grid { grid-template-columns: 1fr; }
+    .reviews-grid { grid-template-columns: 1fr; }
+    .review-col { border-left: 0; padding: 30px 0 0; border-top: 1px solid var(--hairline); margin-top: 30px; }
+    .review-col:first-child { border-top: 0; margin-top: 0; padding-top: 8px; }
+    .review-col .who { margin-top: 18px; }
   }
-  @media (max-width: 640px) {
+  @media (max-width: 680px) {
     .nav-links { display: none; }
-    .quote-box { grid-template-columns: 1fr; gap: 36px; }
-    .hero { padding: 60px 0 70px; }
+    .hero { padding-top: 40px; }
+    .hero-frame { outline-offset: 4px; margin: 4px; }
+    .stat-rule { grid-template-columns: 1fr; }
+    .stat + .stat { border-left: 0; border-top: 1px solid var(--hairline); }
+    .stat { padding: 18px 12px; }
     .services-grid { grid-template-columns: 1fr; }
-    section { padding: 66px 0; }
-    .swatch { width: 150px; height: 200px; }
-    .why-item { margin-right: 0; padding-right: 0; }
+    .quote-box { grid-template-columns: 1fr; }
+    .craft-item { grid-template-columns: 46px 1fr; }
   }
 </style>
 </head>
@@ -321,12 +343,13 @@
 
 <header>
   <div class="wrap nav">
-    <div class="brand">
-      <span class="mark">
-        <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 3H5a2 2 0 0 0-2 2v2a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2z"/><path d="M21 6h1v4c0 .6-.4 1-1 1h-9v2"/><rect x="10" y="15" width="4" height="7" rx="1"/></svg>
+    <a class="brand" href="#top">
+      <span class="mono">C</span>
+      <span class="wordmark">
+        <span class="top">Conservatory Painting</span>
+        <span class="sub">Toms River, NJ</span>
       </span>
-      Conservatory Painting
-    </div>
+    </a>
     <nav class="nav-links">
       <a href="#services">Services</a>
       <a href="#reviews">Reviews</a>
@@ -337,63 +360,58 @@
   </div>
 </header>
 
-<section class="hero">
+<section class="hero" id="top">
   <div class="wrap">
-    <div>
-      <div class="eyebrow">Toms River, New Jersey</div>
-      <h1>Toms River's Trusted <em>Painting Professionals<svg viewBox="0 0 200 12" preserveAspectRatio="none" aria-hidden="true"><path d="M2 9 C 50 3, 150 3, 198 8" stroke="#c05a2e" stroke-width="4" fill="none" stroke-linecap="round"/></svg></em></h1>
+    <div class="hero-frame">
+      <div class="eyebrow">Interior &amp; Exterior Painting</div>
+      <h1>Painting, practiced to a <em>fine finish</em> in Toms River</h1>
       <p class="lead">Conservatory Painting LLC delivers clean lines, honest pricing, and a finish you'll be proud to show off. Interior and exterior painting done right, on schedule, by a local crew your neighbors already recommend.</p>
       <div class="hero-cta">
-        <a class="call-btn" href="#quote">Get a Free Quote</a>
-        <a class="ghost" href="#reviews">See Our Reviews</a>
+        <a class="call-btn" href="#quote">Request a Free Quote</a>
+        <a class="textlink" href="#reviews">Read the Reviews</a>
       </div>
-      <div class="badge-row">
-        <div class="badge"><b>5 <span class="stars">★★★★★</span></b>15 Google reviews</div>
-        <div class="badge"><b>Local</b>Based in Toms River, NJ</div>
-        <div class="badge"><b>Free</b>Estimates, no pressure</div>
+      <div class="stat-rule">
+        <div class="stat"><div class="num">5.0 <span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span></div><div class="lbl">15 Google reviews</div></div>
+        <div class="stat"><div class="num">Local</div><div class="lbl">Based in Toms River, NJ</div></div>
+        <div class="stat"><div class="num">Free</div><div class="lbl">Estimates, no pressure</div></div>
       </div>
-    </div>
-    <div class="swatches" aria-hidden="true">
-      <div class="swatch s1"><span class="chip"></span>Hunter Pine<br><small>Exterior estate</small></div>
-      <div class="swatch s2"><span class="chip"></span>Terracotta Glow<br><small>Front door feature</small></div>
-      <div class="swatch s3"><span class="chip"></span>Shore Linen<br><small>Living room walls</small></div>
     </div>
   </div>
 </section>
 
-<section id="services" class="alt">
+<section id="services">
   <div class="wrap">
-    <div class="kicker reveal">What we do</div>
-    <h2 class="reveal">Painting services for every part of your home</h2>
+    <div class="kicker reveal"><span class="no">I.</span> The Services</div>
+    <h2 class="reveal">Every surface of the house, handled with care</h2>
     <p class="section-intro reveal">From a single accent wall to a full exterior repaint, every job gets the same careful prep, quality materials, and cleanup so thorough you'll wonder if we were ever there.</p>
     <div class="services-grid">
-      <div class="service-card reveal">
-        <div class="icon"><svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18M5 21V7l7-4 7 4v14"/><path d="M9 21v-6h6v6"/></svg></div>
+      <div class="service-cell reveal">
+        <div class="icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18M5 21V7l7-4 7 4v14"/><path d="M9 21v-6h6v6"/></svg></div>
         <h3>Interior Painting</h3>
         <p>Walls, ceilings, trim, and doors. Careful prep, crisp lines, and furniture protected like it's our own.</p>
       </div>
-      <div class="service-card reveal">
-        <div class="icon"><svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M4.9 4.9l2.1 2.1M17 17l2.1 2.1M4.9 19.1 7 17M17 7l2.1-2.1"/></svg></div>
+      <div class="service-cell reveal">
+        <div class="icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M4.9 4.9l2.1 2.1M17 17l2.1 2.1M4.9 19.1 7 17M17 7l2.1-2.1"/></svg></div>
         <h3>Exterior Painting</h3>
         <p>Siding, trim, shutters, and decks. Weather-grade coatings that stand up to Jersey Shore seasons.</p>
       </div>
-      <div class="service-card reveal">
-        <div class="icon"><svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 12h18M12 3v18"/></svg></div>
+      <div class="service-cell reveal">
+        <div class="icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="1"/><path d="M3 12h18M12 3v18"/></svg></div>
         <h3>Cabinet Refinishing</h3>
         <p>A factory-smooth finish that transforms your kitchen for a fraction of the cost of replacement.</p>
       </div>
-      <div class="service-card reveal">
-        <div class="icon"><svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20h16M6 20V8l6-4 6 4v12"/><path d="M9 20v-4h6v4M9 12h6"/></svg></div>
+      <div class="service-cell reveal">
+        <div class="icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20h16M6 20V8l6-4 6 4v12"/><path d="M9 20v-4h6v4M9 12h6"/></svg></div>
         <h3>Deck &amp; Fence Staining</h3>
         <p>Cleaning, sealing, and staining that protects your outdoor spaces and keeps them looking sharp.</p>
       </div>
-      <div class="service-card reveal">
-        <div class="icon"><svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg></div>
+      <div class="service-cell reveal">
+        <div class="icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg></div>
         <h3>Drywall &amp; Repairs</h3>
         <p>Patches, cracks, and water damage repaired and blended so the fix is invisible under fresh paint.</p>
       </div>
-      <div class="service-card reveal">
-        <div class="icon"><svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v6M7 8c-2.5 2-4 4.6-4 7.5A8.4 8.4 0 0 0 12 22a8.4 8.4 0 0 0 9-6.5c0-2.9-1.5-5.5-4-7.5"/><path d="M8 14c0 2.2 1.8 4 4 4"/></svg></div>
+      <div class="service-cell reveal">
+        <div class="icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v6M7 8c-2.5 2-4 4.6-4 7.5A8.4 8.4 0 0 0 12 22a8.4 8.4 0 0 0 9-6.5c0-2.9-1.5-5.5-4-7.5"/><path d="M8 14c0 2.2 1.8 4 4 4"/></svg></div>
         <h3>Power Washing</h3>
         <p>Siding, walkways, and decks refreshed and prepped, on their own or before any exterior work.</p>
       </div>
@@ -401,51 +419,83 @@
   </div>
 </section>
 
-<section>
-  <div class="wrap">
-    <div class="kicker reveal">Why Toms River chooses us</div>
-    <h2 class="reveal">A local crew that treats your home like their own</h2>
-    <div class="why">
-      <div class="why-item reveal">
-        <h3><span class="tick">&#10003;</span> Honest, upfront quotes</h3>
-        <p>You'll know exactly what the job costs before we start. No surprises, no padding.</p>
+<section class="craft">
+  <div class="wrap craft-grid">
+    <div class="craft-copy">
+      <div class="kicker reveal"><span class="no">II.</span> The Method</div>
+      <h2 class="reveal">Good painting is a discipline, not a rush job</h2>
+      <p class="reveal">Fine work rewards the same habits everywhere: patient preparation, steady hands, and no shortcuts. That is how we approach every room and every exterior in Toms River.</p>
+      <p class="note reveal">The finish people admire is decided long before the first coat goes on.</p>
+    </div>
+    <div class="craft-list">
+      <div class="craft-item reveal">
+        <div class="idx">01</div>
+        <div>
+          <h3>Honest, upfront quotes</h3>
+          <p>You'll know exactly what the job costs before we start. No surprises, no padding.</p>
+        </div>
       </div>
-      <div class="why-item reveal">
-        <h3><span class="tick">&#10003;</span> Prep is everything</h3>
-        <p>Sanding, patching, taping, priming. The finish only lasts if the prep is right, so we never skip it.</p>
+      <div class="craft-item reveal">
+        <div class="idx">02</div>
+        <div>
+          <h3>Prep is everything</h3>
+          <p>Sanding, patching, taping, priming. The finish only lasts if the prep is right, so we never skip it.</p>
+        </div>
       </div>
-      <div class="why-item reveal">
-        <h3><span class="tick">&#10003;</span> On time, every time</h3>
-        <p>We show up when we say we will and finish on the schedule we quoted.</p>
+      <div class="craft-item reveal">
+        <div class="idx">03</div>
+        <div>
+          <h3>On time, every time</h3>
+          <p>We show up when we say we will and finish on the schedule we quoted.</p>
+        </div>
       </div>
-      <div class="why-item reveal">
-        <h3><span class="tick">&#10003;</span> Spotless cleanup</h3>
-        <p>Drop cloths, daily tidy-ups, and a final walkthrough. The only thing we leave behind is the finish.</p>
+      <div class="craft-item reveal">
+        <div class="idx">04</div>
+        <div>
+          <h3>Spotless cleanup</h3>
+          <p>Drop cloths, daily tidy-ups, and a final walkthrough. The only thing we leave behind is the finish.</p>
+        </div>
       </div>
     </div>
   </div>
 </section>
 
-<section class="reviews-band" id="reviews" style="padding: 90px 0;">
+<section id="reviews">
   <div class="wrap">
-    <div class="kicker reveal">Reviews</div>
+    <div class="kicker reveal"><span class="no">III.</span> The Reviews</div>
     <h2 class="reveal">Rated 5 stars by your neighbors</h2>
     <p class="section-intro reveal">Real reviews from real customers on our Google Business Profile.</p>
     <div class="reviews-grid">
-      <div class="review-card"><div class="stars">★★★★★</div><p>Kevin at Conservatory Painting did an excellent job painting our sunroom... His work was professional, neat, careful, efficient. He covered the floor with clean paper, taped off everything to create clean paint lines.</p><div class="who">Linda H.</div></div>
-      <div class="review-card"><div class="stars">★★★★★</div><p>Super fair on price and knowledgeable of what would work best with our house. He was very prompt and always left everything clean and tidy when he was done for the day.</p><div class="who">Lou G.</div></div>
-      <div class="review-card"><div class="stars">★★★★★</div><p>Kevin did an amazing job painting our entire house. He was thorough, flexible, responsive, always cleaned up after his day of painting, and his services were very affordable. Definitely recommend!!!</p><div class="who">Amie P.</div></div>
+      <div class="review-col reveal">
+        <div class="qmark">&ldquo;</div>
+        <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <blockquote>Kevin at Conservatory Painting did an excellent job painting our sunroom... His work was professional, neat, careful, efficient. He covered the floor with clean paper, taped off everything to create clean paint lines.</blockquote>
+        <div class="who">Linda H.</div>
+      </div>
+      <div class="review-col reveal">
+        <div class="qmark">&ldquo;</div>
+        <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <blockquote>Super fair on price and knowledgeable of what would work best with our house. He was very prompt and always left everything clean and tidy when he was done for the day.</blockquote>
+        <div class="who">Lou G.</div>
+      </div>
+      <div class="review-col reveal">
+        <div class="qmark">&ldquo;</div>
+        <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <blockquote>Kevin did an amazing job painting our entire house. He was thorough, flexible, responsive, always cleaned up after his day of painting, and his services were very affordable. Definitely recommend!!!</blockquote>
+        <div class="who">Amie P.</div>
+      </div>
     </div>
     <p class="google-line reveal">Read all 15 reviews on <a href="https://www.google.com/maps/place/Conservatory+Painting+LLC/@39.9789573,-74.1502545,14z/data=!4m8!1m2!2m1!1sConservatory+Painting+LLC!3m4!1s0x89c19dab102d4a0f:0x50f18f1b1dfdd0e4!8m2!3d39.9789573!4d-74.1502545" target="_blank" rel="noopener">our Google profile</a>.</p>
   </div>
 </section>
 
-<section class="area-strip" id="area">
+<section class="area-band" id="area">
   <div class="wrap">
-    <div class="kicker reveal">Service area</div>
+    <div class="kicker reveal"><span class="no">IV.</span> The Service Area</div>
     <h2 class="reveal">Proudly serving Toms River and all of Ocean County</h2>
-    <div class="towns">
-      <span class="town">Toms River</span>
+    <p class="section-intro reveal">Based in Toms River and working throughout the surrounding towns.</p>
+    <div class="towns reveal">
+      <span class="town home">Toms River</span>
       <span class="town">Brick</span>
       <span class="town">Lakewood</span>
       <span class="town">Jackson</span>
@@ -461,10 +511,10 @@
   </div>
 </section>
 
-<section class="alt" id="quote">
+<section class="quote-sec" id="quote">
   <div class="wrap quote-box">
     <div class="quote-copy">
-      <div class="kicker reveal">Free estimate</div>
+      <div class="kicker reveal"><span class="no">V.</span> The Estimate</div>
       <h2 class="reveal">Tell us about your project</h2>
       <p class="reveal">Send a few details and we'll get back to you with an honest estimate, usually by the next business day. Prefer to talk it through?</p>
       <a class="phone-big reveal" href="tel:+17329046188">(732) 904-6188</a>
