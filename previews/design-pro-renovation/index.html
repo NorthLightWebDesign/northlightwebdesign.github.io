@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>Design Pro Renovation | Bathroom, Kitchen &amp; Basement Remodeling in Jackson, NJ</title>
+<meta name="description" content="Design Pro Renovation is a licensed and insured home renovation contractor in Jackson, NJ. Bathroom and kitchen remodeling, finished basements, flooring, millwork, and painting across Monmouth, Ocean, and Mercer counties. Call (732) 540-0100 for a free estimate.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --stone: #f4f1ea;
+    --sand: #eae5da;
+    --paper: #ffffff;
+    --ink: #26241f;
+    --ink-soft: #6c665c;
+    --navy: #1d3a5f;
+    --navy-deep: #132741;
+    --navy-soft: #35547d;
+    --gold: #b98a2e;
+    --line: #ddd6c8;
+    --line-dark: rgba(255, 255, 255, 0.16);
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: "Archivo", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    background: var(--stone);
+    color: var(--ink);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+  a { color: inherit; text-decoration: none; }
+  img { max-width: 100%; display: block; }
+  .wrap { max-width: 1140px; margin: 0 auto; padding: 0 20px; }
+  ::selection { background: var(--navy); color: #fff; }
+
+  .preview-ribbon {
+    background: var(--ink);
+    color: #e8e3d8;
+    text-align: center;
+    font-size: 13px;
+    font-weight: 500;
+    padding: 8px 14px;
+    letter-spacing: 0.02em;
+  }
+  .preview-ribbon b { color: #fff; font-weight: 700; }
+
+  /* ---------- Header: light, bordered ---------- */
+  header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba(244, 241, 234, 0.94);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border-bottom: 1px solid var(--line);
+  }
+  .nav { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 16px 0; }
+  .brand { display: flex; align-items: center; gap: 12px; font-weight: 800; font-size: 17px; letter-spacing: -0.01em; line-height: 1.15; }
+  .brand .mark {
+    width: 38px; height: 38px; flex: none;
+    background: var(--navy); color: #fff;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 15px; font-weight: 800; letter-spacing: 0;
+  }
+  .brand small { display: block; font-size: 10.5px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: var(--ink-soft); }
+  .nav-links { display: flex; gap: 26px; font-size: 14px; font-weight: 600; color: var(--ink-soft); }
+  .nav-links a:hover { color: var(--navy); }
+  .call-btn {
+    display: inline-block;
+    background: var(--navy); color: #fff;
+    font-weight: 700; font-size: 14px;
+    padding: 12px 22px;
+    border: 1px solid var(--navy);
+    white-space: nowrap;
+    transition: background .15s ease, border-color .15s ease;
+  }
+  .call-btn:hover { background: var(--navy-deep); border-color: var(--navy-deep); }
+
+  /* ---------- Hero ---------- */
+  .hero { padding: 78px 0 64px; border-bottom: 1px solid var(--line); }
+  .hero .wrap { display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 56px; align-items: center; }
+  .overline {
+    display: inline-block;
+    font-size: 12px; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase;
+    color: var(--navy);
+    border: 1px solid var(--line);
+    background: var(--paper);
+    padding: 6px 12px;
+    margin-bottom: 22px;
+  }
+  .hero h1 {
+    font-size: clamp(34px, 5vw, 56px);
+    font-weight: 800;
+    line-height: 1.06;
+    letter-spacing: -0.025em;
+    margin-bottom: 20px;
+  }
+  .hero h1 span { color: var(--navy); }
+  .hero .lead { font-size: 17px; color: var(--ink-soft); max-width: 540px; margin-bottom: 30px; }
+  .hero-cta { display: flex; gap: 14px; flex-wrap: wrap; align-items: center; }
+  .hero-cta .call-btn { font-size: 16px; padding: 15px 28px; }
+  .hero-cta .alt-link { font-size: 15px; font-weight: 700; color: var(--navy); border-bottom: 2px solid var(--gold); padding-bottom: 2px; }
+  .hero-note { margin-top: 16px; font-size: 13.5px; color: var(--ink-soft); }
+
+  /* Estimate panel */
+  .panel {
+    background: var(--paper);
+    border: 1px solid var(--line);
+    border-top: 4px solid var(--navy);
+    padding: 30px 28px;
+    box-shadow: 0 14px 34px rgba(38, 36, 31, 0.08);
+  }
+  .panel h2 { font-size: 19px; font-weight: 800; letter-spacing: -0.01em; margin-bottom: 6px; }
+  .panel > p { font-size: 14px; color: var(--ink-soft); margin-bottom: 18px; }
+  .panel ul { list-style: none; margin-bottom: 22px; }
+  .panel li { display: flex; gap: 10px; align-items: flex-start; font-size: 14.5px; padding: 8px 0; border-bottom: 1px dashed var(--line); }
+  .panel li:last-child { border-bottom: none; }
+  .panel li::before { content: ""; flex: none; width: 8px; height: 8px; margin-top: 7px; background: var(--gold); }
+  .panel .call-btn { display: block; text-align: center; font-size: 15.5px; padding: 14px; }
+  .panel .panel-phone { display: block; text-align: center; margin-top: 12px; font-size: 13.5px; color: var(--ink-soft); }
+  .panel .panel-phone b { color: var(--ink); }
+
+  /* ---------- Trust strip ---------- */
+  .trust { background: var(--navy-deep); color: #fff; }
+  .trust .wrap { display: grid; grid-template-columns: repeat(3, 1fr); }
+  .trust-item { padding: 26px 24px; border-left: 1px solid var(--line-dark); }
+  .trust-item:first-child { border-left: none; padding-left: 0; }
+  .trust-item b { display: block; font-size: 24px; font-weight: 800; letter-spacing: -0.02em; line-height: 1.2; }
+  .trust-item b .stars { color: var(--gold); font-size: 16px; letter-spacing: 2px; vertical-align: 2px; }
+  .trust-item span { font-size: 13px; color: #a8b6c9; font-weight: 500; }
+
+  /* ---------- Sections ---------- */
+  section { padding: 84px 0; }
+  .kicker {
+    font-size: 12px; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase;
+    color: var(--gold); margin-bottom: 12px;
+  }
+  h2.title { font-size: clamp(26px, 3.4vw, 38px); font-weight: 800; letter-spacing: -0.02em; line-height: 1.12; margin-bottom: 14px; }
+  .section-intro { color: var(--ink-soft); max-width: 620px; font-size: 16px; margin-bottom: 44px; }
+
+  /* ---------- Services ---------- */
+  .services { background: var(--paper); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+  .svc-grid { display: grid; grid-template-columns: repeat(4, 1fr); border-top: 1px solid var(--line); border-left: 1px solid var(--line); }
+  .svc {
+    border-right: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+    padding: 28px 24px 30px;
+    background: var(--paper);
+    transition: background .15s ease;
+  }
+  .svc:hover { background: var(--stone); }
+  .svc .num { font-size: 12px; font-weight: 700; color: var(--gold); letter-spacing: 0.08em; display: block; margin-bottom: 14px; }
+  .svc h3 { font-size: 16.5px; font-weight: 700; letter-spacing: -0.01em; margin-bottom: 8px; }
+  .svc p { font-size: 13.5px; color: var(--ink-soft); }
+  .svc .flag {
+    display: inline-block; margin-left: 8px; vertical-align: 2px;
+    font-size: 10px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase;
+    color: #fff; background: var(--navy); padding: 3px 7px;
+  }
+
+  /* ---------- Why / process ---------- */
+  .why-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 0 60px; border-top: 2px solid var(--ink); }
+  .why-item { padding: 28px 0; border-bottom: 1px solid var(--line); display: flex; gap: 20px; align-items: flex-start; }
+  .why-item .step {
+    flex: none; width: 44px; height: 44px;
+    border: 1px solid var(--ink);
+    display: flex; align-items: center; justify-content: center;
+    font-weight: 800; font-size: 16px;
+  }
+  .why-item h3 { font-size: 17px; font-weight: 700; letter-spacing: -0.01em; margin-bottom: 6px; }
+  .why-item p { font-size: 14px; color: var(--ink-soft); }
+
+  /* ---------- Review band ---------- */
+  .review-band { background: var(--navy); color: #fff; padding: 90px 0; }
+  .review-band .wrap { max-width: 860px; }
+  .review-badge {
+    display: inline-flex; align-items: center; gap: 10px;
+    border: 1px solid var(--line-dark);
+    padding: 8px 16px;
+    font-size: 13px; font-weight: 700;
+    margin-bottom: 30px;
+  }
+  .review-badge .stars { color: var(--gold); letter-spacing: 2px; }
+  blockquote { font-size: clamp(19px, 2.6vw, 26px); font-weight: 600; line-height: 1.45; letter-spacing: -0.01em; }
+  .review-who { margin-top: 26px; display: flex; align-items: center; gap: 14px; font-size: 14px; color: #a8b6c9; }
+  .review-who::before { content: ""; width: 34px; height: 2px; background: var(--gold); }
+  .review-who b { color: #fff; }
+
+  /* ---------- Service area ---------- */
+  .area-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+  .county {
+    background: var(--paper);
+    border: 1px solid var(--line);
+    padding: 26px 24px;
+  }
+  .county h3 { font-size: 18px; font-weight: 800; letter-spacing: -0.01em; margin-bottom: 6px; }
+  .county h3 span { color: var(--gold); margin-right: 8px; }
+  .county p { font-size: 14px; color: var(--ink-soft); }
+
+  /* ---------- Final CTA ---------- */
+  .cta-final { background: var(--sand); border-top: 1px solid var(--line); text-align: center; padding: 90px 0; }
+  .cta-final h2 { font-size: clamp(28px, 4vw, 44px); font-weight: 800; letter-spacing: -0.02em; line-height: 1.1; margin-bottom: 14px; }
+  .cta-final p { color: var(--ink-soft); font-size: 16.5px; max-width: 560px; margin: 0 auto 32px; }
+  .phone-hero {
+    display: inline-block;
+    background: var(--navy); color: #fff;
+    font-size: clamp(19px, 3vw, 26px); font-weight: 800; letter-spacing: -0.01em;
+    padding: 18px 38px;
+    transition: background .15s ease;
+  }
+  .phone-hero:hover { background: var(--navy-deep); }
+  .cta-final .sub { display: block; margin-top: 16px; font-size: 13.5px; color: var(--ink-soft); }
+
+  footer { background: var(--ink); color: #a39c8f; padding: 34px 0; font-size: 13.5px; }
+  .foot { display: flex; justify-content: space-between; align-items: center; gap: 18px; flex-wrap: wrap; }
+  .foot .fname { font-weight: 800; font-size: 15px; color: #fff; }
+  .foot a { text-decoration: underline; }
+  .foot a:hover { color: #fff; }
+
+  /* ---------- Responsive ---------- */
+  @media (max-width: 960px) {
+    .hero .wrap { grid-template-columns: 1fr; gap: 44px; }
+    .svc-grid { grid-template-columns: repeat(2, 1fr); }
+    .why-grid { grid-template-columns: 1fr; gap: 0; }
+    .area-grid { grid-template-columns: 1fr; }
+  }
+  @media (max-width: 680px) {
+    .nav-links { display: none; }
+    .hero { padding: 54px 0 50px; }
+    section { padding: 62px 0; }
+    .svc-grid { grid-template-columns: 1fr; }
+    .trust .wrap { grid-template-columns: 1fr; }
+    .trust-item { border-left: none; border-top: 1px solid var(--line-dark); padding: 18px 0; }
+    .trust-item:first-child { border-top: none; }
+    .review-band { padding: 66px 0; }
+    .cta-final { padding: 66px 0; }
+    .call-btn { padding: 11px 16px; font-size: 13.5px; }
+    .hero-cta .call-btn { width: 100%; text-align: center; }
+    .phone-hero { width: 100%; }
+  }
+</style>
+</head>
+<body>
+
+<div class="preview-ribbon">Preview of your new website, built for <b>Design Pro Renovation</b> by Northlight Web Design. Not yet live.</div>
+
+<header>
+  <div class="wrap nav">
+    <a class="brand" href="#top" aria-label="Design Pro Renovation home">
+      <span class="mark">DP</span>
+      <span>Design Pro Renovation<small>Jackson, New Jersey</small></span>
+    </a>
+    <nav class="nav-links" aria-label="Primary">
+      <a href="#services">Services</a>
+      <a href="#why">Why Us</a>
+      <a href="#review">Reviews</a>
+      <a href="#area">Service Area</a>
+    </nav>
+    <a class="call-btn" href="tel:+17325400100">Call (732) 540-0100</a>
+  </div>
+</header>
+
+<main id="top">
+
+<section class="hero">
+  <div class="wrap">
+    <div>
+      <span class="overline">Licensed and Insured in New Jersey</span>
+      <h1>Renovations done right, <span>from design to final walkthrough.</span></h1>
+      <p class="lead">Design Pro Renovation transforms bathrooms, kitchens, and basements for homeowners across Monmouth, Ocean, and Mercer counties. Fair pricing, clear communication, and craftsmanship that holds up long after we leave.</p>
+      <div class="hero-cta">
+        <a class="call-btn" href="tel:+17325400100">Call (732) 540-0100</a>
+        <a class="alt-link" href="#services">See what we do</a>
+      </div>
+      <p class="hero-note">Free estimates. Based in Jackson, NJ.</p>
+    </div>
+    <aside class="panel" aria-label="Free estimate details">
+      <h2>Start with a free estimate</h2>
+      <p>One call gets your project moving. Here is what you can expect:</p>
+      <ul>
+        <li>A walkthrough of your space and your goals</li>
+        <li>Design ideas and possibilities you may not have considered</li>
+        <li>A fair, straightforward price. No pressure, no surprises</li>
+      </ul>
+      <a class="call-btn" href="tel:+17325400100">Call (732) 540-0100</a>
+      <span class="panel-phone">Rated <b>5.0 on Google</b> by our customers</span>
+    </aside>
+  </div>
+</section>
+
+<div class="trust" role="region" aria-label="Trust highlights">
+  <div class="wrap">
+    <div class="trust-item">
+      <b>5.0 <span class="stars" aria-hidden="true">&#9733;&#9733;&#9733;&#9733;&#9733;</span></b>
+      <span>Rated 5.0 on Google</span>
+    </div>
+    <div class="trust-item">
+      <b>Licensed &amp; Insured</b>
+      <span>Fully licensed and insured in New Jersey</span>
+    </div>
+    <div class="trust-item">
+      <b>3 Counties</b>
+      <span>Serving Monmouth, Ocean, and Mercer counties</span>
+    </div>
+  </div>
+</div>
+
+<section class="services" id="services">
+  <div class="wrap">
+    <div class="kicker">What we do</div>
+    <h2 class="title">One contractor for the whole renovation</h2>
+    <p class="section-intro">From a single room refresh to a full gut renovation, we handle the design, the build, and every finish detail in between. No juggling subcontractors, no gaps in accountability.</p>
+    <div class="svc-grid">
+      <div class="svc">
+        <span class="num">01</span>
+        <h3>Bathroom Renovation<span class="flag">Flagship</span></h3>
+        <p>Full master bath and guest bath remodels, from tile and fixtures to lighting and layout.</p>
+      </div>
+      <div class="svc">
+        <span class="num">02</span>
+        <h3>Kitchen Renovation</h3>
+        <p>Everything from cabinet refinishing to full gut renovations, built around how your family actually cooks and lives.</p>
+      </div>
+      <div class="svc">
+        <span class="num">03</span>
+        <h3>Finished Basements</h3>
+        <p>Turn unused square footage into real living space and add resale value at the same time.</p>
+      </div>
+      <div class="svc">
+        <span class="num">04</span>
+        <h3>Design Guidance</h3>
+        <p>We help you explore design ideas and possibilities you did not know existed before a single wall comes down.</p>
+      </div>
+      <div class="svc">
+        <span class="num">05</span>
+        <h3>Flooring</h3>
+        <p>Ceramic, porcelain, and marble tile, hardwood, and luxury vinyl. Hardwood refinishing and custom staining too.</p>
+      </div>
+      <div class="svc">
+        <span class="num">06</span>
+        <h3>Millwork</h3>
+        <p>Crown moulding, decorative trim, baseboard, and wainscoting that give a room its finished character.</p>
+      </div>
+      <div class="svc">
+        <span class="num">07</span>
+        <h3>Sheetrock &amp; Drywall</h3>
+        <p>Repair and replacement done cleanly, including walls and ceilings damaged by water.</p>
+      </div>
+      <div class="svc">
+        <span class="num">08</span>
+        <h3>Professional Painting</h3>
+        <p>Interior and exterior painting with the prep work that makes the finish last.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="why">
+  <div class="wrap">
+    <div class="kicker">Why homeowners choose us</div>
+    <h2 class="title">The same standard on every project</h2>
+    <p class="section-intro">A renovation lives in your home for decades. These are the commitments behind every job we take on.</p>
+    <div class="why-grid">
+      <div class="why-item">
+        <span class="step">1</span>
+        <div>
+          <h3>Design help from day one</h3>
+          <p>We do not just build what you sketch. We bring ideas, materials, and layouts you may not have considered, so the finished space is better than the one you first imagined.</p>
+        </div>
+      </div>
+      <div class="why-item">
+        <span class="step">2</span>
+        <div>
+          <h3>Clear communication throughout</h3>
+          <p>You will always know what is happening, what is next, and when we will be there. Questions get answered the same day, not the same week.</p>
+        </div>
+      </div>
+      <div class="why-item">
+        <span class="step">3</span>
+        <div>
+          <h3>Fair pricing, no compromises</h3>
+          <p>A fair price without cutting corners on materials or workmanship. The number we quote is the number you pay.</p>
+        </div>
+      </div>
+      <div class="why-item">
+        <span class="step">4</span>
+        <div>
+          <h3>Attention to detail, start to finish</h3>
+          <p>Tight miters, level tile, clean caulk lines, and a final walkthrough together. We are not done until you are completely satisfied.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="review-band" id="review">
+  <div class="wrap">
+    <div class="review-badge"><span class="stars" aria-hidden="true">&#9733;&#9733;&#9733;&#9733;&#9733;</span> 5.0 on Google</div>
+    <blockquote>&ldquo;Design Pro Renovation did an excellent job renovating my bathroom and kitchen. Their professionalism stood out from day one, with great attention to detail and clear communication throughout the entire process. They offer a fair price without compromising on quality, and I'm completely satisfied with the results. Highly recommended for any renovation project!&rdquo;</blockquote>
+    <div class="review-who"><span><b>Leonardo A.</b> &middot; Google review, 5 stars</span></div>
+  </div>
+</section>
+
+<section id="area">
+  <div class="wrap">
+    <div class="kicker">Service area</div>
+    <h2 class="title">Based in Jackson, serving central New Jersey</h2>
+    <p class="section-intro">Design Pro Renovation is based in Jackson, NJ in northern Ocean County, and works with homeowners across three counties.</p>
+    <div class="area-grid">
+      <div class="county">
+        <h3><span>&#9632;</span>Monmouth County</h3>
+        <p>Bathroom, kitchen, and basement renovations for homeowners throughout Monmouth County.</p>
+      </div>
+      <div class="county">
+        <h3><span>&#9632;</span>Ocean County</h3>
+        <p>Our home base. Jackson and the surrounding Ocean County towns get our fastest response.</p>
+      </div>
+      <div class="county">
+        <h3><span>&#9632;</span>Mercer County</h3>
+        <p>Full renovation services for Mercer County homes, from design guidance to final finishes.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cta-final">
+  <div class="wrap">
+    <h2>Ready to love your home again?</h2>
+    <p>Tell us what you are dreaming about. We will walk the space with you, share ideas, and give you a fair, free estimate.</p>
+    <a class="phone-hero" href="tel:+17325400100">Call (732) 540-0100</a>
+    <span class="sub">Free estimates. Licensed and insured in New Jersey.</span>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap foot">
+    <div>
+      <div class="fname">Design Pro Renovation</div>
+      <div>Jackson, New Jersey &middot; <a href="tel:+17325400100">(732) 540-0100</a> &middot; Licensed and insured</div>
+    </div>
+    <div>Website preview by Northlight Web Design</div>
+  </div>
+</footer>
+
+</body>
+</html>
