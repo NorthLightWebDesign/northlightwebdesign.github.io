@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>The Shepherd's Companion - Redesign Mockup</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700;9..144,900&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#2f2a3a;
+    --ink-soft:#645d72;
+    --cream:#fffaf3;
+    --blush:#ffeee4;
+    --sky:#eaf6fd;
+    --card:#ffffff;
+    --line:#f0e4d8;
+
+    --sun:#f6a723;
+    --sun-deep:#e08a12;
+    --coral:#f4704c;
+    --coral-deep:#e0552f;
+    --grass:#6cbf4b;
+    --grass-deep:#4d9c31;
+    --blue:#2f9ed4;
+    --blue-deep:#1a6f9e;
+    --plum:#54306b;
+
+    --radius:22px;
+    --shadow:0 4px 14px rgba(84,48,107,.07), 0 18px 40px rgba(84,48,107,.09);
+    --shadow-lift:0 10px 24px rgba(84,48,107,.12), 0 26px 60px rgba(84,48,107,.14);
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0;padding:0}
+  body{
+    background:var(--cream);color:var(--ink);
+    font:400 17.5px/1.7 Nunito,"Segoe UI",Helvetica,Arial,sans-serif;
+    -webkit-font-smoothing:antialiased;
+    background-image:
+      radial-gradient(900px 420px at 88% -6%, #fff2d9 0%, rgba(255,242,217,0) 62%),
+      radial-gradient(760px 400px at -8% 8%, #e6f4fb 0%, rgba(230,244,251,0) 60%);
+    background-repeat:no-repeat;
+  }
+  h1,h2,h3,.display{font-family:Fraunces,Georgia,serif;font-weight:700;letter-spacing:-.2px}
+  img{max-width:100%;display:block}
+  a{color:var(--blue-deep)}
+
+  /* mockup chrome */
+  .mockbar{position:sticky;top:0;z-index:70;background:linear-gradient(90deg,#54306b,#7a4a94);color:#fbeeff;padding:10px 16px;display:flex;gap:12px;align-items:center;flex-wrap:wrap;font:700 13px/1 Nunito,Arial,sans-serif}
+  .mockbar span{opacity:.8;font-weight:400}
+  .mockbar button{background:transparent;border:1.5px solid rgba(255,255,255,.45);color:#fbeeff;padding:8px 15px;border-radius:999px;cursor:pointer;font:700 13px/1 Nunito,Arial,sans-serif}
+  .mockbar button[aria-pressed="true"]{background:#ffd9a0;color:#54306b;border-color:#ffd9a0}
+
+  .view{display:none}
+  .view.is-on{display:block}
+
+  /* header */
+  .site-head{position:sticky;top:41px;z-index:60;background:rgba(255,250,243,.94);backdrop-filter:blur(8px);border-bottom:2px solid var(--blush)}
+  .head-in{max-width:1160px;margin:0 auto;padding:14px 22px;display:flex;align-items:center;justify-content:space-between;gap:18px}
+  .brand{display:flex;align-items:center;gap:12px;text-decoration:none;color:var(--ink)}
+  .brand .mark{width:44px;height:44px;border-radius:50%;background:linear-gradient(140deg,var(--sun),var(--coral));display:grid;place-items:center;flex:0 0 auto;box-shadow:0 6px 14px rgba(244,112,76,.28)}
+  .brand .mark svg{width:24px;height:24px}
+  .brand b{display:block;font-family:Fraunces,Georgia,serif;font-size:22px;line-height:1.1;font-weight:900}
+  .brand small{display:block;font-size:12.5px;color:var(--ink-soft);font-weight:600}
+  nav.main ul{display:flex;gap:24px;list-style:none;margin:0;padding:0}
+  nav.main a{position:relative;font-weight:800;font-size:15px;text-decoration:none;color:var(--ink-soft);padding:8px 2px}
+  nav.main a:hover{color:var(--plum)}
+  nav.main a.on{color:var(--plum)}
+  nav.main a.on:after{content:"";position:absolute;left:0;right:0;bottom:2px;height:6px;border-radius:6px;background:linear-gradient(90deg,var(--sun),var(--coral));opacity:.55}
+  .menu-btn{display:none;background:#fff;border:2px solid var(--blush);border-radius:14px;width:46px;height:46px;cursor:pointer}
+  .menu-btn i{display:block;height:2.5px;background:var(--plum);margin:5px auto;width:20px;border-radius:2px}
+
+  /* hero */
+  .hero{max-width:1160px;margin:0 auto;padding:36px 22px 6px}
+  .hero-card{position:relative;display:grid;grid-template-columns:1.02fr .98fr;background:var(--card);border-radius:30px;overflow:hidden;box-shadow:var(--shadow)}
+  .hero-card:before{content:"";position:absolute;inset:0;border-radius:30px;padding:3px;background:linear-gradient(120deg,var(--sun),var(--coral),var(--blue));-webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;mask-composite:exclude;pointer-events:none;z-index:2}
+  .hero-photo{position:relative}
+  .hero-photo img{width:100%;height:100%;max-height:440px;aspect-ratio:4/3;object-fit:cover;object-position:center 38%}
+  .sticker{position:absolute;left:22px;bottom:22px;transform:rotate(-6deg);background:#fff;border-radius:16px;padding:9px 16px;font:800 13.5px/1 Nunito,sans-serif;color:var(--plum);box-shadow:var(--shadow);display:flex;align-items:center;gap:8px}
+  .sticker svg{width:18px;height:18px}
+  .hero-text{padding:40px 42px}
+  .eyebrow{display:inline-flex;align-items:center;gap:8px;background:var(--blush);color:var(--coral-deep);font:800 11.5px/1 Nunito,sans-serif;letter-spacing:1.5px;text-transform:uppercase;padding:8px 14px;border-radius:999px;margin-bottom:16px}
+  h1{font-size:37px;line-height:1.15;margin:0 0 14px;font-weight:900}
+  .hero-text p{margin:0 0 20px;color:var(--ink-soft)}
+  .date{font:700 13.5px/1 Nunito,sans-serif;color:var(--ink-soft)}
+  .btn{display:inline-block;background:linear-gradient(120deg,var(--coral),var(--sun));color:#fff;text-decoration:none;padding:14px 26px;border-radius:999px;font:800 15.5px/1 Nunito,sans-serif;min-height:48px;box-sizing:border-box;box-shadow:0 8px 18px rgba(244,112,76,.3);transition:transform .18s ease,box-shadow .18s ease}
+  .btn:hover{transform:translateY(-2px);box-shadow:0 12px 26px rgba(244,112,76,.36)}
+  .btn.alt{background:linear-gradient(120deg,var(--blue),#57c1e8);box-shadow:0 8px 18px rgba(47,158,212,.3)}
+  .btn.ghost{background:#fff;color:var(--plum);border:2.5px solid var(--blush);box-shadow:none}
+  .btn.ghost:hover{border-color:var(--sun)}
+
+  /* verse band */
+  .verse{max-width:1160px;margin:26px auto 0;padding:0 22px}
+  .verse-in{position:relative;overflow:hidden;border-radius:26px;background:linear-gradient(120deg,#fff3d6,#ffe6dc 55%,#e8f5fd);padding:30px 34px;display:flex;align-items:center;gap:20px;box-shadow:var(--shadow)}
+  .verse-in svg.cross{width:34px;height:34px;flex:0 0 auto;opacity:.9}
+  .verse p{margin:0;font-family:Fraunces,Georgia,serif;font-size:23px;line-height:1.4;font-weight:700;color:var(--plum)}
+  .verse cite{display:block;font:700 13.5px/1 Nunito,sans-serif;font-style:normal;color:var(--coral-deep);letter-spacing:1.2px;text-transform:uppercase;margin-top:10px}
+
+  /* sections */
+  section.band{max-width:1160px;margin:0 auto;padding:52px 22px}
+  .band-head{display:flex;align-items:center;justify-content:space-between;gap:20px;margin-bottom:26px}
+  .band-head h2{font-size:30px;margin:0;position:relative;display:inline-block}
+  .band-head h2:after{content:"";display:block;height:8px;margin-top:6px;border-radius:8px;background:linear-gradient(90deg,var(--sun),var(--coral));width:62%;opacity:.6}
+  .band-head a{font:800 15px/1 Nunito,sans-serif;text-decoration:none;white-space:nowrap}
+
+  .paws{display:flex;justify-content:center;gap:16px;padding:8px 0 4px;opacity:.5}
+  .paws svg{width:22px;height:22px}
+  .paws svg:nth-child(2){transform:translateY(-8px) rotate(12deg)}
+  .paws svg:nth-child(3){transform:rotate(-8deg)}
+
+  .grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:26px}
+  .post{position:relative;background:var(--card);border-radius:var(--radius);overflow:hidden;display:flex;flex-direction:column;box-shadow:var(--shadow);transition:transform .2s ease,box-shadow .2s ease}
+  .post:hover{transform:translateY(-5px);box-shadow:var(--shadow-lift)}
+  .post .ph{position:relative;overflow:hidden}
+  .post img{aspect-ratio:3/2;object-fit:cover;width:100%;transition:transform .4s ease}
+  .post:hover img{transform:scale(1.05)}
+  .post .body{padding:20px 22px 24px;display:flex;flex-direction:column;gap:10px;flex:1}
+  .post h3{margin:0;font-size:20.5px;line-height:1.28}
+  .post h3 a{text-decoration:none;color:var(--ink);background:linear-gradient(90deg,var(--sun),var(--coral)) no-repeat 0 100%/0 3px;padding-bottom:2px;transition:background-size .3s ease}
+  .post:hover h3 a{background-size:100% 3px}
+  .post p{margin:0;font-size:16px;color:var(--ink-soft)}
+  .tag{position:absolute;top:14px;left:14px;background:rgba(255,255,255,.94);color:var(--plum);font:800 11px/1 Nunito,sans-serif;letter-spacing:1.1px;text-transform:uppercase;padding:8px 13px;border-radius:999px;box-shadow:0 4px 10px rgba(47,42,58,.14)}
+  .tag.sun{background:var(--sun);color:#472c00}
+  .tag.blue{background:var(--blue);color:#fff}
+  .tag.grass{background:var(--grass);color:#12360a}
+  .post .foot{margin-top:auto;padding-top:4px;display:flex;align-items:center;gap:8px}
+  .post .foot svg{width:15px;height:15px;opacity:.55}
+
+  /* gallery */
+  .gal-nav{display:flex;gap:11px;flex-wrap:wrap;margin-bottom:26px}
+  .chip{border:2.5px solid var(--blush);background:#fff;border-radius:999px;padding:11px 20px;font:800 14.5px/1 Nunito,sans-serif;color:var(--ink-soft);cursor:pointer;min-height:46px}
+  .chip:hover{border-color:var(--sun)}
+  .chip.on{background:linear-gradient(120deg,var(--coral),var(--sun));border-color:transparent;color:#fff;box-shadow:0 8px 18px rgba(244,112,76,.28)}
+  .gal{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+  .gal figure{margin:0;position:relative;border-radius:20px;overflow:hidden;background:var(--blush);box-shadow:var(--shadow);transition:transform .22s ease,box-shadow .22s ease}
+  .gal figure:nth-child(3n){border-radius:20px 20px 60px 20px}
+  .gal figure:nth-child(4n){border-radius:60px 20px 20px 20px}
+  .gal figure:hover{transform:translateY(-5px) rotate(-1.2deg);box-shadow:var(--shadow-lift)}
+  .gal img{aspect-ratio:1/1;object-fit:cover;width:100%;transition:transform .45s ease}
+  .gal figure:hover img{transform:scale(1.07)}
+  .gal figcaption{position:absolute;left:0;right:0;bottom:0;padding:26px 15px 13px;color:#fff;font:800 14px/1.35 Nunito,sans-serif;background:linear-gradient(to top,rgba(56,30,72,.82),rgba(56,30,72,0))}
+
+  /* resources */
+  .grid2{display:grid;grid-template-columns:repeat(2,1fr);gap:26px}
+  .rescard{position:relative;border-radius:var(--radius);padding:30px 32px;box-shadow:var(--shadow);overflow:hidden}
+  .rescard.one{background:linear-gradient(135deg,#fff5e0,#ffe7d9)}
+  .rescard.two{background:linear-gradient(135deg,#e9f6fd,#eaf7e6)}
+  .rescard h3{margin:0 0 8px;font-size:22px}
+  .rescard p{margin:0 0 18px;color:var(--ink-soft);font-size:16.5px}
+  .rescard .blob{position:absolute;right:-30px;top:-30px;width:130px;height:130px;border-radius:50%;background:rgba(255,255,255,.55)}
+
+  /* about */
+  .about{position:relative;background:linear-gradient(180deg,rgba(255,238,228,.55),rgba(234,246,253,.6));border-top:2px solid var(--blush);border-bottom:2px solid var(--blush)}
+  .about-in{max-width:1160px;margin:0 auto;padding:56px 22px;display:grid;grid-template-columns:.8fr 1.2fr;gap:46px;align-items:center}
+  .about .photo{position:relative;z-index:0}
+  .about img{position:relative;z-index:1;border-radius:26px;aspect-ratio:4/5;object-fit:cover;box-shadow:var(--shadow-lift)}
+  .about .photo:after{content:"";position:absolute;inset:18px -18px -18px 18px;border-radius:26px;border:3.5px solid var(--sun);z-index:0}
+  .about h2{font-size:32px;margin:6px 0 12px}
+
+  /* subscribe */
+  .sub{max-width:1160px;margin:0 auto;padding:54px 22px}
+  .subbox{position:relative;overflow:hidden;border-radius:28px;padding:42px;display:grid;grid-template-columns:1.1fr .9fr;gap:32px;align-items:center;background:linear-gradient(120deg,var(--sun),var(--coral));color:#fff;box-shadow:0 18px 44px rgba(244,112,76,.28)}
+  .subbox h2{color:#fff;margin:0;font-size:31px}
+  .subbox p{margin:10px 0 0;color:#fff6ee}
+  .subform{display:flex;gap:11px}
+  .subform input{flex:1;border:0;border-radius:999px;padding:15px 20px;font:16px/1 Nunito,sans-serif;min-height:52px}
+  .subform button{background:var(--plum);color:#fff;border:0;border-radius:999px;padding:0 26px;font:800 15.5px/1 Nunito,sans-serif;cursor:pointer;min-height:52px}
+  .subbox .paw-bg{position:absolute;right:-20px;bottom:-30px;width:190px;opacity:.16}
+
+  footer.site{background:linear-gradient(120deg,#54306b,#7a4a94);color:#f3e8fa;padding:48px 22px}
+  .foot-in{max-width:1160px;margin:0 auto;display:flex;justify-content:space-between;gap:28px;flex-wrap:wrap;font:16px/1.75 Nunito,sans-serif}
+  footer.site strong{font-family:Fraunces,Georgia,serif;font-size:20px}
+  footer.site a{color:#fff;text-decoration:none;display:block;font-weight:600}
+  footer.site a:hover{color:#ffd9a0}
+
+  /* article */
+  .article{max-width:770px;margin:0 auto;padding:46px 22px 20px}
+  .article h1{font-size:40px}
+  .article .lede{font-size:20.5px;color:var(--ink-soft);margin:0 0 28px}
+  .article figure{margin:0 0 30px}
+  .article figure img{border-radius:26px;box-shadow:var(--shadow)}
+  .article figcaption{font:600 14.5px/1.5 Nunito,sans-serif;color:var(--ink-soft);padding-top:10px}
+  .article h2{font-size:26px;margin:40px 0 12px}
+  .article h2:before{content:"";display:inline-block;width:12px;height:12px;border-radius:50%;background:linear-gradient(120deg,var(--sun),var(--coral));margin-right:11px;vertical-align:middle}
+  .article p{margin:0 0 18px}
+  .toc{background:linear-gradient(120deg,#fff4dc,#eaf6fd);border-radius:20px;padding:22px 26px;margin:0 0 32px}
+  .toc b{font:800 11.5px/1 Nunito,sans-serif;letter-spacing:1.4px;text-transform:uppercase;color:var(--coral-deep)}
+  .toc ul{margin:12px 0 0;padding-left:20px}
+  .toc li{font:600 16px/1.9 Nunito,sans-serif}
+  .pullquote{border-left:5px solid var(--sun);background:#fffaf0;border-radius:0 18px 18px 0;padding:20px 26px;margin:30px 0;font-family:Fraunces,Georgia,serif;font-size:21px;line-height:1.45;color:var(--plum)}
+
+  .note{max-width:1160px;margin:0 auto;padding:0 22px 46px}
+  .note div{background:#fff;border:2.5px dashed var(--sun);border-radius:20px;padding:20px 24px;font:16px/1.65 Nunito,sans-serif;color:var(--ink-soft)}
+  .note b{color:var(--coral-deep)}
+
+  @media (max-width:900px){
+    .hero-card,.about-in,.subbox,.grid3,.grid2{grid-template-columns:1fr}
+    .hero-text{padding:28px 24px}
+    .gal{grid-template-columns:repeat(2,1fr)}
+    nav.main{display:none}
+    .menu-btn{display:block}
+    h1{font-size:30px}
+    .article h1{font-size:31px}
+    .verse-in{flex-direction:column;text-align:center;padding:26px 22px}
+    .verse p{font-size:20px}
+    .about .photo:after{display:none}
+  }
+</style>
+</head>
+<body>
+
+<!-- reusable svg -->
+<svg style="display:none">
+  <symbol id="paw" viewBox="0 0 24 24">
+    <path fill="currentColor" d="M12 13.6c2.6 0 5.4 1.9 5.4 4.2 0 1.6-1.3 2.6-3 2.6-1 0-1.7-.4-2.4-.4s-1.4.4-2.4.4c-1.7 0-3-1-3-2.6 0-2.3 2.8-4.2 5.4-4.2Z"/>
+    <ellipse cx="6.4" cy="10.4" rx="2.2" ry="2.8" fill="currentColor"/>
+    <ellipse cx="17.6" cy="10.4" rx="2.2" ry="2.8" fill="currentColor"/>
+    <ellipse cx="9.7" cy="5.9" rx="2" ry="2.6" fill="currentColor"/>
+    <ellipse cx="14.3" cy="5.9" rx="2" ry="2.6" fill="currentColor"/>
+  </symbol>
+  <symbol id="cross" viewBox="0 0 24 24">
+    <path fill="currentColor" d="M10.4 2h3.2v5.6H19v3.2h-5.4V22h-3.2V10.8H5V7.6h5.4z"/>
+  </symbol>
+</svg>
+
+<div class="mockbar">
+  <strong>Redesign mockup v2</strong>
+  <span>The Shepherd's Companion &middot; brighter, warmer, same structure</span>
+  <button data-view="home" aria-pressed="true">Home</button>
+  <button data-view="gallery" aria-pressed="false">Galleries</button>
+  <button data-view="article" aria-pressed="false">Blog post</button>
+</div>
+
+<header class="site-head">
+  <div class="head-in">
+    <a class="brand" href="#">
+      <span class="mark"><svg style="color:#fff"><use href="#paw"/></svg></span>
+      <span><b>The Shepherd's Companion</b><small>Spiritual lessons learned through owning a dog</small></span>
+    </a>
+    <nav class="main" aria-label="Main">
+      <ul>
+        <li><a href="#" class="on">Home</a></li>
+        <li><a href="#">Stories</a></li>
+        <li><a href="#">Galleries</a></li>
+        <li><a href="#">Resources</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </nav>
+    <button class="menu-btn" aria-label="Open menu"><i></i><i></i><i></i></button>
+  </div>
+</header>
+
+<!-- ============ HOME ============ -->
+<main class="view is-on" id="home">
+
+  <div class="hero">
+    <div class="hero-card">
+      <div class="hero-photo">
+        <img src="https://theshepherdscompanion.com/wp-content/uploads/2026/04/spring-scaled.jpg" alt="Ella, a white Swiss shepherd, sitting among white daisies in a spring garden">
+        <span class="sticker"><svg style="color:var(--coral)"><use href="#paw"/></svg> Ella, chief inspiration</span>
+      </div>
+      <div class="hero-text">
+        <span class="eyebrow">Latest reflection</span>
+        <h1>Managing A Shepherd Through the Challenges of Spring</h1>
+        <p>Spring has arrived, my second favorite season. I love seeing the flowers bloom and the grass turn greener, coupled with the longer days.</p>
+        <p class="date">April 20, 2026</p>
+        <p><a class="btn" href="#">Read this reflection</a></p>
+      </div>
+    </div>
+  </div>
+
+  <div class="verse">
+    <div class="verse-in">
+      <svg class="cross" style="color:var(--sun-deep)"><use href="#cross"/></svg>
+      <div>
+        <p>The Lord is my shepherd, I shall not want.</p>
+        <cite>Psalm 23:1</cite>
+      </div>
+    </div>
+  </div>
+
+  <section class="band">
+    <div class="band-head"><h2>Recent reflections</h2><a href="#">All stories</a></div>
+    <div class="grid3">
+
+      <article class="post">
+        <div class="ph"><img src="https://theshepherdscompanion.com/wp-content/uploads/2026/02/IMG_0351-scaled.jpg" alt="Ella standing in deep snow on a cold winter morning"><span class="tag blue">Reflections</span></div>
+        <div class="body">
+          <h3><a href="#">Winter Paws and Heavy Burdens</a></h3>
+          <p>It has been a cold winter here in the Northeast. At times the cold has made it painful to be outside, especially for small paws.</p>
+          <div class="foot"><svg style="color:var(--coral)"><use href="#paw"/></svg><span class="date">February 6, 2026</span></div>
+        </div>
+      </article>
+
+      <article class="post">
+        <div class="ph"><img src="https://theshepherdscompanion.com/wp-content/uploads/2025/12/IMG_ella-at-christmas.jpg" alt="Ella beside a decorated Christmas tree"><span class="tag sun">Reflections</span></div>
+        <div class="body">
+          <h3><a href="#">What Are You Looking For?</a></h3>
+          <p>We all follow something, and whoever or whatever we follow either enriches our lives with positivity or diminishes them.</p>
+          <div class="foot"><svg style="color:var(--coral)"><use href="#paw"/></svg><span class="date">December 13, 2025</span></div>
+        </div>
+      </article>
+
+      <article class="post">
+        <div class="ph"><img src="https://theshepherdscompanion.com/wp-content/uploads/2025/10/fall-imagejpg-scaled.jpg" alt="Autumn leaves on the path where Ella walks each morning"><span class="tag grass">Reflections</span></div>
+        <div class="body">
+          <h3><a href="#">Starting My Day Off Right</a></h3>
+          <p>I have never been a big fan of fall. Perhaps it is because I dislike the shorter days and the cold mornings.</p>
+          <div class="foot"><svg style="color:var(--coral)"><use href="#paw"/></svg><span class="date">November 4, 2025</span></div>
+        </div>
+      </article>
+
+      <article class="post">
+        <div class="ph"><img src="https://theshepherdscompanion.com/wp-content/uploads/2025/10/Ella-comforting-Tom-1-1.png" alt="Ella resting her head on Tom's lap, offering comfort"><span class="tag sun">Reflections</span></div>
+        <div class="body">
+          <h3><a href="#">Divine Comfort From Man's Best Friend</a></h3>
+          <p>I have read that dogs can sense a variety of emotions in us. They know when we are sad, and they respond.</p>
+          <div class="foot"><svg style="color:var(--coral)"><use href="#paw"/></svg><span class="date">October 12, 2025</span></div>
+        </div>
+      </article>
+
+      <article class="post">
+        <div class="ph"><img src="https://theshepherdscompanion.com/wp-content/uploads/2025/09/IMG_0910-scaled.jpg" alt="Ella as a young White Swiss Shepherd outdoors"><span class="tag grass">Reflections</span></div>
+        <div class="body">
+          <h3><a href="#">Count the Cost: A Lesson in Being Well-Informed</a></h3>
+          <p>When the idea of getting a White Swiss Shepherd was suggested, I jumped at it. I did not know anything about the breed.</p>
+          <div class="foot"><svg style="color:var(--coral)"><use href="#paw"/></svg><span class="date">September 23, 2025</span></div>
+        </div>
+      </article>
+
+      <article class="post">
+        <div class="ph"><img src="https://theshepherdscompanion.com/wp-content/uploads/2025/08/ella-and-ball.jpg" alt="Ella carrying her ball across the yard"><span class="tag blue">Reflections</span></div>
+        <div class="body">
+          <h3><a href="#">Finding Contentment in the Mundane</a></h3>
+          <p>A day in the life of a 55 pound Swiss Shepherd. Ella's day starts early, at five in the morning, and she gets up ready.</p>
+          <div class="foot"><svg style="color:var(--coral)"><use href="#paw"/></svg><span class="date">September 4, 2025</span></div>
+        </div>
+      </article>
+
+      <article class="post">
+        <div class="ph"><img src="https://theshepherdscompanion.com/wp-content/uploads/2025/08/looking-out-the-window-scaled.jpg" alt="Ella looking out through a window at the changing view"><span class="tag grass">Reflections</span></div>
+        <div class="body">
+          <h3><a href="#">Learning to Navigate Change: One Step at a Time</a></h3>
+          <p>I dislike change, especially when everything is going smoothly. I firmly believe in the saying that if it is not broken, do not fix it.</p>
+          <div class="foot"><svg style="color:var(--coral)"><use href="#paw"/></svg><span class="date">August 27, 2025</span></div>
+        </div>
+      </article>
+
+      <article class="post">
+        <div class="ph"><img src="https://theshepherdscompanion.com/wp-content/uploads/2025/08/farm-1059875-2042161-scaled.jpg" alt="The farm road in Pennsylvania where Ella was picked up as a puppy"><span class="tag sun">Reflections</span></div>
+        <div class="body">
+          <h3><a href="#">A White Shepherd Named Ella: A Lesson in Acceptance</a></h3>
+          <p>I remember the day we drove to Pennsylvania to pick up our beautiful white shepherd named Ella.</p>
+          <div class="foot"><svg style="color:var(--coral)"><use href="#paw"/></svg><span class="date">August 21, 2025</span></div>
+        </div>
+      </article>
+
+      <article class="post">
+        <div class="ph"><img src="https://theshepherdscompanion.com/wp-content/uploads/2025/08/on-the-dunes-scaled.jpg" alt="Margaret and Ella standing together on the dunes"><span class="tag blue">About me</span></div>
+        <div class="body">
+          <h3><a href="#">Leadership Skills Guided by Faith: My Personal Story</a></h3>
+          <p>Please let me tell you a little more about myself. You probably already figured out that I am a dog owner who writes.</p>
+          <div class="foot"><svg style="color:var(--coral)"><use href="#paw"/></svg><span class="date">August 10, 2025</span></div>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <div class="paws" aria-hidden="true">
+    <svg style="color:var(--sun)"><use href="#paw"/></svg>
+    <svg style="color:var(--coral)"><use href="#paw"/></svg>
+    <svg style="color:var(--blue)"><use href="#paw"/></svg>
+  </div>
+
+  <section class="band" style="padding-top:26px">
+    <div class="band-head"><h2>Galleries</h2><a href="#">See all four collections</a></div>
+    <div class="gal">
+      <figure><img src="https://theshepherdscompanion.com/wp-content/uploads/2025/05/me-and-Ella-in-park.jpg" alt="Margaret walking Ella through the park in autumn"><figcaption>Appreciating Nature</figcaption></figure>
+      <figure><img src="https://theshepherdscompanion.com/wp-content/uploads/2025/05/Resting-Ella-768x1024.jpg" alt="Ella asleep and stretched out on the floor"><figcaption>Peaceful Moments</figcaption></figure>
+      <figure><img src="https://theshepherdscompanion.com/wp-content/uploads/2025/05/Ella-summer-sprinkler-1.jpg" alt="Ella jumping through the sprinkler on a summer afternoon"><figcaption>Play Time</figcaption></figure>
+      <figure><img src="https://theshepherdscompanion.com/wp-content/uploads/2025/05/Happy-Birthday-Ella-1.jpg" alt="Ella wearing a birthday hat beside her cake"><figcaption>Special Occasions</figcaption></figure>
+    </div>
+  </section>
+
+  <section class="band" style="padding-top:0">
+    <div class="band-head"><h2>Resources</h2><a href="#">All resources</a></div>
+    <div class="grid2">
+      <div class="rescard one">
+        <span class="blob"></span>
+        <h3>My Dog Parenting Toolkit</h3>
+        <p>The products, routines, and hard-won lessons that made life with a White Swiss Shepherd easier.</p>
+        <a class="btn" href="#">Open the toolkit</a>
+      </div>
+      <div class="rescard two">
+        <span class="blob"></span>
+        <h3>Resources That Helped Me Grow in My Faith</h3>
+        <p>Books, studies, and daily practices that shaped the reflections behind these stories.</p>
+        <a class="btn alt" href="#">See the resources</a>
+      </div>
+    </div>
+  </section>
+
+  <div class="about">
+    <div class="about-in">
+      <div class="photo"><img src="https://theshepherdscompanion.com/wp-content/uploads/2025/05/Ella-and-me-in-nature-1.jpg" alt="Margaret sitting outdoors with Ella beside her"></div>
+      <div>
+        <span class="eyebrow">About</span>
+        <h2>Hello, I am Margaret</h2>
+        <p>I am a dog owner who found that the lessons God teaches through a shepherd named Ella are worth writing down. This blog is where I share what has helped me, one reflection at a time, for anyone who loves their dog and wants to walk closer with Him.</p>
+        <p><a class="btn" href="#">Read my story</a> &nbsp; <a class="btn ghost" href="#">Send me a note</a></p>
+      </div>
+    </div>
+  </div>
+
+  <div class="sub">
+    <div class="subbox">
+      <svg class="paw-bg" style="color:#fff"><use href="#paw"/></svg>
+      <div>
+        <h2>New reflections in your inbox</h2>
+        <p>One email when a new story is published. Nothing else, ever.</p>
+      </div>
+      <form class="subform" onsubmit="return false">
+        <label for="em" style="position:absolute;left:-9999px">Email address</label>
+        <input id="em" type="email" placeholder="your@email.com">
+        <button type="submit">Subscribe</button>
+      </form>
+    </div>
+  </div>
+
+  <div class="note"><div><b>Same structure, more life:</b> brighter palette of sun gold, coral, and sky blue with the muted green gone, a Psalm 23 verse band under the hero, paw motifs used as accents rather than decoration for its own sake, cards that lift on hover, and playful asymmetric corners in the photo grid. Structure is untouched from v1, and every photo and word is still hers.</div></div>
+</main>
+
+<!-- ============ GALLERY ============ -->
+<main class="view" id="gallery">
+  <section class="band">
+    <h1 style="margin-bottom:6px">Galleries</h1>
+    <p style="color:var(--ink-soft);margin:0 0 26px">Four collections, one page, one grid. Tap any photo to open it full size.</p>
+    <div class="gal-nav">
+      <button class="chip on">Appreciating Nature</button>
+      <button class="chip">Peaceful Moments</button>
+      <button class="chip">Play Time</button>
+      <button class="chip">Special Occasions</button>
+    </div>
+    <div class="gal">
+      <figure><img src="https://theshepherdscompanion.com/wp-content/uploads/2025/05/me-and-Ella-in-park.jpg" alt="Margaret walking Ella on a park path lined with autumn trees"><figcaption>In the park</figcaption></figure>
+      <figure><img src="https://theshepherdscompanion.com/wp-content/uploads/2025/05/Ella-and-me-in-nature-1.jpg" alt="Margaret and Ella resting together in a wooded clearing"><figcaption>Out in nature</figcaption></figure>
+      <figure><img src="https://theshepherdscompanion.com/wp-content/uploads/2025/04/Ella-7.jpg" alt="Ella standing alert in tall grass"><figcaption>Standing watch</figcaption></figure>
+      <figure><img src="https://theshepherdscompanion.com/wp-content/uploads/2025/05/Ella-at-the-beach.jpg" alt="Ella at the shoreline with the ocean behind her"><figcaption>At the shore</figcaption></figure>
+      <figure><img src="https://theshepherdscompanion.com/wp-content/uploads/2025/08/at-the-beach.jpg" alt="Ella and Margaret sitting on the sand at sunset"><figcaption>Sunset on the sand</figcaption></figure>
+      <figure><img src="https://theshepherdscompanion.com/wp-content/uploads/2025/06/me-and-Ella-fall1-scaled.jpg" alt="Margaret and Ella surrounded by fallen leaves"><figcaption>First fall together</figcaption></figure>
+      <figure><img src="https://theshepherdscompanion.com/wp-content/uploads/2025/05/Ella-rest-2.jpg" alt="Ella curled up asleep on a blanket"><figcaption>Afternoon rest</figcaption></figure>
+      <figure><img src="https://theshepherdscompanion.com/wp-content/uploads/2025/05/playing-with-toy-1.jpg" alt="Ella shaking her favorite rope toy"><figcaption>Her favorite toy</figcaption></figure>
+    </div>
+  </section>
+  <div class="note"><div><b>What changed:</b> four separate gallery pages become one page with four collections, every photo in the same square frame with a caption and real alt text, playful corners and a gentle tilt on hover. The broken grey circle placeholders are gone.</div></div>
+</main>
+
+<!-- ============ ARTICLE ============ -->
+<main class="view" id="article">
+  <article class="article">
+    <span class="eyebrow">Reflections &middot; April 20, 2026</span>
+    <h1>Managing A Shepherd Through the Challenges of Spring</h1>
+    <p class="lede">Spring has arrived, my second favorite season. I love seeing the flowers bloom and the grass turn greener, coupled with the longer days.</p>
+    <figure>
+      <img src="https://theshepherdscompanion.com/wp-content/uploads/2026/04/spring-scaled.jpg" alt="Ella sitting among white daisies in the spring garden">
+      <figcaption>Ella in the daisies, April 2026.</figcaption>
+    </figure>
+    <div class="toc">
+      <b>In this reflection</b>
+      <ul>
+        <li>The season arrives</li>
+        <li>What spring asks of a shepherd</li>
+        <li>What Ella taught me this year</li>
+      </ul>
+    </div>
+    <h2>The season arrives</h2>
+    <p>Her existing words stay exactly as she wrote them. The only change is that the piece is broken into sections with headings, so a reader can find their place and come back to it.</p>
+    <p>Right now this article and the others run 600 to 900 words with no subheadings at all, which is why they read as a wall on a phone.</p>
+    <blockquote class="pullquote">A pull quote gives her best line room to breathe, and gives the page a second place for the eye to land.</blockquote>
+    <h2>What spring asks of a shepherd</h2>
+    <p>Section two of her text sits here. Same paragraphs, same order, same voice.</p>
+    <h2>What Ella taught me this year</h2>
+    <p>And the closing thought lands here, followed by the subscribe block and the next reflection, so a reader always has somewhere to go.</p>
+  </article>
+  <div class="note"><div><b>What changed:</b> one H1, headings with a sun-and-coral dot marking each section, a contents block, a pull quote, and the featured photo captioned with real alt text. Not one word of hers is rewritten.</div></div>
+</main>
+
+<footer class="site">
+  <div class="foot-in">
+    <div>
+      <strong>The Shepherd's Companion</strong><br>
+      Spiritual lessons learned through owning a dog<br>
+      Copyright 2026 theshepherdscompanion.com
+    </div>
+    <div>
+      <a href="#">Stories</a><a href="#">Galleries</a><a href="#">Resources</a>
+    </div>
+    <div>
+      <a href="#">About</a><a href="#">Contact</a><a href="#">Privacy policy</a><a href="#">Copyright notice</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+  document.querySelectorAll('.mockbar button').forEach(function(b){
+    b.addEventListener('click', function(){
+      document.querySelectorAll('.mockbar button').forEach(function(x){x.setAttribute('aria-pressed','false')});
+      b.setAttribute('aria-pressed','true');
+      document.querySelectorAll('.view').forEach(function(v){v.classList.remove('is-on')});
+      document.getElementById(b.dataset.view).classList.add('is-on');
+      window.scrollTo(0,0);
+    });
+  });
+</script>
+</body>
+</html>
