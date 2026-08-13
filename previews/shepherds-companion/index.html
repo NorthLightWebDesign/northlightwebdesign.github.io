@@ -73,21 +73,18 @@
   .menu-btn{display:none;background:#fff;border:2px solid var(--blush);border-radius:14px;width:46px;height:46px;cursor:pointer}
   .menu-btn i{display:block;height:2.5px;background:var(--plum);margin:5px auto;width:20px;border-radius:2px}
 
-  /* full-bleed hero */
-  .hero-full{position:relative;width:100%;min-height:clamp(520px,86vh,940px);display:flex;align-items:flex-end;overflow:hidden;background:#3a2a1e}
-  .hero-full>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 34%}
-  .hero-full:after{content:"";position:absolute;inset:0;background:
-    linear-gradient(to left,rgba(38,20,50,.80) 0%,rgba(38,20,50,.55) 30%,rgba(38,20,50,.12) 56%,rgba(38,20,50,0) 74%),
-    linear-gradient(to top,rgba(41,22,52,.55) 0%,rgba(41,22,52,.12) 26%,rgba(41,22,52,0) 52%)}
-  .hero-in{position:relative;z-index:2;max-width:var(--wrap);margin:0 auto;width:100%;padding:0 22px 74px;color:#fff;display:flex;justify-content:flex-end}
-  .hero-copy{max-width:min(620px,46%);text-align:left}
-  .hero-copy h1{max-width:100%}
-  .hero-in .kicker{display:inline-flex;align-items:center;gap:9px;background:rgba(255,255,255,.16);backdrop-filter:blur(4px);border:1px solid rgba(255,255,255,.3);color:#fff;font:800 11.5px/1 Nunito,sans-serif;letter-spacing:1.6px;text-transform:uppercase;padding:9px 16px;border-radius:999px;margin-bottom:18px}
-  .hero-in .kicker svg{width:16px;height:16px}
-  .hero-in h1{color:#fff;font-size:clamp(34px,4.6vw,62px);line-height:1.06;margin:0 0 14px;max-width:16ch;text-shadow:0 2px 24px rgba(30,12,40,.45)}
-  .hero-verse{display:flex;align-items:center;gap:13px;font-family:Fraunces,Georgia,serif;font-size:clamp(17px,1.5vw,22px);font-weight:500;color:#ffe6c9;max-width:46ch}
-  .hero-verse svg{width:26px;height:26px;flex:0 0 auto;color:var(--sun)}
-  .hero-verse cite{font-style:normal;font-family:Nunito,sans-serif;font-weight:800;font-size:12.5px;letter-spacing:1.3px;text-transform:uppercase;color:#ffc978;display:block;margin-top:6px}
+  /* full-bleed hero: her cover photo runs edge to edge and carries no text over it,
+     so neither Margaret nor Ella is ever covered. The words sit in the band beneath. */
+  .hero-full{position:relative;width:100%;display:block;background:#e9dccd;line-height:0}
+  .hero-full img{width:100%;height:clamp(340px,62vh,720px);object-fit:cover;object-position:center 32%}
+  .hero-in{position:relative;max-width:var(--wrap);margin:0 auto;width:100%;padding:34px 22px 8px;line-height:1.7}
+  .hero-copy{max-width:min(760px,72%)}
+  .kicker{display:inline-flex;align-items:center;gap:9px;background:var(--blush);color:var(--coral-deep);font:800 11.5px/1 Nunito,sans-serif;letter-spacing:1.6px;text-transform:uppercase;padding:9px 16px;border-radius:999px;margin-bottom:16px}
+  .kicker svg{width:16px;height:16px;color:var(--coral)}
+  .hero-copy h1{font-size:clamp(32px,4vw,54px);line-height:1.08;margin:0 0 16px;max-width:20ch}
+  .hero-verse{display:flex;align-items:center;gap:13px;font-family:Fraunces,Georgia,serif;font-size:clamp(18px,1.5vw,23px);font-weight:500;color:var(--plum);max-width:52ch}
+  .hero-verse svg{width:26px;height:26px;flex:0 0 auto;color:var(--sun-deep)}
+  .hero-verse cite{font-style:normal;font-family:Nunito,sans-serif;font-weight:800;font-size:12.5px;letter-spacing:1.3px;text-transform:uppercase;color:var(--coral-deep);display:block;margin-top:6px}
 
   /* latest-post card straddling the hero */
   .hero{max-width:var(--wrap);margin:34px auto 0;padding:0 22px 6px;position:relative;z-index:5}
@@ -227,17 +224,11 @@
     .menu-btn{display:block}
     h1{font-size:30px}
     .article h1{font-size:31px}
-    /* phone: photo stays whole, copy sits underneath so nothing covers Margaret or Ella */
-    .hero-full{display:block;min-height:0;background:transparent}
-    .hero-full>img{position:static;width:100%;height:auto;aspect-ratio:4/3;object-fit:cover;object-position:center 40%}
-    .hero-full:after{display:none}
-    .hero-in{position:static;padding:24px 22px 26px;color:var(--ink);display:block;background:linear-gradient(180deg,#fff4e2,rgba(255,250,243,0))}
+    /* phone: the portrait crop of her cover photo, shown whole */
+    .hero-full img{height:auto;aspect-ratio:1170/1606;max-height:none}
+    .hero-in{padding:26px 22px 4px}
     .hero-copy{max-width:100%}
-    .hero-copy h1{color:var(--ink);font-size:31px;text-shadow:none;margin-bottom:12px}
-    .hero-in .kicker{background:var(--blush);border-color:transparent;color:var(--coral-deep);backdrop-filter:none}
-    .hero-in .kicker svg{color:var(--coral) !important}
-    .hero-verse{color:var(--plum);max-width:100%}
-    .hero-verse cite{color:var(--coral-deep)}
+    .hero-copy h1{font-size:30px;max-width:100%}
     .hero{margin-top:8px}
     .verse-in{flex-direction:column;text-align:center;padding:26px 22px}
     .verse p{font-size:20px}
@@ -293,7 +284,10 @@
 <main class="view is-on" id="home">
 
   <section class="hero-full">
-    <img src="https://theshepherdscompanion.com/wp-content/uploads/2025/06/me-and-Ella-fall1-scaled.jpg" alt="Margaret and Ella beside the river on a fall afternoon, under a leaning tree">
+    <picture>
+      <source media="(max-width:700px)" srcset="https://northlightwebdesign.com/previews/shepherds-companion/img/hero-tall.jpg">
+      <img src="https://northlightwebdesign.com/previews/shepherds-companion/img/hero-wide.jpg" alt="Margaret kneeling in the sand dunes at golden hour with her arm around Ella, who is leaning into her">
+    </picture>
     <div class="hero-in">
       <div class="hero-copy">
         <span class="kicker"><svg style="color:#fff"><use href="#paw"/></svg> Walking with Ella since 2025</span>
@@ -419,12 +413,12 @@
   <div class="bleed">
     <div class="band-head"><h2>Galleries</h2><a href="#">See all four collections</a></div>
     <div class="gal gal-bleed">
+      <figure><img src="https://northlightwebdesign.com/previews/shepherds-companion/img/ella-and-the-journal.jpg" alt="Margaret writing in her journal on the patio while Ella leans in over her shoulder with a tennis ball in her mouth"><figcaption>Quiet time, interrupted</figcaption></figure>
+      <figure><img src="https://northlightwebdesign.com/previews/shepherds-companion/img/ella-on-the-steps.jpg" alt="Ella standing on the front steps beside red, white and blue bunting"><figcaption>Standing guard on the steps</figcaption></figure>
       <figure><img src="https://theshepherdscompanion.com/wp-content/uploads/2025/05/me-and-Ella-in-park.jpg" alt="Margaret walking Ella through the park in autumn"><figcaption>Appreciating Nature</figcaption></figure>
       <figure><img src="https://theshepherdscompanion.com/wp-content/uploads/2025/05/Resting-Ella-768x1024.jpg" alt="Ella asleep and stretched out on the floor"><figcaption>Peaceful Moments</figcaption></figure>
       <figure><img src="https://theshepherdscompanion.com/wp-content/uploads/2025/05/Ella-summer-sprinkler-1.jpg" alt="Ella jumping through the sprinkler on a summer afternoon"><figcaption>Play Time</figcaption></figure>
       <figure><img src="https://theshepherdscompanion.com/wp-content/uploads/2025/05/Happy-Birthday-Ella-1.jpg" alt="Ella wearing a birthday hat beside her cake"><figcaption>Special Occasions</figcaption></figure>
-      <figure><img src="https://theshepherdscompanion.com/wp-content/uploads/2025/05/Ella-at-the-beach.jpg" alt="Ella at the shoreline with the ocean behind her"><figcaption>At the shore</figcaption></figure>
-      <figure><img src="https://theshepherdscompanion.com/wp-content/uploads/2025/05/playing-with-toy-1.jpg" alt="Ella shaking her favorite rope toy"><figcaption>Her favorite toy</figcaption></figure>
     </div>
   </div>
 
@@ -488,6 +482,8 @@
       <button class="chip">Special Occasions</button>
     </div>
     <div class="gal">
+      <figure><img src="https://northlightwebdesign.com/previews/shepherds-companion/img/ella-and-the-journal.jpg" alt="Margaret writing in her journal on the patio while Ella leans in over her shoulder with a tennis ball in her mouth"><figcaption>Quiet time, interrupted</figcaption></figure>
+      <figure><img src="https://northlightwebdesign.com/previews/shepherds-companion/img/ella-on-the-steps.jpg" alt="Ella standing on the front steps beside red, white and blue bunting"><figcaption>Standing guard on the steps</figcaption></figure>
       <figure><img src="https://theshepherdscompanion.com/wp-content/uploads/2025/05/me-and-Ella-in-park.jpg" alt="Margaret walking Ella on a park path lined with autumn trees"><figcaption>In the park</figcaption></figure>
       <figure><img src="https://theshepherdscompanion.com/wp-content/uploads/2025/05/Ella-and-me-in-nature-1.jpg" alt="Margaret and Ella resting together in a wooded clearing"><figcaption>Out in nature</figcaption></figure>
       <figure><img src="https://theshepherdscompanion.com/wp-content/uploads/2025/04/Ella-7.jpg" alt="Ella standing alert in tall grass"><figcaption>Standing watch</figcaption></figure>
