@@ -161,6 +161,22 @@
   .gal figure:hover img{transform:scale(1.07)}
   .gal figcaption{position:absolute;left:0;right:0;bottom:0;padding:26px 15px 13px;color:#fff;font:800 14px/1.35 Nunito,sans-serif;background:linear-gradient(to top,rgba(56,30,72,.82),rgba(56,30,72,0))}
 
+  /* articles */
+  .arts{display:grid;grid-template-columns:repeat(2,1fr);gap:26px}
+  .art{position:relative;background:var(--card);border-radius:var(--radius);padding:32px 34px 30px;box-shadow:var(--shadow);border-left:6px solid var(--sun);display:flex;flex-direction:column;gap:12px;transition:transform .2s ease,box-shadow .2s ease}
+  .art:nth-child(2){border-left-color:var(--blue)}
+  .art:hover{transform:translateY(-5px);box-shadow:var(--shadow-lift)}
+  .art .eyebrow{margin-bottom:2px}
+  .art h3{margin:0;font-size:24px;line-height:1.25}
+  .art h3 a{text-decoration:none;color:var(--ink)}
+  .art:hover h3 a{color:var(--plum)}
+  .art p{margin:0;color:var(--ink-soft);font-size:16.5px}
+  .art .go{margin-top:auto;padding-top:6px}
+  .art .go a{font:800 15px/1 Nunito,sans-serif;text-decoration:none;display:inline-flex;align-items:center;gap:8px}
+  .art .go a:after{content:"";width:18px;height:2px;background:currentColor;border-radius:2px;transition:width .2s ease}
+  .art:hover .go a:after{width:30px}
+  @media (max-width:900px){.arts{grid-template-columns:1fr}}
+
   /* full-bleed gallery strip */
   .bleed{width:100%;padding:46px 0 52px;background:linear-gradient(180deg,rgba(255,244,226,.75),rgba(234,246,253,.6))}
   .bleed .band-head{max-width:var(--wrap);margin:0 auto 26px;padding:0 22px}
@@ -274,6 +290,7 @@
       <ul>
         <li><a href="#" class="on">Home</a></li>
         <li><a href="#">Stories</a></li>
+        <li><a href="#">Articles</a></li>
         <li><a href="#">Galleries</a></li>
         <li><a href="#">Resources</a></li>
         <li><a href="#">About</a></li>
@@ -402,6 +419,27 @@
           <p>Please let me tell you a little more about myself. You probably already figured out that I am a dog owner who writes.</p>
           <div class="foot"><svg style="color:var(--coral)"><use href="#paw"/></svg><span class="date">August 10, 2025</span></div>
         </div>
+      </article>
+
+    </div>
+  </section>
+
+  <section class="band" style="padding-top:8px">
+    <div class="band-head"><h2>Articles</h2><a href="#">All articles</a></div>
+    <div class="arts">
+
+      <article class="art">
+        <span class="eyebrow">Article</span>
+        <h3><a href="https://theshepherdscompanion.com/what-is-my-purpose-in-life/">What Is My Purpose?</a></h3>
+        <p>Many of us have wrestled with the nagging question of purpose at least once in the past year. It is a common struggle to find meaning, and so we turn to our jobs, our families, or our hobbies looking for it.</p>
+        <div class="go"><a href="https://theshepherdscompanion.com/what-is-my-purpose-in-life/">Read the article</a></div>
+      </article>
+
+      <article class="art">
+        <span class="eyebrow">Article</span>
+        <h3><a href="https://theshepherdscompanion.com/how-do-i-live-out-my-universial-calling-part-2/">How Do I Live Out My Calling to Love God?</a></h3>
+        <p>In a world that demands so much of us, it is challenging to dedicate the time needed to pursue our calling. Amidst the daily pressures, how can we truly achieve success, and where do we even start?</p>
+        <div class="go"><a href="https://theshepherdscompanion.com/how-do-i-live-out-my-universial-calling-part-2/">Read the article</a></div>
       </article>
 
     </div>
