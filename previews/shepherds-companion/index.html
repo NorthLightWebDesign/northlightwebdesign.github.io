@@ -75,10 +75,15 @@
 
   /* full-bleed hero: her cover photo runs edge to edge and carries no text over it,
      so neither Margaret nor Ella is ever covered. The words sit in the band beneath. */
-  .hero-full{position:relative;width:100%;display:block;background:linear-gradient(180deg,#ffeede 0%,#fffaf3 100%);line-height:0}
-  .hero-full img{width:100%;height:clamp(340px,60vh,680px);object-fit:cover;object-position:center top}
-  .hero-in{position:relative;max-width:var(--wrap);margin:0 auto;width:100%;padding:34px 22px 8px;line-height:1.7}
-  .hero-copy{max-width:min(760px,72%)}
+  /* Hero: her cover photo is a portrait, so it is shown WHOLE, never cropped to a banner
+     and never covered by text. The warm band runs full width; the photo sits beside the words. */
+  .hero-full{position:relative;width:100%;display:grid;grid-template-columns:minmax(0,.82fr) minmax(0,1.18fr);gap:clamp(28px,4vw,60px);align-items:center;
+    max-width:var(--wrap);margin:0 auto;padding:clamp(26px,3.4vw,48px) 22px clamp(22px,2.6vw,34px)}
+  .hero-full:before{content:"";position:absolute;inset:0 calc(50% - 50vw);background:linear-gradient(180deg,#ffeede 0%,#fff6ea 58%,rgba(255,250,243,0) 100%);z-index:0}
+  .hero-full picture{position:relative;z-index:1;display:block}
+  .hero-full img{width:100%;height:auto;border-radius:26px;box-shadow:var(--shadow-lift);display:block}
+  .hero-in{position:relative;z-index:1;width:100%;padding:0;line-height:1.7}
+  .hero-copy{max-width:100%}
   .kicker{display:inline-flex;align-items:center;gap:9px;background:var(--blush);color:var(--coral-deep);font:800 11.5px/1 Nunito,sans-serif;letter-spacing:1.6px;text-transform:uppercase;padding:9px 16px;border-radius:999px;margin-bottom:16px}
   .kicker svg{width:16px;height:16px;color:var(--coral)}
   .hero-copy h1{font-size:clamp(32px,4vw,54px);line-height:1.08;margin:0 0 16px;max-width:20ch}
@@ -224,10 +229,9 @@
     .menu-btn{display:block}
     h1{font-size:30px}
     .article h1{font-size:31px}
-    /* phone: the portrait crop of her cover photo, shown whole */
-    .hero-full img{height:auto;aspect-ratio:1170/1606;max-height:none}
-    .hero-in{padding:26px 22px 4px}
-    .hero-copy{max-width:100%}
+    /* phone: photo whole on top, words underneath */
+    .hero-full{grid-template-columns:1fr;gap:22px;padding:18px 18px 8px}
+    .hero-full img{border-radius:20px}
     .hero-copy h1{font-size:30px;max-width:100%}
     .hero{margin-top:8px}
     .verse-in{flex-direction:column;text-align:center;padding:26px 22px}
@@ -285,8 +289,7 @@
 
   <section class="hero-full">
     <picture>
-      <source media="(max-width:700px)" srcset="https://northlightwebdesign.com/previews/shepherds-companion/img/hero-tall.jpg">
-      <img src="https://northlightwebdesign.com/previews/shepherds-companion/img/hero-wide.jpg" alt="Margaret kneeling in the sand dunes at golden hour with her arm around Ella, who is leaning into her">
+      <img src="https://northlightwebdesign.com/previews/shepherds-companion/img/hero-tall.jpg" alt="Margaret kneeling in the sand dunes at golden hour with her arm around Ella, who is leaning into her">
     </picture>
     <div class="hero-in">
       <div class="hero-copy">
