@@ -46,6 +46,12 @@
   .sub { text-align: center; color: #b9c3da; max-width: 480px; margin: 0 auto 44px; font-size: 16px; }
 
   .cards { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+  .cards.subs { grid-template-columns: 1fr 1fr; max-width: 640px; margin: 0 auto 44px; }
+  .group-title {
+    text-align: center; font-size: 12.5px; font-weight: 700; letter-spacing: .12em;
+    text-transform: uppercase; color: #93a0be; margin-bottom: 18px;
+  }
+  .cards + .group-title { margin-top: 44px; }
   .card.boost { border-color: rgba(252,163,17,.5); position: relative; }
   .card.boost .tag {
     position: absolute; top: -11px; left: 50%; transform: translateX(-50%);
@@ -100,6 +106,23 @@
   <div class="wrap">
     <h1>Make a payment</h1>
     <p class="sub">Pick the payment David pointed you to. Checkout is handled securely by Stripe; we never see your card details.</p>
+    <div class="group-title">Website subscription - no build fee</div>
+    <div class="cards subs">
+      <div class="card">
+        <div class="label">Site Plan</div>
+        <div class="amount">$100<small>/month</small></div>
+        <p>Your complete website: build, launch, hosting, maintenance, and edits. No build fee, cancel anytime, own the site after 12 monthly payments.</p>
+        <a href="https://buy.stripe.com/4gMfZjdwT2Tb13p9lE2oE08">Start site plan</a>
+      </div>
+      <div class="card boost">
+        <div class="tag">Best value</div>
+        <div class="label">Growth Plan</div>
+        <div class="amount">$175<small>/month</small></div>
+        <p>Everything in the Site Plan, plus monthly SEO work, fresh content, Google profile posts, your newest reviews, and a monthly performance report.</p>
+        <a href="https://buy.stripe.com/28E00lakHdxP3bxdBU2oE09">Start growth plan</a>
+      </div>
+    </div>
+    <div class="group-title">Flat build and add-ons</div>
     <div class="cards">
       <div class="card">
         <div class="label">Project Deposit</div>
@@ -119,8 +142,7 @@
         <p>Hosting, updates, and edits handled for you. Cancel anytime; your site stays yours.</p>
         <a href="https://buy.stripe.com/bJe6oJ1Ob3Xfh2n0P82oE02">Start care plan</a>
       </div>
-      <div class="card boost">
-        <div class="tag">Best value</div>
+      <div class="card">
         <div class="label">Boost Plan</div>
         <div class="amount">$100<small>/month</small></div>
         <p>Everything in Care, plus monthly SEO work, fresh content, Google profile posts, and a monthly website performance report.</p>
