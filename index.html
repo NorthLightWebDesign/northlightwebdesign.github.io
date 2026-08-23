@@ -365,10 +365,10 @@
   .field label { display: block; font-size: 13px; font-weight: 600; color: #c4cde0; margin-bottom: 7px; letter-spacing: .02em; }
   .field input, .field textarea {
     width: 100%; background: rgba(10, 17, 40, 0.6); border: 1px solid rgba(255, 255, 255, 0.14);
-    border-radius: 10px; padding: 13px 15px; color: #fff; font-family: "Inter", sans-serif; font-size: 15px;
+    border-radius: 10px; padding: 15px; color: #fff; font-family: "Inter", sans-serif; font-size: 15px;
     transition: border-color .15s ease, box-shadow .15s ease;
   }
-  .field input::placeholder, .field textarea::placeholder { color: #5f6b88; }
+  .field input::placeholder, .field textarea::placeholder { color: #8b96b4; }
   .field input:focus, .field textarea:focus {
     outline: none; border-color: var(--aurora);
     box-shadow: 0 0 0 3px rgba(76, 201, 168, 0.18);
@@ -723,17 +723,17 @@ src="https://www.facebook.com/tr?id=2128120458086072&ev=PageView&noscript=1"
         <div class="form-row">
           <div class="field">
             <label for="f-name">Your name</label>
-            <input id="f-name" type="text" name="name" placeholder="Sam Rivera" required>
+            <input id="f-name" type="text" name="name" autocomplete="name" placeholder="Sam Rivera" required>
           </div>
           <div class="field">
             <label for="f-business">Business name</label>
-            <input id="f-business" type="text" name="business" placeholder="Rivera Painting LLC" required>
+            <input id="f-business" type="text" name="business" autocomplete="organization" placeholder="Rivera Painting LLC" required>
           </div>
         </div>
         <div class="form-row">
           <div class="field">
             <label for="f-town">Town</label>
-            <input id="f-town" type="text" name="town" placeholder="Toms River, NJ" required>
+            <input id="f-town" type="text" name="town" autocomplete="address-level2" placeholder="Toms River, NJ" required>
           </div>
           <div class="field">
             <label for="f-contact">Email or phone</label>
