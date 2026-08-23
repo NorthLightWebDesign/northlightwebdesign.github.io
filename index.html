@@ -363,6 +363,7 @@
   .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
   .field { margin-bottom: 16px; }
   .field label { display: block; font-size: 13px; font-weight: 600; color: #c4cde0; margin-bottom: 7px; letter-spacing: .02em; }
+  .field label .opt { font-weight: 400; color: #8b96b4; letter-spacing: 0; }
   .field input, .field textarea {
     width: 100%; background: rgba(10, 17, 40, 0.6); border: 1px solid rgba(255, 255, 255, 0.14);
     border-radius: 10px; padding: 15px; color: #fff; font-family: "Inter", sans-serif; font-size: 15px;
@@ -719,6 +720,15 @@ src="https://www.facebook.com/tr?id=2128120458086072&ev=PageView&noscript=1"
         <input type="hidden" name="_captcha" value="false">
         <input type="hidden" name="_blacklist" value="SEO services, guest post, backlink, crypto, bitcoin, forex, casino, viagra, loan offer, investment opportunity">
         <input type="hidden" name="_next" value="https://northlightwebdesign.com/thanks/">
+        <input type="hidden" name="_autoresponse" value="Thanks for reaching out. This is an automatic note so you know it landed, and a real one from me is coming shortly.
+
+I'm David, I run Northlight myself, so you're not in a queue somewhere. You'll have a preview of your website within one business day, built with your business name, your town, and your reviews already on it. Nothing to pay and nothing to sign to look at it.
+
+If anything is urgent before then, just reply straight to this email and it comes to me.
+
+David Kincade
+Northlight Web Design
+northlightwebdesign.com">
         <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
         <div class="form-row">
           <div class="field">
@@ -736,9 +746,13 @@ src="https://www.facebook.com/tr?id=2128120458086072&ev=PageView&noscript=1"
             <input id="f-town" type="text" name="town" autocomplete="address-level2" placeholder="Toms River, NJ" required>
           </div>
           <div class="field">
-            <label for="f-contact">Email or phone</label>
-            <input id="f-contact" type="text" name="reach_me_at" placeholder="Best way to reach you" required>
+            <label for="f-email">Your email</label>
+            <input id="f-email" type="email" name="email" autocomplete="email" inputmode="email" placeholder="you@yourbusiness.com" required>
           </div>
+        </div>
+        <div class="field">
+          <label for="f-phone">Phone <span class="opt">(optional, if you'd rather get a call)</span></label>
+          <input id="f-phone" type="tel" name="phone" autocomplete="tel" inputmode="tel" placeholder="(732) 555-0142">
         </div>
         <div class="field">
           <label for="f-message">What do you need?</label>
