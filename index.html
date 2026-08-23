@@ -4,13 +4,14 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Web Design for New Jersey Service Businesses | Northlight</title>
-<meta name="description" content="Northlight builds clean, fast websites for New Jersey service businesses that don't have one yet. No build fee, $100 a month, cancel anytime - and you see a preview of your site within one business day.">
+<meta name="description" content="Websites for New Jersey service businesses. No build fee, $100 a month, and a free preview of your site within one business day.">
+<meta name="referrer" content="strict-origin-when-cross-origin">
 <link rel="canonical" href="https://northlightwebdesign.com/">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://northlightwebdesign.com/">
 <meta property="og:title" content="Web Design for New Jersey Service Businesses | Northlight">
 <meta property="og:description" content="No build fee. $100 a month, cancel anytime, own your site after a year. See a free preview of your website within one business day.">
-<meta name="twitter:card" content="summary">
+<meta name="twitter:card" content="summary_large_image">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -480,7 +481,7 @@ src="https://www.facebook.com/tr?id=2128120458086072&ev=PageView&noscript=1"
       </div>
       <div class="hero-proof">
         <div class="proof"><b>$0 <span>build fee</span></b>We build it first</div>
-        <div class="proof"><b>$100 <span>a month</span></b>Cancel anytime</div>
+        <div class="proof"><b>$100 <span>a month</span></b>Cancel anytime, yours after 12</div>
         <div class="proof"><b>1 <span>business day</span></b>To your free preview</div>
       </div>
     </div>
@@ -609,7 +610,7 @@ src="https://www.facebook.com/tr?id=2128120458086072&ev=PageView&noscript=1"
           </ul>
           <div class="price-tag">
             <div class="amount">$100<small>/month</small></div>
-            <div class="terms">No build fee. Cancel anytime.</div>
+            <div class="terms">No build fee. Cancel anytime; the site stays up once it's paid off at 12 months.</div>
           </div>
         </div>
       </div>
@@ -628,7 +629,7 @@ src="https://www.facebook.com/tr?id=2128120458086072&ev=PageView&noscript=1"
           </ul>
           <div class="price-tag">
             <div class="amount">$175<small>/month</small></div>
-            <div class="terms">No build fee. Cancel anytime.</div>
+            <div class="terms">No build fee. Cancel anytime; the site stays up once it's paid off at 12 months.</div>
           </div>
         </div>
       </div>
@@ -644,7 +645,7 @@ src="https://www.facebook.com/tr?id=2128120458086072&ev=PageView&noscript=1"
       </div>
       <div class="pricing-note reveal">
         <b>No contracts, no upsells</b>
-        Cancel anytime with an email. The price on this page is the price. We earn the monthly by keeping your site fast, current, and working.
+        Cancel anytime with an email. If you cancel before the 12 monthly payments are done the site comes down, since the build hasn't been paid off yet; after that it's yours to keep either way. The price on this page is the price. We earn the monthly by keeping your site fast, current, and working.
       </div>
     </div>
   </div>
@@ -716,6 +717,8 @@ src="https://www.facebook.com/tr?id=2128120458086072&ev=PageView&noscript=1"
         <input type="hidden" name="_subject" value="New inquiry from northlightwebdesign.com">
         <input type="hidden" name="_template" value="table">
         <input type="hidden" name="_captcha" value="false">
+        <input type="hidden" name="_blacklist" value="SEO services, guest post, backlink, crypto, bitcoin, forex, casino, viagra, loan offer, investment opportunity">
+        <input type="hidden" name="_next" value="https://northlightwebdesign.com/thanks/">
         <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
         <div class="form-row">
           <div class="field">
@@ -797,7 +800,10 @@ src="https://www.facebook.com/tr?id=2128120458086072&ev=PageView&noscript=1"
       form.style.display = 'none';
       status.style.display = 'block';
     } catch (err) {
-      // Network or service hiccup: fall back to the classic POST so no lead is ever lost
+      // Network or service hiccup: fall back to the classic POST so no lead is ever lost.
+      // Fire Lead here too - the fallback navigates away, so this is the last chance to
+      // record the conversion. Without it Meta optimizes on an undercounted signal.
+      if (window.fbq) fbq('track', 'Lead');
       form.submit();
     }
   });
