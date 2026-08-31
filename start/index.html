@@ -355,7 +355,11 @@
   .field label .opt { font-weight: 400; color: #8b96b4; letter-spacing: 0; }
   .field input, .field textarea {
     width: 100%; background: rgba(10, 17, 40, 0.6); border: 1px solid rgba(255, 255, 255, 0.14);
-    border-radius: 10px; padding: 15px; color: #fff; font-family: "Inter", sans-serif; font-size: 15px;
+    /* 16px is a hard floor, not a taste choice: iOS Safari auto-zooms the page
+       on focus for any input under 16px and does not zoom back out afterwards.
+       This is the page paid traffic lands on, so every mobile lead was filling
+       the form zoomed in and half off-screen. Changed from 15px 2026-08-31. */
+    border-radius: 10px; padding: 15px; color: #fff; font-family: "Inter", sans-serif; font-size: 16px;
     transition: border-color .15s ease, box-shadow .15s ease;
   }
   .field input::placeholder, .field textarea::placeholder { color: #8b96b4; }
